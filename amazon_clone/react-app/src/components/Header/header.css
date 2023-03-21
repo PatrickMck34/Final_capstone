@@ -4,12 +4,10 @@
     align-items: center;
     background-color:black;
     position:sticky;
-    top:0;
-    z-index: 100;
 
 }
 .nav-logo {
-    width:80px;
+    width:4em;
     object-fit:contain;
     margin: 0 10px;
     margin-top:12px;

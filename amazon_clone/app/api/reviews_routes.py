@@ -31,7 +31,7 @@ def edit_reviews(reviewsId):
     if form.errors:
         return {"errors": form.errors}
 
-        @reviews_routes.route('/<int:reviewsId>', methods=['DELETE'])
+@reviews_routes.route('/<int:reviewsId>', methods=['DELETE'])
 @login_required
 def delete_reviews(reviewsId):
     reviews = reviews.query.get(reviewsId)

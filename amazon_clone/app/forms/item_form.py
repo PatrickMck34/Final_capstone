@@ -6,3 +6,5 @@ class ItemForm(FlaskForm):
     name = StringField("Name", validators=[DataRequired()])
     price = IntegerField("Price", validators=[DataRequired()])
     rating = IntegerField("Rating")
+    description = StringField("Description")
+    imageUrl = StringField("ImageUrl")

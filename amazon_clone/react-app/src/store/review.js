@@ -48,7 +48,7 @@ export  const deleteReview = (reviewId) => {
 };
 
 const initialState =  {allReviews:{}, singleSpotReviews: {}}
-export const reviewsReducer = (state = initialState, action) => {
+export default function reviewsReducer(state = initialState, action) {
     let newState = {}
     
     switch (action.type) {
@@ -74,4 +74,3 @@ export const reviewsReducer = (state = initialState, action) => {
       default:
     return state
 }}
-export default reviewsReducer

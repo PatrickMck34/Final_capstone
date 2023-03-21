@@ -14,18 +14,18 @@ function Home(){
                     {/*  */}
                 </div>
                 <div className="home-line">
-                {/* <Item title="ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set With Japanese VG10 Steel Core" price={159.00} image='https://lh3.googleusercontent.com/miQ2X_ihAO0OSQt1LeAeMPpczaXCjuu0XxRizkNrgz4Sml6R0GaBISvk33xKXmoxlvIYlbigB7SjCyCQR_HMfqPIZfvrUaTlFzfaQrXX' */}
-                {/* rating={4}/> */}
-                    {/* <Item title="Magnetic Levitation Floating Globe" price={38.99} image="https://lh3.googleusercontent.com/DMhhP5hH7DRxaNZ7mTsM6rM_QonIFKU69ejJ9zFaxrnaE8tiHv9SzZa1QV0kWrX-1VT1PIRU0ohu2DrjtqP3UtAKUwYzTJ2s7wl5whWb" */}
-                    {/* rating={4}/> */}
-                    {/* <Item title="Sleep HeadPhones, White Noise Bluetooth Sleep Mask" price={26.99} image="https://lh3.googleusercontent.com/KEkm8qxAgBCmoON7gNz36NxXkQPORr-5FDw9avhh7GxTVZ1P-8VVJqaPfce8h_923_mVVTUmVB5zG4dxDpz4AXEIN8DpPPe3LMVkUzP_Ig" */}
-                    {/* rating={3}/> */}
+              <Item title="ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set With Japanese VG10 Steel Core" price={159.00} image='https://lh3.googleusercontent.com/miQ2X_ihAO0OSQt1LeAeMPpczaXCjuu0XxRizkNrgz4Sml6R0GaBISvk33xKXmoxlvIYlbigB7SjCyCQR_HMfqPIZfvrUaTlFzfaQrXX' alt="loading"
+                 rating={4}/> 
+                    <Item title="Magnetic Levitation Floating Globe" price={38.99} image="https://lh3.googleusercontent.com/DMhhP5hH7DRxaNZ7mTsM6rM_QonIFKU69ejJ9zFaxrnaE8tiHv9SzZa1QV0kWrX-1VT1PIRU0ohu2DrjtqP3UtAKUwYzTJ2s7wl5whWb" alt="loading"
+                   rating={4}/> 
+                     <Item title="Sleep HeadPhones, White Noise Bluetooth Sleep Mask" price={26.99} image="https://lh3.googleusercontent.com/KEkm8qxAgBCmoON7gNz36NxXkQPORr-5FDw9avhh7GxTVZ1P-8VVJqaPfce8h_923_mVVTUmVB5zG4dxDpz4AXEIN8DpPPe3LMVkUzP_Ig" alt="loading"
+                   rating={3}/> 
 
                 </div>
                 <div className="home-line">
-                    {/*  */}
-                    {/* <Item title="AeroBand Electric Air Drum Set Air Drum Sticks" price={199.00} image="https://lh3.googleusercontent.com/y9lBYiWKYCR5OS4zQo0YLm6ju0ygCRMywa4hFeuQ2asrGSjZDval5tUIXs4UEqtegybPhwwGtFn_TTdSeeF902sW7viJNRyPpxS708P1"
-                    rating={3}/> */}
+                   
+                    <Item title="AeroBand Electric Air Drum Set Air Drum Sticks" price={199.00} image="https://lh3.googleusercontent.com/y9lBYiWKYCR5OS4zQo0YLm6ju0ygCRMywa4hFeuQ2asrGSjZDval5tUIXs4UEqtegybPhwwGtFn_TTdSeeF902sW7viJNRyPpxS708P1" alt="loading"
+                    rating={3}/> 
 
                 </div>
             </div>

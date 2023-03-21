@@ -7,7 +7,9 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String)
     rating = db.Column(db.Integer)
+    imageUrl = db.Column(db.String)
 
 
     if environment == "production":
@@ -19,5 +21,6 @@ class Item(db.Model):
             'id': self.id,
             'name': self.name,
             'price': self.price,
+            'description': self.desctription,
             'rating': self.rating
         }
