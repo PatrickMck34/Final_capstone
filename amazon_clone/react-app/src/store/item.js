@@ -68,7 +68,7 @@ export default function ItemsReducer(state = initialState, action) {
                 case DELETE_ITEM:
              newState = {...state}
              delete newState[action.payload]
-            
+            return state
       default:
     return state
 }}
