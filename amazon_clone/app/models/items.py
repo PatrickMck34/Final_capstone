@@ -7,7 +7,7 @@ class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String, nullable=False)
     price = db.Column(db.Integer, nullable=False)
-    rating = db.column(db.Integer)
+    rating = db.Column(db.Integer)
 
 
     if environment == "production":
