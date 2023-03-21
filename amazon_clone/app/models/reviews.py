@@ -1,8 +1,8 @@
 from .db import db, environment, SCHEMA, add_prefix_for_prod
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask_login import UserMixin
 
-class User(db.Model, UserMixin):
+
+class Reviews(db.Model,):
     __tableitemId__ = 'itemId'
     id = db.Column(db.Integer, primary_key=True)
     itemId = db.Column(db.String, nullable=False)
