@@ -1,4 +1,4 @@
-import { csrfFetch } from './csrf'; 
+
 
 const READ_REVIEWS = '/reviews'
 const DELETE_REVIEW = '/reviews/:reviewId';
@@ -7,7 +7,7 @@ const READ_REVIEW = '/reviews/spotsid'
 
 export const createReviews = (reviews) => async (dispatch) => {
     const {review, stars, spotId} = reviews
- const data = await csrfFetch(`/api/spots/${spotId}/reviews` , {
+ const data = await fetch(`/api/spots/${spotId}/reviews` , {
         method: "POST",
         body: JSON.stringify({
            review, stars
@@ -24,7 +24,7 @@ export const createReview = (review) =>({
     payload: review
 })
 export const getReviews = (spotId) => async (dispatch) => {
-const data = await csrfFetch(`/api/spots/${spotId}/reviews`)
+const data = await fetch(`/api/spots/${spotId}/reviews`)
     const response = await data.json()
     dispatch(getReview(response))
     return response
@@ -34,7 +34,7 @@ export const getReview = (review) =>({
     payload: review
 })
 export const deleteReviews = (id) => async (dispatch) => {
-    const response = await csrfFetch(`/api/reviews/${id}`, {
+    const response = await fetch(`/api/reviews/${id}`, {
         method: 'DELETE',
     });
     dispatch(deleteReview(id));

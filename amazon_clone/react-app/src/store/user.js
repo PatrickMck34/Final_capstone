@@ -53,21 +53,6 @@ export const readUser = (user) => ({
     payload: user
 })
 
-export const readUserFollowers = (followers) => ({
-    type: READ_USER_FOLLOWERS,
-    payload: followers
-})
-
-
-
-export const getUserFollowers = (userId) => async (dispatch) => {
-    const data = await fetch(`/api/users/${userId}/followers`)
-
-    const followers = await data.json()
-
-    dispatch(readUserFollowers(followers))
-    return followers
-}
 
 
 let initialState = { allUsers: {}, singleUser: {} }
