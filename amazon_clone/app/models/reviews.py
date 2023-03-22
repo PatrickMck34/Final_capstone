@@ -4,6 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 class Review(db.Model,):
     __tableitemId__ = 'reviews'
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
     id = db.Column(db.Integer, primary_key=True)
     itemId = db.Column(db.String, nullable=False)
     userId = db.Column(db.Integer, nullable=False)
@@ -11,8 +13,6 @@ class Review(db.Model,):
     
 
 
-    if environment == "production":
-        __table_args__ = {'schema': SCHEMA}
 
 
     def to_dict(self):
