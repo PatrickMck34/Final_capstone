@@ -1,5 +1,11 @@
-# dependencies
-/node_modules
-/.pnp
-.pnp.js
-
+.env
+__pycache__/
+*.py[cod]
+.venv
+.DS_Store
+.vscode/
+Pipfile.lock
+package-lock.json
+instance/
+migrations/
+/build
