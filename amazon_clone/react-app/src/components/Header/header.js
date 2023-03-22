@@ -36,9 +36,13 @@ function Header() {
                   
                 </div>
                 <div className="nav-option-basket">
-                <i className="fa-solid fa-cart-shopping"  />
-                   
+                    <Link to="/cart">
+                        <button className={"fa-solid fa-cart-shopping"} id="cart-button">
                     <span className="nav-option2 basket-count">0</span>
+                            
+                        </button>
+                   
+                    </Link>
                    
                 </div>
             </div>

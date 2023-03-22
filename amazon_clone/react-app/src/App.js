@@ -7,6 +7,7 @@ import { authenticate } from "./store/session";
 import Navigation from "./components/Navigation";
 import Home from "./components/Home/home";
 import Header from "./components/Header/header"
+import Cart from "./components/Cart/cart";
 
 function App() {
   const dispatch = useDispatch();
@@ -20,6 +21,10 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} />
       {isLoaded && ( */}
         <Switch>
+          <Route path="/cart">
+            <Header />
+            <Cart />
+          </Route>
           <Route path="/login" >
             <LoginFormPage />
           </Route>
