@@ -1,6 +1,9 @@
 import React from 'react'
 import './header.css'
-import { Link} from 'react-router-dom'
+import {  Link} from 'react-router-dom'
+import SignupFormModal from '../SignupFormModal'
+import OpenModalButton from '../OpenModalButton'
+import { NavLink } from 'react-router-dom'
 
 function Header() {
     return(
@@ -18,7 +21,16 @@ function Header() {
             <div className="nav-nav">
                 <div className="nav-option">
                    <span className='nav-option1'>Hello</span>
-                   <span className='nav-option2'>Sign In</span>
+                   <NavLink to={'/signup'}>
+                   <span className='nav-option2' >Sign In
+                   </span>
+                   </NavLink>
+                   {/* <OpenModalButton
+                            buttonText={"Sign In"} 
+                            modalComponent={<SignupFormModal/>}/> */}
+                               
+                         
+                         
                 </div>
                 <div className="nav-option">
                  
