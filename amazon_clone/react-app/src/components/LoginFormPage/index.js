@@ -3,6 +3,7 @@ import { login } from "../../store/session";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import './LoginForm.css';
+import { Link } from "react-router-dom";
 
 function LoginFormPage() {
   const dispatch = useDispatch();
@@ -23,33 +24,64 @@ function LoginFormPage() {
 
   return (
     <>
-      <h1>Log In</h1>
+    <div classNAme="log-logo">
+      <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
+    </div>
+    <div className="create-container-log">
+    <div className="log-logo">
+
+      <h1>Sign In</h1>
+          </div>
+      <div className="login-title">
+
+
       <form onSubmit={handleSubmit}>
         <ul>
           {errors.map((error, idx) => (
             <li key={idx}>{error}</li>
-          ))}
-        </ul>
+            ))}
+            </ul>
+        <span className="log-option">
+
         <label>
-          Email
+        
           <input
-            type="text"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
+          className="log-options"
+          type="text"
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          required
           />
         </label>
+            </span>
+            <span className="log-option">
+
         <label>
-          Password
+          <div className="spacer-log"></div>
+        
           <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            required
+          className="log-options"
+          placeholder="Password"
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          required
           />
         </label>
-        <button type="submit">Log In</button>
+          </span>
       </form>
+          </div> 
+            <button className="continue-button-log" type="submit">Log In</button>
+            </div>
+            <div className="signup-redirect">
+
+              <span>Don't Have an Account?</span>
+            <Link to={'/signup'}>
+                   <button className='nav-option2' >Create Your Amazin Account
+                   </button>
+                   </Link>
+            </div>
     </>
   );
 }

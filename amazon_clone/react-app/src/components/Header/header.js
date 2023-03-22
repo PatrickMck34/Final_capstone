@@ -20,17 +20,14 @@ function Header() {
 
             <div className="nav-nav">
                 <div className="nav-option">
-                   <span className='nav-option1'>Hello</span>
-                   <Link to={'/signup'}>
-                   <button className='nav-option2' >Sign In
+                <Link to={'/login'}>
+                <button className='nav-option1' >Log In
                    </button>
                    </Link>
-                   {/* <OpenModalButton
-                            buttonText={"Sign In"} 
-                            modalComponent={<SignupFormModal/>}/> */}
-                               
-                         
-                         
+                   <Link to={'/signup'}>
+                   <button className='nav-option2' >Sign Up
+                   </button>
+                   </Link>
                 </div>
                 <div className="nav-option">
                  

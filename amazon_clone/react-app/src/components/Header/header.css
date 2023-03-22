@@ -15,8 +15,10 @@
 
 }
 #search-icon {
+    border:1px solid;
     padding:5px;
     height:22px;
+    width:20px;
     background-color:#cd9042
 }
 .nav-search {
@@ -45,13 +47,18 @@
 
 }
 .nav-option1 {
-    font-size:18px;
-    margin-bottom:.2em;
+    font-size:12px;
+    width:5.55em;
+    font-weight:800;
+    margin-bottom:.3em;
+    cursor:pointer;
+
 }
 .nav-option2 {
-    font-size:13px;
+
+    font-size:12px;
     font-weight:800;
-    margin-bottom:.6em;
+    margin-bottom:.1em;
     cursor:pointer;
 }
 .nav-option-basket {

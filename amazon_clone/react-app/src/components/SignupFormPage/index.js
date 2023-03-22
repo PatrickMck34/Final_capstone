@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { signUp } from "../../store/session";
 import './SignupForm.css';
+import { Link } from "react-router-dom";
 
 function SignupFormPage() {
   const dispatch = useDispatch();
@@ -30,7 +31,7 @@ function SignupFormPage() {
   return (
     <>
     <div className="sign-logo">
-    <img className="signin-logo" src="https://i.postimg.cc/ZYrg8zCH/Simply-Amazin.png"></img>
+    <img className="signin-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png"></img>
     </div>
 
     <div className="create-container">
@@ -105,6 +106,14 @@ function SignupFormPage() {
 
 
           </div>
+          <div className="logup-redirect">
+
+              <span>Already Have an Account?</span>
+            <Link to={'/login'}>
+                   <button className='nav-option2' >Login to Your Amazin Account
+                   </button>
+                   </Link>
+            </div>
     </>
   );
 }
