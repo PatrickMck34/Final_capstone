@@ -23,24 +23,21 @@ def upgrade():
     sa.Column('items', sa.String(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
-    )if environment == "production":
-        op.execute(f"ALTER TABLE cart SET SCHEMA {SCHEMA};")
+    )
     op.create_table('items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
     sa.Column('price', sa.Integer(), nullable=False),
     sa.Column('rating', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id')
-    )if environment == "production":
-        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
+    )
     op.create_table('review',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('itemId', sa.String(), nullable=False),
     sa.Column('userId', sa.Integer(), nullable=False),
     sa.Column('review', sa.String(), nullable=False),
     sa.PrimaryKeyConstraint('id')
-    )if environment == "production":
-        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+    )
     with op.batch_alter_table('users', schema=None) as batch_op:
         batch_op.add_column(sa.Column('firstName', sa.String(length=30)))
         batch_op.add_column(sa.Column('lastName', sa.String(length=30)))
