@@ -21,10 +21,10 @@ function Header() {
             <div className="nav-nav">
                 <div className="nav-option">
                    <span className='nav-option1'>Hello</span>
-                   <NavLink to={'/signup'}>
-                   <span className='nav-option2' >Sign In
-                   </span>
-                   </NavLink>
+                   <Link to={'/signup'}>
+                   <button className='nav-option2' >Sign In
+                   </button>
+                   </Link>
                    {/* <OpenModalButton
                             buttonText={"Sign In"} 
                             modalComponent={<SignupFormModal/>}/> */}
@@ -42,7 +42,7 @@ function Header() {
                 <i className="fa-solid fa-cart-shopping"  />
                    
                     <span className="nav-option2 basket-count">0</span>
-                    <span></span>
+                   
                 </div>
             </div>
 
