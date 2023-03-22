@@ -1,0 +1,76 @@
+.create-container {
+    display:flex;
+    flex-flow:column;
+    height: 35em;
+    width: 21em;
+    background-color:rgb(248, 248, 249);
+    margin-left:auto;
+    margin-right: auto;
+    margin-top:4em;
+    border-radius: 1ch;
+    border: 1px solid rgb(188, 188, 194)
+    
+
+}
+.continue-button {
+    display:flex;
+   width:165%;
+   height:2.3em;
+   background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color:#111;
+    margin-left:.9em;
+    margin-top:1.6em;
+    justify-content:center;
+    padding:6px;
+    
+
+  
+
+}
+.signin-title {
+    display:flex;
+
+    height:20em;
+    
+    flex-flow: nowrap;
+    
+}
+.signup-logo {
+    display:flex;
+    flex-direction: column;
+    padding:3px;
+    margin-top:-1em;
+    margin-right:auto;
+    font-size:medium;
+    margin-left: .5em;
+}
+.signin-option {
+    margin-left:7em;
+    margin-right:auto;
+    
+    
+}
+.spacer {
+    margin:2em;
+}
+.sign-options {
+    display:flex;
+    height:2em;
+    width:160%;
+    margin-left:1em;
+    border-radius: .5ch;
+    border: 1px solid rgb(209, 209, 211)
+   
+}
+.signin-logo {
+    display:flex;
+    margin-left:auto;
+    margin-right:auto;
+    height:4em;
+    margin-top:2em;
+    margin-bottom:-3em;
+
+      
+}
