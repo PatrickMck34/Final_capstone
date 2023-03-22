@@ -1,15 +1,15 @@
 .home {
     display:flex;
     max-width:1500px;
-    justify-content:center;
-    margin-right:auto;
-    margin-left:auto;
-}
 
+    justify-content:center;
+    margin:auto;
+   
+}
 
 .home-banner {
     z-index: -1;
-    margin-bottom: -300px;
+    margin-bottom: -250px;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
     width:100%;
 }
