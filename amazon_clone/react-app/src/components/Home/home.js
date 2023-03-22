@@ -11,7 +11,7 @@ function Home(){
                      rating={3}/> 
                      <Item title="KingTool 325 piece Home Repair Toolkit" price={89.99} image='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU'
                      rating={5}/>
-              <Item title="ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set With Japanese VG10 Steel Core" price={159.00} image='https://lh3.googleusercontent.com/miQ2X_ihAO0OSQt1LeAeMPpczaXCjuu0XxRizkNrgz4Sml6R0GaBISvk33xKXmoxlvIYlbigB7SjCyCQR_HMfqPIZfvrUaTlFzfaQrXX' alt="loading"
+              <Item title="ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set" price={159.00} image='https://lh3.googleusercontent.com/miQ2X_ihAO0OSQt1LeAeMPpczaXCjuu0XxRizkNrgz4Sml6R0GaBISvk33xKXmoxlvIYlbigB7SjCyCQR_HMfqPIZfvrUaTlFzfaQrXX' alt="loading"
                  rating={4}/> 
                     {/*  */}
                 </div>
