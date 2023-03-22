@@ -24,7 +24,7 @@ function LoginFormPage() {
 
   return (
     <>
-    <div classNAme="log-logo">
+    <div className="log-logo">
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
     </div>
     <div className="create-container-log">

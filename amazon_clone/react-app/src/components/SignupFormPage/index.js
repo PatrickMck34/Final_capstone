@@ -79,7 +79,7 @@ function SignupFormPage() {
         <span className="signin-option">
           <input
           className="sign-options"
-          placeHolder="Password"
+          placeholder="Password"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}

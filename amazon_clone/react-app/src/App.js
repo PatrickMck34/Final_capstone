@@ -4,16 +4,17 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 import Home from "./components/Home/home";
-import Header from "./components/Header/header"
+// import Header from "./components/Header/header"
 import Cart from "./components/Cart/cart";
+import * as userActions from './store/user'
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true));
+    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=>dispatch(userActions.getUser()));
   }, [dispatch]);
 
   return (
@@ -22,8 +23,7 @@ function App() {
       {isLoaded && ( */}
         <Switch>
           <Route path="/cart">
-            <Header />
-            <Cart />
+         <Cart />
           </Route>
           <Route path="/login" >
             <LoginFormPage />
@@ -31,10 +31,8 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/">
-            <Header />
+          <Route ecxact path="/">
             <Home />
-
           </Route>
         </Switch>
       {/* )} */}
