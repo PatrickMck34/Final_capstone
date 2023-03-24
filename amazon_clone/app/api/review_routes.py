@@ -19,8 +19,8 @@ def get_items2():
 
 
 
-@ review_routes.route('/add', methods=['POST'])
-@ login_required
+@review_routes.route('/add', methods=['POST'])
+@login_required
 def create_review_post():
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
