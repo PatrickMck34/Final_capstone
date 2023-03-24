@@ -4,8 +4,11 @@ import {  Link} from 'react-router-dom'
 import SignupFormModal from '../SignupFormModal'
 import OpenModalButton from '../OpenModalButton'
 import { NavLink } from 'react-router-dom'
+import * as sessionActions from '../../store/session'
+import { useDispatch } from 'react-redux'
 
 function Header() {
+const dispatch = useDispatch()
     return(
         <div className="nav">
             <Link to='/'>
@@ -20,6 +23,7 @@ function Header() {
 
             <div className="nav-nav">
                 <div className="nav-option">
+                  
                 <Link to={'/login'}>
                 <button className='nav-option1' >Log In
                    </button>
@@ -29,6 +33,17 @@ function Header() {
                    </button>
                    </Link>
                 </div>
+                <div className="nav-option">
+                  
+                  <Link to={'/logout'}>
+                  <button className='nav-option1'onClick={(()=> dispatch(sessionActions.logout()))} >Logout
+                     </button>
+                     </Link>
+                     <Link to={'/signup'}>
+                     <button className='nav-option2' >
+                     </button>
+                     </Link>
+                  </div>
                 <div className="nav-option">
                  
                 </div>

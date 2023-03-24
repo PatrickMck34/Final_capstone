@@ -24,5 +24,7 @@ class Item(db.Model):
             'name': self.name,
             'price': self.price,
             'description': self.desctription,
-            'rating': self.rating
+            'rating': self.rating,
+            'imageUrl': self.imageUrl,
+
         }

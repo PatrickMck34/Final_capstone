@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     hashed_password = db.Column(db.String(255), nullable=False)
     firstName = db.Column(db.String(30))
     lastName = db.Column(db.String(30))
-    reviews = db.Column(db.String(250))
+
     
 
     @property
@@ -36,7 +36,7 @@ class User(db.Model, UserMixin):
             'email': self.email,
             'firstName': self.firstName,
             'lastName': self.lastName,
-            'reviews': self.reviews,
+
 
 
         }

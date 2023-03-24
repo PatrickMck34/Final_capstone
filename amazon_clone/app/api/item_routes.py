@@ -7,11 +7,46 @@ from datetime import datetime
 
 item_routes = Blueprint('items', __name__)
 
-@item_routes.route('/items')
-@login_required
-def items():
-    """
-    Query for all items and returns them in a list of item dictionaries
-    """
-    items = item.query.all()
-    return {'items': [item.to_dict() for item in items]}
+@item_routes.route('', methods=['GET'])
+def get_items():
+    items = Item.query.all()
+    return [item.to_dict() for item in items]
+
+@item_routes.route('/', methods=['GET'])
+def get_items2():
+    items = Item.query.all()
+    return [item.to_dict() for item in items]
+
+
+
+
+@ item_routes.route('/<int:itemId>/item', methods=['POST'])
+@ login_required
+def create_item_post(itemId):
+    form = ItemForm()
+    form['csrf_token'].data = request.cookies['csrf_token']
+
+    if form.validate_on_submit():
+        name = form.item_name.data
+        price = form.item_price.data
+        rating = form.item_rating.data
+        description = form.item_description.data
+        imageUrl = form.item.imageUrl.data
+        new_item = Item(
+            item_id=itemId,
+            item_name=name,
+            item_price=price,
+            item_description=description,
+            item_imageUrl=imageUrl,
+          
+            createdAt=datetime.now(),
+            updatedAt=datetime.now(),
+        )
+        db.session.add(new_item)
+        db.session.commit()
+
+        ret = Item.query.get(new_item.id)
+        return ret.to_dict()
+
+    if form.errors:
+        return {"errors": form.errors}

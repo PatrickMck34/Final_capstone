@@ -5,26 +5,31 @@ const DELETE_REVIEW = '/reviews/:reviewId';
 const CREATE_REVIEW = '/reviews/new'
 const READ_REVIEW = '/reviews/spotsid'
 
-export const createReviews = (reviews) => async (dispatch) => {
-    const {review, stars, spotId} = reviews
- const data = await fetch(`/api/spots/${spotId}/reviews` , {
-        method: "POST",
+export const createReviews = ({review, reviewId}) => async (dispatch) => {
+    // dispatch(createReview(review))
+
+   const rev = review
+    const data = await fetch('/api/reviews/add' , {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
         body: JSON.stringify({
-           review, stars
+            review
         }),
     });
+
     const response = await data.json()
-    
     dispatch(createReview(response))
     return response
-}
+}   
 
 export const createReview = (review) =>({
     type: CREATE_REVIEW,
     payload: review
 })
-export const getReviews = (spotId) => async (dispatch) => {
-const data = await fetch(`/api/spots/${spotId}/reviews`)
+export const getReviews = () => async (dispatch) => {
+const data = await fetch(`/api/reviews`)
     const response = await data.json()
     dispatch(getReview(response))
     return response
@@ -47,24 +52,27 @@ export  const deleteReview = (reviewId) => {
     };
 };
 
-const initialState =  {allReviews:{}, singleSpotReviews: {}}
+const initialState =  {allReviews:{}, singleReview: {}}
 export default function reviewsReducer(state = initialState, action) {
     let newState = {}
     
     switch (action.type) {
                case CREATE_REVIEW:
-                 newState = { allReviews:{...state.allReviews}} 
+                 newState = {...state, allReviews:{}} 
                 newState.allReviews[action.payload.id] = action.payload
                 return newState
 
                 case READ_REVIEWS:
-                 newState ={allReviews: {} };
-                 action.payload.Reviews.forEach(reviews => newState.allReviews[reviews.id] = reviews)
+                    newState ={allReviews: {} };
+                //  action.payload.review.forEach(reviews => newState.allReviews[reviews.id] = reviews)
                 return newState
+       
+
+
 
                 case READ_REVIEW:
-                 newState ={singleSpotReviews: {} };
-                 action.payload.Reviews.forEach(reviews => newState.singleSpotReviews[reviews.id] = reviews)
+                 newState ={singleReview: {} };
+                 action.payload.review.allReviews.forEach(reviews => newState.singleReview[reviews.id] = reviews)
                 return newState 
 
                 case DELETE_REVIEW:

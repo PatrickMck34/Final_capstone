@@ -4,12 +4,12 @@ const READ_USER = "/user/:userId"
 
 
 
-export const getUser = () => async (dispatch) => {
-    const data = await fetch("/api")
-    if (data.ok) {
-        const response = await data.Json()
-        dispatch(readUser(response))
-        return response
+// export const getUser = () => async (dispatch) => {
+//     const data = await fetch("/api/user")
+//     if (data.ok) {
+//         const response = await data.Json()
+//         dispatch(readUser(response))
+//         return response
         // } else if (response.status < 500) {
         //     const data = await response.json();
         //     if (data.errors) {
@@ -17,8 +17,8 @@ export const getUser = () => async (dispatch) => {
         //     }
         // } else {
         //     return ["An error occurred. Please try again."];
-    }
-}
+//     }
+// }
 
 export const emailExists = (email) => async (dispatch) => {
     const res = await fetch(`/api/users/emailExists`, {

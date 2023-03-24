@@ -24,26 +24,26 @@ def user(id):
     user = User.query.get(id)
     return user.to_dict()
 
-@ user_routes.route('/<int:userId>/review', methods=['Post'])
+@ user_routes.route('/<int:userId>/user', methods=['Post'])
 @ login_required
-def create_user_Review(userId):
-    form = ReviewForm()
+def create_user_user(userId):
+    form = UserForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        review = form.review.data
+        user = form.user.data
         
 
-        new_review = Review(
-            review=review,
+        new_user = User(
+            user=user,
             userId=userId,
             createdAt=datetime.now(),
             updatedAt=datetime.now()
         )
-        db.session.add(new_Review)
+        db.session.add(new_user)
         db.session.commit()
 
-        ret = Review.query.get(new_Review.id)
+        ret = User.query.get(new_user.id)
         return ret.to_dict()
 
     if form.errors:

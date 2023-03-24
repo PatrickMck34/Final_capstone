@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, request, session, redirect
+from flask import Flask, render_template, request, session, redirect, jsonify
 from flask_cors import CORS
 from flask_migrate import Migrate
 from flask_wtf.csrf import CSRFProtect, generate_csrf
@@ -8,7 +8,7 @@ from .models import db, User
 from .api.user_routes import user_routes
 from .api.auth_routes import auth_routes
 from .api.item_routes import item_routes
-from .api.reviews_routes import reviews_routes
+from .api.review_routes import review_routes
 from .seeds import seed_commands
 from .config import Config
 
@@ -28,10 +28,10 @@ def load_user(id):
 app.cli.add_command(seed_commands)
 
 app.config.from_object(Config)
-app.register_blueprint(user_routes, url_prefix='/api/users')
+app.register_blueprint(user_routes, url_prefix='/api/user')
 app.register_blueprint(auth_routes, url_prefix='/api/auth')
 app.register_blueprint(item_routes, url_prefix='/api/items')
-app.register_blueprint(reviews_routes, url_prefix='/api/reviews')
+app.register_blueprint(review_routes, url_prefix='/api/reviews')
 db.init_app(app)
 Migrate(app, db)
 
@@ -52,6 +52,8 @@ def https_redirect():
             code = 301
             return redirect(url, code=code)
 
+
+@app.route('/review/new')
 
 @app.after_request
 def inject_csrf_token(response):
@@ -93,3 +95,12 @@ def react_root(path):
 @app.errorhandler(404)
 def not_found(e):
     return app.send_static_file('index.html')
+
+@app.route('/add')
+def post_review(review):
+    review = request.json['review']
+
+    # reviews = Review(review)
+    db.session.add(review)
+    db.session.commit()
+    return jsonify(review.to_dict())
