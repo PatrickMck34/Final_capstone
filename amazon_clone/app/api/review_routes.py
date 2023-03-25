@@ -7,14 +7,14 @@ from datetime import datetime
 review_routes = Blueprint('reviews', __name__)
 
 @review_routes.route('', methods=['GET'])
-def get_items():
-    items = Item.query.all()
-    return [item.to_dict() for item in items]
+def get_reviews():
+    reviews = Review.query.all()
+    return [reviews.to_dict() for review in reviews]
 
 @review_routes.route('/', methods=['GET'])
-def get_items2():
-    items = Item.query.all()
-    return [item.to_dict() for item in items]
+def get_reviews2():
+    reviews = Review.query.all()
+    return [reviews.to_dict() for item in reviews]
 
 
 
@@ -38,8 +38,8 @@ def create_review_post():
         db.session.add(new_review)
         db.session.commit()
 
-        ret = Review.query.get(new_review.id)
-        return ret.to_dict()
+        retu = Review.query.get(new_review.id)
+        return {"review": [retu.to_dict()]}
 
     if form.errors:
         return {"errors": form.errors}
