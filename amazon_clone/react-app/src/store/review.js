@@ -63,8 +63,9 @@ export default function reviewsReducer(state = initialState, action) {
                 return newState
 
                 case READ_REVIEWS:
+                    console.log(action)
+                    newState.allReviews[action.payload] = action.payload
                     newState ={allReviews: {} };
-                //  action.payload.review.forEach(reviews => newState.allReviews[reviews.id] = reviews)
                 return newState
        
 

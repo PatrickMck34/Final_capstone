@@ -3,7 +3,7 @@ from wtforms import StringField, IntegerField
 from wtforms.validators import DataRequired
 
 class ReviewForm(FlaskForm):
-    review = StringField("review", )
+    review = StringField("review")
    
  
     
