@@ -1,11 +1,11 @@
 const READ_ITEMS = '/Items'
 const DELETE_ITEM = '/Items/:ItemId';
 const CREATE_ITEM = '/Items/new'
-const READ_ITEM = '/Items/spotsid'
+const READ_ITEM = '/Items/:itemId'
 
 export const createItem = (items) => async (dispatch) => {
     const {item, rating,} = items
- const data = await fetch(`/api/item` , {
+ const data = await fetch(`/api/items` , {
         method: "POST",
         body: JSON.stringify({
            item, rating
@@ -21,12 +21,22 @@ export const createItems = (Item) =>({
     type: CREATE_ITEM,
     payload: Item
 })
-export const getItem = (itemId) => async (dispatch) => {
-const data = await fetch(`/api/item/${itemId}`)
+export const getItem = (id) => async (dispatch) => {
+const data = await fetch(`/api/items/${id}`)
+if (data.ok) {
     const response = await data.json()
     dispatch(getItems(response))
     return response
 }
+}
+export const getAllItems = () => async (dispatch) => {
+    const data = await fetch(`/api/items`)
+    if (data.ok) {
+        const response = await data.json()
+        dispatch(getItems(response))
+        return response
+    }
+    }
 export const getItems = (Item) =>({
     type: READ_ITEM,
     payload: Item
@@ -55,15 +65,18 @@ export default function ItemsReducer(state = initialState, action) {
                 newState.allItems[action.payload.id] = action.payload
                 return newState
 
-                case READ_ITEMS:
-                 newState ={allItems: {} };
-                 action.payload.Items.forEach(Items => newState.allItems[Items.id] = Items)
-                return newState
+                case READ_ITEM:
+                    const variable = action.payload.reduce((acc, post) => {
+                        acc[post.id] = post
+                        return acc
+                    }, {})
+                    newState.allItems = variable
+                    return newState
 
                 case READ_ITEM:
-                 newState ={singleItem: {} };
-                 action.payload.Items.forEach(Items => newState.singleItem[Items.id] = Items)
-                return newState 
+                 newState ={...state, singleItem: {} };
+                 newState.singleItem[action.payload] = action.payload
+                return newState
 
                 case DELETE_ITEM:
              newState = {...state}
