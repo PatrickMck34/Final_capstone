@@ -21,6 +21,7 @@ export const createReviews = ({review, reviewId}) => async (dispatch) => {
 
     const response = await data.json()
     dispatch(createReview(response))
+    console.log(response)
     return response
 }   
 
@@ -31,6 +32,7 @@ export const createReview = (review) =>({
 export const getReviews = () => async (dispatch) => {
 const data = await fetch(`/api/reviews`)
     const response = await data.json()
+    console.log(response)
     dispatch(getReview(response))
     return response
 }
@@ -54,26 +56,28 @@ export  const deleteReview = (reviewId) => {
 
 const initialState =  {allReviews:{}, singleReview: {}}
 export default function reviewsReducer(state = initialState, action) {
-    let newState = {}
+    let newState = {...state}
     
     switch (action.type) {
                case CREATE_REVIEW:
-                 newState = {...state, allReviews:{}} 
-                newState.allReviews[action.payload.id] = action.payload
+                 newState = {allReviews:{}} 
+                newState.allReviews = action.payload
                 return newState
 
                 case READ_REVIEWS:
-                    console.log(action)
-                    newState.allReviews[action.payload] = action.payload
-                    newState ={allReviews: {} };
-                return newState
+                    const variable = action.payload.reduce((acc, post) => {
+                        acc[post.id] = post
+                        return acc
+                    }, {})
+                    newState.allPosts = variable
+                    return newState
        
 
 
 
                 case READ_REVIEW:
                  newState ={singleReview: {} };
-                 action.payload.review.allReviews.forEach(reviews => newState.singleReview[reviews.id] = reviews)
+                 action.payload.allReviews.forEach(reviews => newState.singleReview[reviews.id] = reviews)
                 return newState 
 
                 case DELETE_REVIEW:

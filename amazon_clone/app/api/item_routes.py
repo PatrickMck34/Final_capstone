@@ -8,20 +8,18 @@ from datetime import datetime
 item_routes = Blueprint('items', __name__)
 
 @item_routes.route('', methods=['GET'])
-def get_items():
-    items = Item.query.all()
-    return [item.to_dict() for item in items]
+def get_reviews():
+    its = Item.query.all()
+    return [it.to_dict() for it in its]
 
-@item_routes.route('/', methods=['GET'])
-def get_items2():
-    items = Item.query.all()
-    return [item.to_dict() for item in items]
+# @item_routes.route('/<int:id>', methods=['GET'])
+# def get_items(id):
+#     ret = Item.query.get(id)
 
+#     return [ret.to_dict()]
 
-
-
-@ item_routes.route('/<int:itemId>/item', methods=['POST'])
-@ login_required
+@item_routes.route('/<int:itemId>/item', methods=['POST'])
+@login_required
 def create_item_post(itemId):
     form = ItemForm()
     form['csrf_token'].data = request.cookies['csrf_token']

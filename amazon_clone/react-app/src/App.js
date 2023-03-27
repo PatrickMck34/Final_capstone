@@ -9,12 +9,14 @@ import Cart from "./components/Cart/cart";
 import * as reviewActions from './store/review'
 import ReviewPage from "./components/ReviewPage/review_page"
 import Item from './components/Items/Item'
+import Items from './components/ItemDetails/itemDetails'
+import * as itemActions from "./store/item"
 
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=>dispatch(reviewActions.getReview()));
+    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=> dispatch(itemActions.getAllItems()).then(()=>dispatch(reviewActions.getReviews())));
   }, [dispatch]);
 
   return (
@@ -33,6 +35,9 @@ function App() {
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/item/:itemId">
+            <Items Item={Item}/>
           </Route>
           <Route ecxact path="/">
             <Home />
