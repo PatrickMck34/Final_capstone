@@ -69,7 +69,7 @@ export default function reviewsReducer(state = initialState, action) {
                         acc[post.id] = post
                         return acc
                     }, {})
-                    newState.allPosts = variable
+                    newState.allReviews = variable
                     return newState
        
 
@@ -77,11 +77,11 @@ export default function reviewsReducer(state = initialState, action) {
 
                 case READ_REVIEW:
                  newState ={singleReview: {} };
-                 action.payload.allReviews.forEach(reviews => newState.singleReview[reviews.id] = reviews)
+                 newState.singleReview = action.payload
                 return newState 
 
                 case DELETE_REVIEW:
-             newState = {...state}
+             newState = {}
              delete newState[action.payload]
             return state
       default:

@@ -8,3 +8,4 @@ class ItemForm(FlaskForm):
     rating = IntegerField("Rating")
     description = StringField("Description")
     imageUrl = StringField("ImageUrl")
+    userId = IntegerField("userId")

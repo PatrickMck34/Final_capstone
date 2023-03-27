@@ -10,7 +10,9 @@ class Review(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(200))
-    
+    userId = db.Column(db.Integer)
+    itemId = db.Column(db.Integer)
+
 
 
 
@@ -18,7 +20,9 @@ class Review(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'review': self.review
+            'review': self.review,
+            'userId': self.userId,
+            'itemId': self.itemId,
 
            
         }

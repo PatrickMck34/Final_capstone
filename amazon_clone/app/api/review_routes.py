@@ -14,7 +14,7 @@ def get_reviews():
 @review_routes.route('/', methods=['GET'])
 def get_reviews2():
     reviews = Review.query.all()
-    return [reviews.to_dict() for item in reviews]
+    return [reviews.to_dict() for reviews in reviews]
 
 
 

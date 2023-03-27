@@ -5,15 +5,21 @@ from datetime import datetime
 
 def seed_reviews():
     review1 = Review(
-        review = "Wonderful crappy place",
+        userId = 1,
+        review = "Wonderful item, must buy!",
+        itemId = 1,
      
     )
     review2 = Review(
-        review = "Wonderful  place",
+        userId = 2,
+        review = "I would reccomend to anyone!",
+        itemId = 2,
         
     )
     review3 = Review(
-        review = " crappy place",
+        userId = 3,
+        review = "It was ok, worth the money almost",
+        itemId = 3,
       
     )
     reviews = [review1, review2, review3]

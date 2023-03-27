@@ -11,6 +11,8 @@ function ReviewPage() {
   const sessionUser = useSelector((state) => state.session.user);
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([])
+  const item = useSelector(state => state.items)
+  const reviews = useSelector(state => state.reviews)
   
 
 //   if (!!sessionUser) return window.alert("You must be logged in to leave a review")
@@ -20,14 +22,14 @@ function ReviewPage() {
 
   
     dispatch(reviewActions.createReviews({review}))
-  }
-//     .then()
-//     .catch(async (res) => {
-//         const data = await res.json();
-//         if (data && data.errors) setErrors(data.errors);
+  
+    .then()
+    .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
    
-//       });
-//   };
+      });
+  };
 
   return (
     <>
@@ -35,6 +37,7 @@ function ReviewPage() {
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
     </div>
     <div className="create-container-log">
+    <div>hfhfh</div>
     <div className="log-logo">
 
       <h1>Create A Review</h1>
