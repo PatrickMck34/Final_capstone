@@ -4,7 +4,8 @@ import Item from '../Items/Item'
 import { useSelector } from "react-redux";
 function Cart() {
     const cartItems = useSelector(state => state.item.allItems)
-
+    let subtotal = 299+179+179.99+38.99+26.99+1999.99
+   
     return(
         <div className="checkout"> 
 
@@ -13,19 +14,20 @@ function Cart() {
                 <h2 className="cart-title">Your Shopping Basket</h2>
                 {Object.values(cartItems).map((item, idx) =>(
                    
-
-                    <Item id={1}title={cartItems[idx+1]?.name} price={cartItems[idx+1]?.price} image={cartItems[idx+1]?.imageUrl} 
-                    rating={cartItems[idx+1]?.rating}/>
+                        
+                    <Item id={1}title={item?.name} price={item?.price} image={item?.imageUrl} 
+                    rating={item?.rating} />  
                         ))}
-                    <p>
                        
-                        </p>
+
+                        
+                   
                     
                      
         </div>
 
         <div className="checkout-right">
-            <h2>The subtotal</h2>
+            <h2>The subtotal: {subtotal}</h2>
         </div>
         </div>
 

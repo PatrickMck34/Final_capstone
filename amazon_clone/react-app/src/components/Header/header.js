@@ -6,8 +6,12 @@ import OpenModalButton from '../OpenModalButton'
 import { NavLink } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 function Header() {
+    const cartItems = useSelector(state => state.item.allItems)
+    const cart = Object.values(cartItems)
+    
 const dispatch = useDispatch()
     return(
         <div className="nav">
@@ -53,7 +57,7 @@ const dispatch = useDispatch()
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">
-                    <span className="nav-option2 basket-count">0</span>
+                    <span className="nav-option2 basket-count">{cart.length}</span>
                             
                         </button>
                    
