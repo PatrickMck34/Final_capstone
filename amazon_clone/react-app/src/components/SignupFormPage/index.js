@@ -92,10 +92,10 @@ function SignupFormPage() {
         <span className="signin-option">
           <input
           className="sign-options"
-          placeholder="Last Name"
-          type="text"
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
+          placeholder="Confirm Password"
+          type="password"
+          value={confirmPassword}
+          onChange={(e) => setConfirmPassword(e.target.value)}
          
           />
         </span>
