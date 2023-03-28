@@ -1,0 +1,14 @@
+.reviewBox {
+    display:flex;
+    height:30em;
+    margin-top:2em;
+    width:50em;
+    justify-content: center;
+    border:1px solid rgba(145, 145, 145, 0.416);
+    margin-left:auto;
+    margin-top:4em;
+    margin-right:auto;
+    background-color:white;
+
+    
+}

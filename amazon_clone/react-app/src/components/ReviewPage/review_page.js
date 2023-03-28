@@ -35,9 +35,12 @@ function ReviewPage() {
     <>
     <div className="log-logo">
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
+    <div className="reviewBox">Product Reviews
+    
+    
+    </div>
     </div>
     <div className="create-container-log">
-    <div>hfhfh</div>
     <div className="log-logo">
 
       <h1>Create A Review</h1>
