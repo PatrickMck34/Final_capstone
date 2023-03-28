@@ -74,7 +74,7 @@ def edit_reviews(reviewId):
 @review_routes.route('/<int:reviewsId>', methods=['DELETE'])
 @login_required
 def delete_reviews(reviewsId):
-    reviews = reviews.query.get(reviewsId)
+    reviews = Review.query.get(reviewsId)
     
     if not reviews:
         return {"errors": ["Invalid Delete Request"]}
