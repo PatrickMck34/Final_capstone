@@ -5,16 +5,31 @@ import { Redirect } from "react-router-dom";
 import './review.css';
 import { Link } from "react-router-dom";
 import * as reviewActions from '../../store/review'
+import { useEffect } from "react";
+
 
 function ReviewPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([])
+  const num = (window.location.href.length - 1)
+    const  itemId = (window.location.href[num])
   const item = useSelector(state => state.items)
-  const reviews = useSelector(state => state.reviews)
-  
+  const reviews = useSelector(state => state.review)
 
+  // const id = sessionUser.id
+  console.log(reviews)
+
+  
+  useEffect(() => {
+    if(sessionUser === null){
+    dispatch(reviewActions.getUserReviews(itemId))
+    };
+    if(!!sessionUser){
+      dispatch(reviewActions.getUserReviews(itemId))
+      };
+  }, [dispatch]);
 //   if (!!sessionUser) return window.alert("You must be logged in to leave a review")
 
   const handleSubmit = async (e) => {
@@ -35,11 +50,23 @@ function ReviewPage() {
     <>
     <div className="log-logo">
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
-    <div className="reviewBox">Product Reviews
-    
-    
-    </div>
-    </div>
+
+    <div className="reviewContainer">
+    <div className="reviewBox">Product Reviews:
+    {Object.values(reviews.allReviews).map((rev, idx) =>(
+      
+      <div className="reviewList">{rev.review}
+      <pre>
+
+      <i class="fa-solid fa-user">   {rev.userId}</i>
+      </pre>
+      </div>
+  
+      
+      ))}
+      </div>
+      </div>
+      </div>
     <div className="create-container-log">
     <div className="log-logo">
 
@@ -60,7 +87,7 @@ function ReviewPage() {
           <input
           className="log-options"
           type="text"
-          placeholder="Write something nice"
+          placeholder="Write something nice, or not"
           value={review}
           onChange={(e) => setReview(e.target.value)}
           required

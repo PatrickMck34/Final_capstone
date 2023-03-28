@@ -16,13 +16,25 @@ def seed_reviews():
         itemId = 2,
         
     )
-    review3 = Review(
-        userId = 3,
-        review = "It was ok, worth the money almost",
+    review4 = Review(
+        userId = 2,
+        review = "It was worth the money almost",
         itemId = 3,
       
     )
-    reviews = [review1, review2, review3]
+    review5 = Review(
+        userId = 2,
+        review = "It was ok, money almost",
+        itemId = 3,
+      
+    )
+    review6 = Review(
+        userId = 1,
+        review = "It was ok, almost",
+        itemId = 3,
+      
+    )
+    reviews = [review1, review2, review4, review5, review6]
     add_reviews = [db.session.add(review) for review in reviews]
     db.session.commit()
 

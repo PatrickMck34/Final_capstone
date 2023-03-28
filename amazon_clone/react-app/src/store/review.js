@@ -36,6 +36,12 @@ const data = await fetch(`/api/reviews`)
     dispatch(getReview(response))
     return response
 }
+export const getUserReviews = (id) => async (dispatch) => {
+    const data = await fetch(`/api/reviews/${id}`)
+        const response = await data.json()
+        dispatch(getReview(response))
+        return response
+    }
 export const getReview = (review) =>({
     type: READ_REVIEWS,
     payload: review

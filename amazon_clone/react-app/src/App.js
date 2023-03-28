@@ -16,7 +16,7 @@ function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=> dispatch(itemActions.getAllItems()).then(()=>dispatch(reviewActions.getReviews())));
+    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=> dispatch(itemActions.getAllItems()));
   }, [dispatch]);
 
   return (
