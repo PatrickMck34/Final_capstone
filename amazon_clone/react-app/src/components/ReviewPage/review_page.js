@@ -18,21 +18,22 @@ function ReviewPage() {
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([])
   const num = (window.location.href.length - 1)
-    const  itemId = (window.location.href[num])
+  const  itemId = (window.location.href[num])
   const item = useSelector(state => state.items)
   const reviews = useSelector(state => state.review)
+  
 
   // const id = sessionUser.id
-  console.log(reviews)
+ 
 
   
   useEffect(() => {
-    if(sessionUser === null){
-    dispatch(reviewActions.getUserReviews(itemId))
-    };
-    if(!!sessionUser){
+    // if(sessionUser === null){
+    // dispatch(reviewActions.getUserReviews(itemId))
+    // };
+    // if(!!sessionUser){
       dispatch(reviewActions.getUserReviews(itemId))
-      };
+      // };
   }, [dispatch]);
 //   if (!!sessionUser) return window.alert("You must be logged in to leave a review")
 
@@ -61,13 +62,17 @@ function ReviewPage() {
       </strong>
     {Object.values(reviews.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i className="fa-solid fa-user"/>   {rev.userName} says:    {rev.review} 
+      <i className="fa-solid fa-user"/>   {rev?.userName} says:    {rev?.review} 
                                            <div>
+                                            <Link to={`/reviews/${rev.id}`}>
+
       <OpenModalButton
-              buttonText="Log In"
-           
-              modalComponent={<EditReview reviewId={rev.id}/>}
-             /> <button onClick={()=>dispatch(reviewActions.updateReview(rev.review, rev.itemId, rev.id, rev.userName)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Edit</button> <button onClick={()=>dispatch(reviewActions.deleteReviews(rev.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
+              buttonText="edit"
+              
+              modalComponent={<EditReview />}
+              /> 
+              </Link>
+               <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(rev?.itemId)))}>Delete</button>
         </div>
       </pre>
   

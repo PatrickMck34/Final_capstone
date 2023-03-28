@@ -13,7 +13,10 @@ import Items from './components/ItemDetails/itemDetails'
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 
+import { useSelector } from "react-redux";
+
 function App() {
+  const reviews = useSelector(state=>state.reviews)
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -25,9 +28,6 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} />
       {isLoaded && ( */}
         <Switch>
-        <Route path="/review/edit">
-            <EditReview />
-          </Route>
           <Route path="/review">
             <ReviewPage />
           </Route>

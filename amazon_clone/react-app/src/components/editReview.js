@@ -2,20 +2,22 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../context/Modal";
 import * as reviewActions from '../store/review'
+import { useParams } from "react-router-dom";
 
 
-function EditReview() {
+function EditReview({id}) {
+    const reviewId = useParams()
     const reviews = useSelector(state=>state.review)
     const user = useSelector(state=>state.session.user)
 	const dispatch = useDispatch();
-	// const [review, setReview] = useState(`${reviews.allReviews[2].review}`)
+	const [review, setReview] = useState(`${reviews.allReviews[reviewId].review}`)
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		 
-        // dispatch(reviewActions.updateReview())
+        dispatch(reviewActions.updateReview())
 			// if (data) {
 			// 	setErrors(data);
 			// } else {
