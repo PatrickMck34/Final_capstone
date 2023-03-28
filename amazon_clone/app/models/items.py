@@ -14,7 +14,7 @@ class Item(db.Model):
     description = db.Column(db.String(200))
     rating = db.Column(db.Integer)
     imageUrl = db.Column(db.String(100))
-    userId = db.Column(db.Integer, nullable=True)
+    user_id = db.Column(db.Integer, nullable=True)
     reviews = db.relationship("Review", back_populates="items")
 
 
@@ -28,6 +28,6 @@ class Item(db.Model):
             'description': self.description,
             'rating': self.rating,
             'imageUrl': self.imageUrl,
-            'userId': self.userId,
+            'user_id': self.user_id,
 
         }

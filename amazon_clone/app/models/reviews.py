@@ -12,9 +12,9 @@ class Review(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(200))
-    userId = db.Column(db.Integer, db.ForeignKey(User.id))
-    itemId = db.Column(db.Integer, db.ForeignKey(Item.id))
-    userName = db.Column(db.String(30))
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    item_id = db.Column(db.Integer, db.ForeignKey(Item.id))
+    user_name = db.Column(db.String(30))
 
     user = db.relationship("User", back_populates="reviews")
     items = db.relationship("Item", back_populates="reviews")
@@ -27,10 +27,10 @@ class Review(db.Model):
         return {
             'id': self.id,
             'review': self.review,
-            'userId': self.userId,
-            'itemId': self.itemId,
-            'userName': self.userName,
-            "user": self.user.to_dict(),
+            'user_id': self.user_id,
+            'item_id': self.item_id,
+            'user_name': self.user_name,
+            # "user": self.User.to_dict(),
             "items": self.items.to_dict(),
 
            }
