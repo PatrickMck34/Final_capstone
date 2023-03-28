@@ -23,7 +23,9 @@ def seed_users():
     # users = [demo, marnie, bobbie]
     # add_users = [db.session.add(user) for user in users]
     db.session.add(demo)
+    db.session.commit()
     db.session.add(marnie)
+    db.session.commit()
     db.session.add(bobbie)
     db.session.commit()
 
@@ -40,4 +42,4 @@ def undo_users():
     # else:
         db.session.execute(text("DELETE FROM users"))
         
-    db.session.commit()
+db.session.commit()
