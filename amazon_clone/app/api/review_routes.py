@@ -13,7 +13,7 @@ def get_reviews():
 
 @review_routes.route('/<int:itemId>', methods=['GET'])
 def get_reviews2(itemId):
-    userReviews = Review.query.filter(Review.itemId==itemId)
+    userRev = Review.query.filter(Review.itemId==itemId)
     return [userReview.to_dict() for userReview in userReviews]
     # return [userReviews.to_dict() ]
 
