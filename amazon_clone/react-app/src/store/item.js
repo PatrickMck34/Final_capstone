@@ -5,10 +5,11 @@ const READ_ITEM = '/Items/:itemId'
 
 export const createItem = ({items, itemId}) => async (dispatch) => {
     const {item, rating,} = items
- const data = await fetch(`/api/items/${itemId}` , {
+    const data = await fetch(`/api/items/${itemId}`, {
         method: "POST",
         body: JSON.stringify({
-           item, rating
+           item, 
+           rating
         }),
     });
     const response = await data.json()
