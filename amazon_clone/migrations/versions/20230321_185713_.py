@@ -21,7 +21,8 @@ def upgrade():
     with op.batch_alter_table('items', schema=None) as batch_op:
         batch_op.add_column(sa.Column('description', sa.String(), nullable=True))
         batch_op.add_column(sa.Column('imageUrl', sa.String(), nullable=True))
-    
+    if environment == "production":
+        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
 
     # ### end Alembic commands ###
 
