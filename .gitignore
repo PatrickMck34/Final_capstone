@@ -1,12 +1,12 @@
 .env
-__pycache__/
-*.py[cod]
+# __pycache__/
+# *.py[cod]
 .venv
-.DS_Store
+# .DS_Store
 .vscode/
 Pipfile.lock
 package-lock.json
-instance/
+dev.db/
 /build
 node_modules/
 instance/
