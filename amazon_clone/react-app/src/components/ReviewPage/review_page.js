@@ -58,7 +58,9 @@ function ReviewPage() {
       </strong>
     {Object.values(reviews.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i class="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}
+      <i class="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}                                         <div>
+                 <button>Edit</button> <button onClick={()=>dispatch(reviewActions.deleteReviews(rev.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
+        </div>
       </pre>
   
       

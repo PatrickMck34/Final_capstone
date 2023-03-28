@@ -46,11 +46,11 @@ export const getReview = (review) =>({
     type: READ_REVIEWS,
     payload: review
 })
-export const deleteReviews = (id) => async (dispatch) => {
-    const response = await fetch(`/api/reviews/${id}`, {
+export const deleteReviews = (reviewId) => async (dispatch) => {
+    const response = await fetch(`/api/reviews/${reviewId}`, {
         method: 'DELETE',
     });
-    dispatch(deleteReview(id));
+    dispatch(deleteReview(reviewId));
     return response;
 };
 export  const deleteReview = (reviewId) => {
