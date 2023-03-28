@@ -1,5 +1,6 @@
 .reviewBox {
-    height:30em;
+    height:15em;
+    padding:8px;
     margin-top:4em;
     width:40em;
     border:1px solid rgba(145, 145, 145, 0.416);
@@ -8,7 +9,9 @@
     background-color:rgb(253, 253, 253);
     border-radius: 2ch;
 
-    
+
+} * {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 .reviewList {
     display:flex;
@@ -41,4 +44,14 @@
     border-radius: 1ch;
     padding:1px;
     border: 1px solid rgb(188, 188, 194)
+}
+.reviewPre {
+    display:flex;
+    border:1px solid rgba(171, 171, 173, 0.53);
+    height:2em;
+    justify-items:space-between;
+    padding:5px;
+    border-radius: 2ch;
+    box-shadow: -1px 1px lightgray
+
 }

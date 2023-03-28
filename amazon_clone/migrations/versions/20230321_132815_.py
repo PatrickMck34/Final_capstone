@@ -37,6 +37,7 @@ def upgrade():
     sa.Column('review', sa.String(), nullable=False),
     sa.Column('userId', sa.Integer()),
     sa.Column('itemId', sa.Integer()),
+    sa.Column('userName', sa.String()),
     sa.PrimaryKeyConstraint('id')
     )
     with op.batch_alter_table('users', schema=None) as batch_op:

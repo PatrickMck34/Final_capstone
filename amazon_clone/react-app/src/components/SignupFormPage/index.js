@@ -9,6 +9,8 @@ function SignupFormPage() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("")
+  const [lastName, setLastName] = useState("")
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -47,9 +49,6 @@ function SignupFormPage() {
         </ul>
         <label>
 <span className="signin-option">
-        
-   
-
           <input
           className="sign-options"
           placeholder="Email"
@@ -87,19 +86,21 @@ function SignupFormPage() {
           />
         </span>
         </label>
-        <label>
-        <div className="spacer"></div>
+       
+          <div className="spacer"></div>
+          <label>
         <span className="signin-option">
           <input
           className="sign-options"
-          placeholder="Confirm Password"
-          type="password"
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
+          placeholder="Last Name"
+          type="text"
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
+         
           />
-          </span>
+        </span>
         </label>
+          <div className="spacer"></div>
         <button className="continue-button" type="submit">Continue</button>
       </form>
           </div>

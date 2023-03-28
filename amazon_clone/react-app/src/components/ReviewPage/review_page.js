@@ -10,7 +10,8 @@ import { useEffect } from "react";
 
 function ReviewPage() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
+  const sessionUser = useSelector(state => state.session.user);
+  const session = useSelector(state=>state.session)
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([])
   const num = (window.location.href.length - 1)
@@ -52,15 +53,13 @@ function ReviewPage() {
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
 
     <div className="reviewContainer">
-    <div className="reviewBox">Product Reviews:
+    <div className="reviewBox"><strong>
+      Product Reviews:
+      </strong>
     {Object.values(reviews.allReviews).map((rev, idx) =>(
-      
-      <div className="reviewList">{rev.review}
-      <pre>
-
-      <i class="fa-solid fa-user">   {rev.userId}</i>
+      <pre className="reviewPre">
+      <i class="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}
       </pre>
-      </div>
   
       
       ))}

@@ -12,6 +12,7 @@ class Review(db.Model):
     review = db.Column(db.String(200))
     userId = db.Column(db.Integer)
     itemId = db.Column(db.Integer)
+    userName = db.Column(db.String(30))
 
 
 
@@ -23,6 +24,7 @@ class Review(db.Model):
             'review': self.review,
             'userId': self.userId,
             'itemId': self.itemId,
+            'userName': self.userName,
 
            
         }
