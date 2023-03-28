@@ -44,7 +44,7 @@ def upgrade():
         batch_op.add_column(sa.Column('firstName', sa.String(length=30)))
         batch_op.add_column(sa.Column('lastName', sa.String(length=30)))
 
-     if environment == "production":
+    if environment == "production":
         op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
         op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
