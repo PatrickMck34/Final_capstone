@@ -96,11 +96,11 @@ def react_root(path):
 def not_found(e):
     return app.send_static_file('index.html')
 
-@app.route('/add')
-def post_review(review):
-    review = request.json['review']
+# @app.route('/add')
+# def post_review(review):
+#     review = request.json['review']
 
-    # reviews = Review(review)
-    db.session.add(review)
-    db.session.commit()
-    return jsonify(review.to_dict())
+#     # reviews = Review(review)
+#     db.session.add(review)
+#     db.session.commit()
+#     return jsonify(review.to_dict())
