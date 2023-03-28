@@ -11,16 +11,16 @@ def get_reviews():
     revs = Review.query.all()
     return [rev.to_dict() for rev in revs]
 
-@review_routes.route('/<int:itemId>', methods=['GET'])
-def get_reviews2(itemId):
-    userRev = Review.query.filter(Review.itemId==itemId)
+@review_routes.route('/<int:item_id>', methods=['GET'])
+def get_reviews2(item_id):
+    userReviews = Review.query.filter(Review.item_id==item_id)
     return [userReview.to_dict() for userReview in userReviews]
     # return [userReviews.to_dict() ]
 
 
 
 
-@review_routes.route('/add/<int:itemId>', methods=['POST'])
+@review_routes.route("/add/<int:itemId>", methods=['POST'])
 @login_required
 def create_review_post(itemId):
     form = ReviewForm()
@@ -33,7 +33,7 @@ def create_review_post(itemId):
         new_review = Review(
          
             review=review,
-            itemId=itemId,
+            item_id=item_id,
           
  
         )
@@ -41,7 +41,7 @@ def create_review_post(itemId):
         db.session.commit()
 
         retu = Review.query.get(new_review.id)
-        return {"review": [retu.to_dict()]}
+        return [retu.to_dict()]
 
     if form.errors:
         return {"errors": form.errors}

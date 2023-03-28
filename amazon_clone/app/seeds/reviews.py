@@ -5,38 +5,38 @@ from datetime import datetime
 
 def seed_reviews():
     review1 = Review(
-        userId = 1,
+        user_id = 1,
         review = "Wonderful item, must buy!",
-        itemId = 1,
-        userName = "Sally"
+        item_id = 1,
+        user_name = "Sally"
      
     )
     review2 = Review(
-        userId = 2,
+        user_id = 2,
         review = "I would reccomend to anyone!",
-        itemId = 2,
-        userName = "Joe"
+        item_id = 2,
+        user_name = "Joe"
         
     )
     review4 = Review(
-        userId = 2,
+        user_id = 2,
         review = "It was worth the money almost",
-        itemId = 3,
-        userName = "Cindy"
+        item_id = 3,
+        user_name = "Cindy"
       
     )
     review5 = Review(
-        userId = 2,
+        user_id = 2,
         review = "It was ok, money almost",
-        itemId = 3,
-        userName = "John"
+        item_id = 3,
+        user_name = "John"
       
     )
     review6 = Review(
-        userId = 1,
+        user_id = 1,
         review = "It was ok, almost",
-        itemId = 3,
-        userName = "bob"
+        item_id = 3,
+        user_name = "bob"
       
     )
     reviews = [review1, review2, review4, review5, review6]

@@ -65,8 +65,8 @@ const data = await fetch(`/api/reviews`)
     dispatch(getReview(response))
     return response
 }
-export const getUserReviews = (id) => async (dispatch) => {
-    const data = await fetch(`/api/reviews/${id}`)
+export const getUserReviews = (item_id) => async (dispatch) => {
+    const data = await fetch(`/api/reviews/${item_id}`)
         const response = await data.json()
         dispatch(getReview(response))
         return response
@@ -96,7 +96,7 @@ export default function reviewsReducer(state = initialState, action) {
     switch (action.type) {
                case CREATE_REVIEW:
                  newState = {allReviews:{...state, allReviews:{}}}
-                // newState.allReviews = action.payload
+                newState.allReviews = action.payload
                 return newState
 
                 case READ_REVIEWS:
