@@ -15,6 +15,7 @@ class Item(db.Model):
     rating = db.Column(db.Integer)
     imageUrl = db.Column(db.String(100))
     userId = db.Column(db.Integer, nullable=True)
+    reviews = db.relationship("Review", back_populates="items")
 
 
 

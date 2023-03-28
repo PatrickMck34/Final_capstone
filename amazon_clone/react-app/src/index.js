@@ -10,6 +10,7 @@ import App from "./App";
 import Header from "./components/Header/header";
 
 import "./index.css";
+import EditReview from "./components/editReview";
 
 const store = configureStore();
 
@@ -27,8 +28,11 @@ function Root() {
 			<Provider store={store}>
 				<BrowserRouter>
 				<Header />
-			         <App />
 					<Modal />
+					<EditReview/>
+
+			         <App />
+				
 				</BrowserRouter>
 			</Provider>
 		</ModalProvider>

@@ -3,7 +3,8 @@
 const READ_REVIEWS = '/reviews'
 const DELETE_REVIEW = '/reviews/:reviewId';
 const CREATE_REVIEW = '/reviews/new'
-const READ_REVIEW = '/reviews/spotsid'
+const READ_REVIEW = '/reviews/reviewId'
+const UPDATE_REVIEW = '/reviews/edit'
 
 export const createReviews = ({review, itemId}) => async (dispatch) => {
     // dispatch(createReview(review))
@@ -25,7 +26,36 @@ const itemid = itemId
     console.log(response)
     return response
 }   
+export const updateReviews = ({review, itemId, reviewId, userName}) => async (dispatch) => {
+    // dispatch(createReview(review))
+const itemid = itemId
+   const rev = review
+   const userName = userName
+  
+    const data = await fetch(`/api/reviews/add/${reviewId}` , {
+        method: 'POST',
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            review,
+            itemid,
+            userName
+        }),
+    });
 
+    const response = await data.json()
+    dispatch(createReview(response))
+    console.log(response)
+    return response
+}   
+
+export const updateReview = (review) => {
+    return {
+        type: UPDATE_REVIEW,
+        payload: review
+    }
+}
 export const createReview = (review) =>({
     type: CREATE_REVIEW,
     payload: review
@@ -91,6 +121,9 @@ export default function reviewsReducer(state = initialState, action) {
              newState = {}
              delete newState[action.payload]
             return state
+            case UPDATE_REVIEW:
+            newState.allReviews[action.payload] = action.payload
+            return newState
       default:
     return state
 }}

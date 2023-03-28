@@ -6,6 +6,9 @@ import './review.css';
 import { Link } from "react-router-dom";
 import * as reviewActions from '../../store/review'
 import { useEffect } from "react";
+import * as itemActions from '../../store/item'
+import OpenModalButton from "../OpenModalButton";
+import EditReview from "../editReview";
 
 
 function ReviewPage() {
@@ -37,7 +40,7 @@ function ReviewPage() {
     e.preventDefault();
 
   
-    dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
+    dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId))).then(()=>dispatch(itemActions.getAllItems()))
   
     .then()
     .catch(async (res) => {
@@ -58,8 +61,13 @@ function ReviewPage() {
       </strong>
     {Object.values(reviews.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i className="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}                                         <div>
-                 <button>Edit</button> <button onClick={()=>dispatch(reviewActions.deleteReviews(rev.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
+      <i className="fa-solid fa-user"/>   {rev.userName} says:    {rev.review} 
+                                           <div>
+      <OpenModalButton
+              buttonText="Log In"
+           
+              modalComponent={<EditReview reviewId={rev.id}/>}
+             /> <button onClick={()=>dispatch(reviewActions.updateReview(rev.review, rev.itemId, rev.id, rev.userName)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Edit</button> <button onClick={()=>dispatch(reviewActions.deleteReviews(rev.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
         </div>
       </pre>
   
