@@ -20,19 +20,20 @@ def get_reviews2(itemId):
 
 
 
-@review_routes.route('/add', methods=['POST'])
+@review_routes.route('/add/<int:itemId>', methods=['POST'])
 @login_required
-def create_review_post():
+def create_review_post(itemId):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
         
         review = form.review.data
-       
+           
         new_review = Review(
          
             review=review,
+            itemId=itemId,
           
  
         )

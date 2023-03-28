@@ -37,7 +37,7 @@ function ReviewPage() {
     e.preventDefault();
 
   
-    dispatch(reviewActions.createReviews({review}))
+    dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
   
     .then()
     .catch(async (res) => {
@@ -58,7 +58,7 @@ function ReviewPage() {
       </strong>
     {Object.values(reviews.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i class="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}
+      <i className="fa-solid fa-user"/>   {rev.userName} says:    {rev.review}
       </pre>
   
       

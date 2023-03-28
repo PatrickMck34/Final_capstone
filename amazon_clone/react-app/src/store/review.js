@@ -5,17 +5,18 @@ const DELETE_REVIEW = '/reviews/:reviewId';
 const CREATE_REVIEW = '/reviews/new'
 const READ_REVIEW = '/reviews/spotsid'
 
-export const createReviews = ({review, reviewId}) => async (dispatch) => {
+export const createReviews = ({review, itemId}) => async (dispatch) => {
     // dispatch(createReview(review))
-
+const itemid = itemId
    const rev = review
-    const data = await fetch('/api/reviews/add' , {
+    const data = await fetch(`/api/reviews/add/${itemId}` , {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            review
+            review,
+            itemid
         }),
     });
 
@@ -66,8 +67,8 @@ export default function reviewsReducer(state = initialState, action) {
     
     switch (action.type) {
                case CREATE_REVIEW:
-                 newState = {allReviews:{}} 
-                newState.allReviews = action.payload
+                 newState = {allReviews:{...state, allReviews:{}}}
+                // newState.allReviews = action.payload
                 return newState
 
                 case READ_REVIEWS:
