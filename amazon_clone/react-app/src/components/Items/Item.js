@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Item({id, title, image, price, rating, cart}) {
     
+ 
     return(
         <div className='Item'>
             <div className="Item-info">
@@ -25,10 +26,10 @@ function Item({id, title, image, price, rating, cart}) {
                       
                     
                      <img src={image}/>
-                        <button className="Item-button" onClick={()=>cart += Item({id, title, image, price, rating, cart})}>Add to Cart</button>
+                
                         
                         <Link to={`/review/${title}/${id}`} >
-                        <button className="Item-button">Write Review</button>
+                        <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
     )

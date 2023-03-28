@@ -29,11 +29,15 @@ def upgrade():
     sa.Column('name', sa.String(), nullable=False),
     sa.Column('price', sa.Integer(), nullable=False),
     sa.Column('rating', sa.Integer(), nullable=True),
+    sa.Column('userId', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('review', sa.String(), nullable=False),
+    sa.Column('userId', sa.Integer()),
+    sa.Column('itemId', sa.Integer()),
+    sa.Column('userName', sa.String()),
     sa.PrimaryKeyConstraint('id')
     )
     with op.batch_alter_table('users', schema=None) as batch_op:
@@ -52,4 +56,5 @@ def downgrade():
   
     op.drop_table('items')
     op.drop_table('cart')
+    op.drop_table('reviews')
     # ### end Alembic commands ###

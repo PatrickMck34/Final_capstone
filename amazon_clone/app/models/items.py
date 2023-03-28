@@ -14,6 +14,10 @@ class Item(db.Model):
     description = db.Column(db.String(200))
     rating = db.Column(db.Integer)
     imageUrl = db.Column(db.String(100))
+<<<<<<< HEAD
+=======
+    userId = db.Column(db.Integer, nullable=True)
+>>>>>>> review
 
 
 
@@ -26,5 +30,6 @@ class Item(db.Model):
             'description': self.description,
             'rating': self.rating,
             'imageUrl': self.imageUrl,
+            'userId': self.userId,
 
         }

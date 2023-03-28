@@ -3,9 +3,13 @@ const DELETE_ITEM = '/Items/:ItemId';
 const CREATE_ITEM = '/Items/new'
 const READ_ITEM = '/Items/:itemId'
 
-export const createItem = (items) => async (dispatch) => {
+export const createItem = ({items, itemId}) => async (dispatch) => {
     const {item, rating,} = items
+<<<<<<< HEAD
  const data = await fetch(`/api/items` , {
+=======
+ const data = await fetch(`/api/items/${itemId}` , {
+>>>>>>> review
         method: "POST",
         body: JSON.stringify({
            item, rating
@@ -61,8 +65,8 @@ export default function ItemsReducer(state = initialState, action) {
     
     switch (action.type) {
                case CREATE_ITEM:
-                 newState = { allItems:{...state.allItems}} 
-                newState.allItems[action.payload.id] = action.payload
+                 newState = { allItems:{}} 
+                newState.allItems = action.payload
                 return newState
 
                 case READ_ITEM:

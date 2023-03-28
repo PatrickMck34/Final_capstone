@@ -36,6 +36,12 @@ const data = await fetch(`/api/reviews`)
     dispatch(getReview(response))
     return response
 }
+export const getUserReviews = (id) => async (dispatch) => {
+    const data = await fetch(`/api/reviews/${id}`)
+        const response = await data.json()
+        dispatch(getReview(response))
+        return response
+    }
 export const getReview = (review) =>({
     type: READ_REVIEWS,
     payload: review
@@ -69,7 +75,11 @@ export default function reviewsReducer(state = initialState, action) {
                         acc[post.id] = post
                         return acc
                     }, {})
+<<<<<<< HEAD
                     newState.allPosts = variable
+=======
+                    newState.allReviews = variable
+>>>>>>> review
                     return newState
        
 
@@ -77,11 +87,15 @@ export default function reviewsReducer(state = initialState, action) {
 
                 case READ_REVIEW:
                  newState ={singleReview: {} };
+<<<<<<< HEAD
                  action.payload.allReviews.forEach(reviews => newState.singleReview[reviews.id] = reviews)
+=======
+                 newState.singleReview = action.payload
+>>>>>>> review
                 return newState 
 
                 case DELETE_REVIEW:
-             newState = {...state}
+             newState = {}
              delete newState[action.payload]
             return state
       default:

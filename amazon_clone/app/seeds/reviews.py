@@ -5,18 +5,41 @@ from datetime import datetime
 
 def seed_reviews():
     review1 = Review(
-        review = "Wonderful crappy place",
+        userId = 1,
+        review = "Wonderful item, must buy!",
+        itemId = 1,
+        userName = "Sally"
      
     )
     review2 = Review(
-        review = "Wonderful  place",
+        userId = 2,
+        review = "I would reccomend to anyone!",
+        itemId = 2,
+        userName = "Joe"
         
     )
-    review3 = Review(
-        review = " crappy place",
+    review4 = Review(
+        userId = 2,
+        review = "It was worth the money almost",
+        itemId = 3,
+        userName = "Cindy"
       
     )
-    reviews = [review1, review2, review3]
+    review5 = Review(
+        userId = 2,
+        review = "It was ok, money almost",
+        itemId = 3,
+        userName = "John"
+      
+    )
+    review6 = Review(
+        userId = 1,
+        review = "It was ok, almost",
+        itemId = 3,
+        userName = "bob"
+      
+    )
+    reviews = [review1, review2, review4, review5, review6]
     add_reviews = [db.session.add(review) for review in reviews]
     db.session.commit()
 
