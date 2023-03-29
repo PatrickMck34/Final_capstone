@@ -12,8 +12,8 @@ class Review(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(200))
-    user_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('User.id')), nullable=False)
-    item_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('Item.id')), nullable=False))
+    user_id = db.Column(db.Integer, db.ForeignKey)
+    item_id = db.Column(db.Integer, db.ForeignKey)
     user_name = db.Column(db.String(30))
 
     user = db.relationship("User", back_populates="reviews")
