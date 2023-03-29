@@ -22,9 +22,9 @@ def seed():
     # undo_reviews(),
     # undo_items(),
     # Add other seed functions here
-    seed_users(),
-    seed_reviews(),
-    seed_items()
+        seed_users(),
+        seed_reviews(),
+        seed_items()
 
 
 # Creates the `flask seed undo` command
