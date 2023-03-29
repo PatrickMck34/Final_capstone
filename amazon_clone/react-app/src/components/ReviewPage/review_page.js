@@ -35,7 +35,7 @@ function ReviewPage() {
     if(!!sessionUser){
       dispatch(reviewActions.getUserReviews(itemId))
       };
-  }, [dispatch]);
+  }, []);
 //   if (!!sessionUser) return window.alert("You must be logged in to leave a review")
 
   const handleSubmit = async (e) => {

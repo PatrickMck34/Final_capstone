@@ -46,7 +46,6 @@ const itemid = itemId
 
     const response = await data.json()
     dispatch(createReview(response))
-    console.log(response)
     return response
 }   
 

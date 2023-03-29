@@ -9,3 +9,8 @@
     background-color:white;
     height:max-content;
 }
+.cart-title {
+    margin-right:10px;
+    border-bottom:1px solid lightgray;
+    padding:10px;
+}
