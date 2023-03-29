@@ -6,17 +6,18 @@ const CREATE_REVIEW = '/reviews/new'
 const READ_REVIEW = '/reviews/reviewId'
 const UPDATE_REVIEW = '/reviews/edit'
 
-export const createReviews = ({review, itemId}) => async (dispatch) => {
+export const createReviews = ({rev, itemId}) => async (dispatch) => {
     // dispatch(createReview(review))
 const itemid = itemId
-   const rev = review
+const review = rev
+console.log(review)
     const data = await fetch(`/api/reviews/add/${itemId}` , {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            rev,
+            review,
             itemid
         }),
     });

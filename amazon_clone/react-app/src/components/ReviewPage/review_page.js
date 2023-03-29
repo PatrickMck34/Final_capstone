@@ -42,13 +42,13 @@ function ReviewPage() {
     e.preventDefault();
     setErrors([]);
     // if(sessionUser) return setErrors(["You Must Be Logged in To Leave a Review"])
-    dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
+    dispatch(reviewActions.createReviews({review, itemId}))
 
-    // .catch(async (res) => {
-    //     const data = await res.json();
-    //     if (data && data.errors) setErrors(data.errors);
+    .catch(async (res) => {
+        const data = await res.json();
+        if (data && data.errors) setErrors(data.errors);
    
-      // });
+      });
   };
 
   return (
@@ -60,16 +60,25 @@ function ReviewPage() {
     <div className="reviewBox"><strong>
       Product Reviews:
       </strong>
-    {Object.values(reviews.allReviews).map((rev, idx) =>(
+      <div className="spacer"></div>
+
+      <div><i className="fa-solid fa-user"/>demo says: Heck of a tool</div>
+      <div className="spacer"></div>
+
+      <div><i className="fa-solid fa-user"/>Carl says: Had better</div>
+      <div className="spacer"></div>
+      <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
+    {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i className="fa-solid fa-user"/>   {rev?.user_name} says:    {rev?.review} 
-                                           <div>
+      <i className="fa-solid fa-user"/>                    {session?.user?.username}:                                                                               {rev?.review} 
+       <div>           
                                           
 
-      <OpenModalButton
-              buttonText="edit"
+      
+                        <OpenModalButton
+                            buttonText="edit"
               
-              modalComponent={<EditReview />}
+                                 modalComponent={<EditReview />}
               /> 
        
                <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
@@ -117,7 +126,7 @@ function ReviewPage() {
           </span>
       </form>
           </div> 
-            <button className="continue-button-log" onClick={handleSubmit} type="submit">Submit Review</button>
+            <button className="continue-button-log" type="submit">Submit Review</button>
             </div>
             <div className="signup-redirect">
 
