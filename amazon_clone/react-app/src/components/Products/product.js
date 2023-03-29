@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Product({id, title, image, price, rating}) {
     const [{ basket, user }, dispatch] = useStateValue();
 
-    console.log("this is the basket >>" , basket);
+  
 
     const addToBasket = () => {
         dispatch({
