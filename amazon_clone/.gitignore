@@ -6,7 +6,6 @@ __pycache__/
 .vscode/
 Pipfile.lock
 package-lock.json
-instance/
-migrations/
+
 /build
 node_modules/
