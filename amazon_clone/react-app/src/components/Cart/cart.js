@@ -27,6 +27,7 @@ function Cart() {
         </div>
 
         <div className="checkout-right">
+            <Subtotal />
             <h2>The subtotal: {subtotal}</h2>
         </div>
         </div>

@@ -28,12 +28,12 @@ def create_review_post(itemId):
 
     if form.validate_on_submit():
         
-        review = form.review.data
+        text = form.review.data
            
         new_review = Review(
          
-            review=review,
-            item_id=item_id,
+            review=text,
+            item_id=itemId,
           
  
         )

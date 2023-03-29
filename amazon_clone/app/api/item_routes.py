@@ -18,7 +18,7 @@ def get_reviews():
 
 #     return [ret.to_dict()]
 
-@item_routes.route('/<int:itemId>/item', methods=['POST'])
+@item_routes.route('/<int:itemId>', methods=['POST'])
 @login_required
 def create_item_post(itemId):
     form = ItemForm()
