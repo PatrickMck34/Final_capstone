@@ -10,20 +10,19 @@ export const createReviews = ({review, itemId}) => async (dispatch) => {
     // dispatch(createReview(review))
 const itemid = itemId
    const rev = review
-    const data = await fetch(`/api/reviews/add/2` , {
+    const data = await fetch(`/api/reviews/add/${itemId}` , {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            review,
+            rev,
             itemid
         }),
     });
-
+    
     const response = await data.json()
     dispatch(createReview(response))
-    console.log(response)
     return response
 }   
 export const updateReviews = ({review, itemId, reviewId, userName}) => async (dispatch) => {

@@ -21,17 +21,17 @@ function ReviewPage() {
   const  itemId = (window.location.href[num])
   const item = useSelector(state => state.items)
   const reviews = useSelector(state => state.review)
-  console.log(itemId)
+ 
   
 
   // const id = sessionUser.id
  
 
-  
+
   useEffect(() => {
-    // if(sessionUser === null){
-    // dispatch(reviewActions.getUserReviews(itemId))
-    // };
+    if(sessionUser === null){
+    dispatch(reviewActions.getUserReviews(itemId))
+    };
     if(!!sessionUser){
       dispatch(reviewActions.getUserReviews(itemId))
       };
@@ -40,16 +40,15 @@ function ReviewPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-  
+    setErrors([]);
+    // if(sessionUser) return setErrors(["You Must Be Logged in To Leave a Review"])
     dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
-  
-    .then()
-    .catch(async (res) => {
-        const data = await res.json();
-        if (data && data.errors) setErrors(data.errors);
+
+    // .catch(async (res) => {
+    //     const data = await res.json();
+    //     if (data && data.errors) setErrors(data.errors);
    
-      });
+      // });
   };
 
   return (

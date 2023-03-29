@@ -27,12 +27,13 @@ def create_review_post(itemId):
     form['csrf_token'].data = request.cookies['csrf_token']
 
     if form.validate_on_submit():
-        
-        text = form.review.data
+    
+        review=form.review.data
+       
            
-        new_review = Review(
+        new_review=Review(
          
-            review=text,
+            review=review,
             item_id=itemId,
           
  
