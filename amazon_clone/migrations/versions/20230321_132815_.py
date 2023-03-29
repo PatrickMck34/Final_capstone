@@ -24,6 +24,9 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=False),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE cart SET SCHEMA {SCHEMA};")
+
     op.create_table('items',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('name', sa.String(), nullable=False),
@@ -32,6 +35,9 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE items SET SCHEMA {SCHEMA};")
+
     op.create_table('reviews',
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('review', sa.String(), nullable=False),
@@ -40,10 +46,13 @@ def upgrade():
     sa.Column('user_name', sa.String()),
     sa.PrimaryKeyConstraint('id')
     )
+    if environment == "production":
+        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
+        
     with op.batch_alter_table('users', schema=None) as batch_op:
         batch_op.add_column(sa.Column('firstName', sa.String(length=30)))
         batch_op.add_column(sa.Column('lastName', sa.String(length=30)))
-
+        
   
     # ### end Alembic commands ###
 
