@@ -6,14 +6,14 @@ from datetime import datetime
 def seed_reviews():
     
     review5 = Review(
-        user_id = 10,
+        # user_id = 10,
         review = "It was ok, money almost",
         # item_id = 3,
         user_name = "John"
       
     )
     review6 = Review(
-        user_id = 9,
+        # user_id = 9,
         review = "It was ok, almost",
         # item_id = 3,
         user_name = "bob"
