@@ -10,7 +10,7 @@ class Review(db.Model):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
         
-    id = db.Column(db.Integer)
+    id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(200))
     user_id = db.Column(db.Integer, db.ForeignKey(User.id))
     item_id = db.Column(db.Integer, db.ForeignKey(Item.id))
