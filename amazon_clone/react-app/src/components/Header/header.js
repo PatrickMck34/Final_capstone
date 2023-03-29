@@ -7,12 +7,14 @@ import { NavLink } from 'react-router-dom'
 import * as sessionActions from '../../store/session'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { useStateValue } from '../../store/StateProvider'
 
 function Header() {
+    
+    const [{ basket }, dispatch] = useStateValue();
     const cartItems = useSelector(state => state.item.allItems)
     const cart = Object.values(cartItems)
     
-const dispatch = useDispatch()
     return(
         <div className="nav">
             <Link to='/'>
@@ -57,7 +59,7 @@ const dispatch = useDispatch()
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">
-                    <span className="nav-option2 basket-count">{cart.length}</span>
+                    <span className="nav-option2 basket-count">{basket?.length}</span>
                             
                         </button>
                    

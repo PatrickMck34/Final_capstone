@@ -2,9 +2,12 @@ import React from "react";
 import './checkout.css'
 import Item from '../Items/Item'
 import { useSelector } from "react-redux";
+import Subtotal from "../Subtotal/subtotal";
+import CheckoutProduct from "../checkout/cartItems";
+import { useStateValue } from "../../store/StateProvider";
 function Cart() {
     const cartItems = useSelector(state => state.item.allItems)
-    let subtotal = 299+179+179.99+38.99+26.99+1999.99
+    const [{basket}, dispatch] = useStateValue()
    
     return(
         <div className="checkout"> 
@@ -12,10 +15,10 @@ function Cart() {
             <div className="checkout-left">
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
                 <h2 className="cart-title">Your Shopping Basket</h2>
-                {Object.values(cartItems).map((item, idx) =>(
+                {Object.values(basket).map((item, idx) =>(
                    
                         
-                    <Item id={1}title={item?.name} price={item?.price} image={item?.imageUrl} 
+                    <CheckoutProduct id={item?.id}title={item?.name} price={item?.price} image={item?.image} 
                     rating={item?.rating} />  
                         ))}
                        
@@ -27,7 +30,8 @@ function Cart() {
         </div>
 
         <div className="checkout-right">
-            <h2>The subtotal: {subtotal}</h2>
+           
+            <Subtotal/>      
         </div>
         </div>
 

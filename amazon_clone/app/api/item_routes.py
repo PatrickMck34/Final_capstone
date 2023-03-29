@@ -12,15 +12,15 @@ def get_reviews():
     its = Item.query.all()
     return [it.to_dict() for it in its]
 
-# @item_routes.route('/<int:id>', methods=['GET'])
-# def get_items(id):
-#     ret = Item.query.get(id)
+@item_routes.route('/<int:userId>', methods=['GET'])
+def get_items(userId):
+    userCarts = Item.query.filter(Item.user_id==userId)
+    return [userCart.to_dict() for userCart in userCarts]
 
-#     return [ret.to_dict()]
 
-@item_routes.route('/<int:itemId>/item', methods=['POST'])
+@item_routes.route('/<int:userId>', methods=['POST'])
 @login_required
-def create_item_post(itemId):
+def create_item_post(userId):
     form = ItemForm()
     form['csrf_token'].data = request.cookies['csrf_token']
 
@@ -36,9 +36,8 @@ def create_item_post(itemId):
             item_price=price,
             item_description=description,
             item_imageUrl=imageUrl,
-          
-            createdAt=datetime.now(),
-            updatedAt=datetime.now(),
+            user_id=userId
+     
         )
         db.session.add(new_item)
         db.session.commit()

@@ -46,13 +46,13 @@ def create_review_post(itemId):
     if form.errors:
         return {"errors": form.errors}
 
-@review_routes.route('/<int:reviewId>', methods=['PUT', 'PATCH'])
+@review_routes.route('/<int:reviewsId>', methods=['PUT', 'PATCH'])
 @login_required
-def edit_reviews(reviewId):
+def edit_reviews(reviewsId):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     
-    reviews = Review.query.get(reviewId)
+    reviews = Review.query.get(reviewsId)
     
     if not reviews:
         return {"errors": ["Invalid Edit Request"]}

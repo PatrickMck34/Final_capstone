@@ -1,9 +1,13 @@
 import React from "react";
 import './Item.css'
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as cartActions from '../../store/cart'
+import { useSelector } from "react-redux";
 
-function Item({id, title, image, price, rating, cart}) {
-    
+function Item({id, title, image, price, rating}) {
+    const dispatch = useDispatch()
+    const user = useSelector(state=>state.session.user)
  
     return(
         <div className='Item'>
@@ -28,6 +32,7 @@ function Item({id, title, image, price, rating, cart}) {
                      <img src={image}/>
                 
                         
+                            <button className="Item-button" onClick={(()=>dispatch(cartActions.getCart(user.id)))}>Add to Cart</button>
                         <Link to={`/review/${title}/${id}`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>

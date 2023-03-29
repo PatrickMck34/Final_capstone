@@ -8,9 +8,11 @@ import configureStore from "./store";
 import * as sessionActions from "./store/session";
 import App from "./App";
 import Header from "./components/Header/header";
-
+import { StateProvider } from "./store/StateProvider";
 import "./index.css";
 import EditReview from "./components/editReview";
+import reducer, { initialState } from "./store/reducer";
+
 
 const store = configureStore();
 
@@ -29,6 +31,7 @@ function Root() {
 				<BrowserRouter>
 				<Header />
 					<Modal />
+					
 			         <App />
 				</BrowserRouter>
 			</Provider>
@@ -38,7 +41,9 @@ function Root() {
 
 ReactDOM.render(
 	<React.StrictMode>
+	<StateProvider initialState={initialState} reducer={reducer}>
 		<Root />
+		</StateProvider>
 	</React.StrictMode>,
 	document.getElementById("root")
 );

@@ -2,6 +2,7 @@ const READ_ITEMS = '/Items'
 const DELETE_ITEM = '/Items/:ItemId';
 const CREATE_ITEM = '/Items/new'
 const READ_ITEM = '/Items/:itemId'
+const READ_CART ='Items/cart'
 
 export const createItem = ({items, itemId}) => async (dispatch) => {
     const {item, rating,} = items
@@ -25,8 +26,8 @@ export const createItems = (Item) =>({
     type: CREATE_ITEM,
     payload: Item
 })
-export const getItem = (id) => async (dispatch) => {
-const data = await fetch(`/api/items/${id}`)
+export const getItem = (user_id) => async (dispatch) => {
+const data = await fetch(`/api/items/${user_id}`)
 if (data.ok) {
     const response = await data.json()
     dispatch(getItems(response))
@@ -42,8 +43,13 @@ export const getAllItems = () => async (dispatch) => {
     }
     }
 export const getItems = (Item) =>({
-    type: READ_ITEM,
+    type: READ_ITEMS,
     payload: Item
+})
+
+export const getCart = ({id}, {title}, {image}, {price}, {rating}) =>({
+    type: READ_CART,
+    payload: ({id}, {title}, {image}, {price}, {rating})
 })
 export const deleteItems = (id) => async (dispatch) => {
     const response = await fetch(`/api/item/${id}`, {
@@ -61,7 +67,7 @@ export  const deleteItem = (itemId) => {
 
 const initialState =  {allItems:{}, singleItem: {}}
 export default function ItemsReducer(state = initialState, action) {
-    let newState = {}
+    let newState = {...state}
     
     switch (action.type) {
                case CREATE_ITEM:
@@ -69,7 +75,7 @@ export default function ItemsReducer(state = initialState, action) {
                 newState.allItems = action.payload
                 return newState
 
-                case READ_ITEM:
+                case READ_ITEMS:
                     const variable = action.payload.reduce((acc, post) => {
                         acc[post.id] = post
                         return acc
@@ -80,6 +86,10 @@ export default function ItemsReducer(state = initialState, action) {
                 case READ_ITEM:
                  newState ={...state, singleItem: {} };
                  newState.singleItem[action.payload] = action.payload
+                return newState
+                case READ_CART:
+                 newState ={...state, singleItem: {} };
+                 newState.singleItem = {...state, singeItem:{}}
                 return newState
 
                 case DELETE_ITEM:
