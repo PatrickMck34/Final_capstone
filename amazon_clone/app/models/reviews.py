@@ -16,9 +16,6 @@ class Review(db.Model):
     item_id = db.Column(db.Integer)
     user_name = db.Column(db.String(30))
 
-    user = db.relationship("User", back_populates="reviews")
-    items = db.relationship("Item", back_populates="reviews")
-
 
 
 

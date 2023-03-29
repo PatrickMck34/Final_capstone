@@ -63,7 +63,7 @@ def upgrade():
     sa.Column('user_id', sa.Integer(), nullable=True),
     sa.Column('item_id', sa.Integer(), nullable=True),
     sa.Column('user_name', sa.String(length=30), nullable=True),
-
+ 
     sa.PrimaryKeyConstraint('id')
     )
     if environment == "production":
