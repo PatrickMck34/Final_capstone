@@ -8,7 +8,7 @@ class Cart(db.Model):
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
     
-    _id = db.Column(db.Integer, primary_key=True)
+    _id = db.Column(db.Integer)
     items = db.Column(db.String, nullable=False)
     userId = db.Column(db.Integer, nullable=False)
     
