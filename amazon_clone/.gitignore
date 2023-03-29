@@ -2,5 +2,5 @@ dev.db
 __pycache__
 node_modules/
 .venv/
-dev.db
+dev.db/
 
