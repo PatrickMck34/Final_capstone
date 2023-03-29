@@ -29,10 +29,7 @@ function Root() {
 				<BrowserRouter>
 				<Header />
 					<Modal />
-					<EditReview/>
-
 			         <App />
-				
 				</BrowserRouter>
 			</Provider>
 		</ModalProvider>

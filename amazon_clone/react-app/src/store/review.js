@@ -10,7 +10,7 @@ export const createReviews = ({review, itemId}) => async (dispatch) => {
     // dispatch(createReview(review))
 const itemid = itemId
    const rev = review
-    const data = await fetch(`/api/reviews/add/${itemid}` , {
+    const data = await fetch(`/api/reviews/add/2` , {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -67,8 +67,8 @@ const data = await fetch(`/api/reviews`)
     dispatch(getReview(response))
     return response
 }
-export const getUserReviews = (item_id) => async (dispatch) => {
-    const data = await fetch(`/api/reviews/${item_id}`)
+export const getUserReviews = (itemId) => async (dispatch) => {
+    const data = await fetch(`/api/reviews/${itemId}`)
         const response = await data.json()
         dispatch(getReview(response))
         return response
@@ -97,8 +97,8 @@ export default function reviewsReducer(state = initialState, action) {
     
     switch (action.type) {
                case CREATE_REVIEW:
-                 newState = {allReviews:{...state, allReviews:{}}}
-                newState.allReviews = action.payload
+                 newState = {...state, allReviews:{}}
+                newState.allReviews[action.payload] = action.payload
                 return newState
 
                 case READ_REVIEWS:

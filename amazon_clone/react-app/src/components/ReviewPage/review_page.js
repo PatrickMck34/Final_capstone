@@ -18,9 +18,10 @@ function ReviewPage() {
   const [review, setReview] = useState("");
   const [errors, setErrors] = useState([])
   const num = (window.location.href.length - 1)
-  const  item_id = (window.location.href[num])
+  const  itemId = (window.location.href[num])
   const item = useSelector(state => state.items)
   const reviews = useSelector(state => state.review)
+  console.log(itemId)
   
 
   // const id = sessionUser.id
@@ -28,11 +29,11 @@ function ReviewPage() {
 
   
   useEffect(() => {
-    if(sessionUser === null){
-    dispatch(reviewActions.getUserReviews(item_id))
-    };
+    // if(sessionUser === null){
+    // dispatch(reviewActions.getUserReviews(itemId))
+    // };
     if(!!sessionUser){
-      dispatch(reviewActions.getUserReviews(item_id))
+      dispatch(reviewActions.getUserReviews(itemId))
       };
   }, [dispatch]);
 //   if (!!sessionUser) return window.alert("You must be logged in to leave a review")
@@ -41,7 +42,7 @@ function ReviewPage() {
     e.preventDefault();
 
   
-    dispatch(reviewActions.createReviews({review, item_id})).then(()=>dispatch(reviewActions.getUserReviews(item_id))).then(()=>dispatch(itemActions.getAllItems()))
+    dispatch(reviewActions.createReviews({review, itemId})).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
   
     .then()
     .catch(async (res) => {
@@ -72,7 +73,7 @@ function ReviewPage() {
               modalComponent={<EditReview />}
               /> 
        
-               <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(rev?.item_id)))}>Delete</button>
+               <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
         </div>
       </pre>
   
