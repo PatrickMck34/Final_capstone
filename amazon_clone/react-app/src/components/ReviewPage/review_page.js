@@ -41,8 +41,18 @@ function ReviewPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    // if(sessionUser) return setErrors(["You Must Be Logged in To Leave a Review"])
-    dispatch(reviewActions.createReviews({rev}, itemId)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
+    if(review.length < 1) {
+      return setErrors(["Review must not be empty"])}
+    if(review.length > 100){
+      return setErrors(["Review must be 100 char or less"])}
+    if(session.user === null){
+      return setErrors(["You must be logged in to leave a review"])
+    }
+    
+    
+    // if(sessionUser === null) return setErrors(["You Must Be Logged in To Leave a Review"])
+    // if(rev.length >2 ) return setErrors(["Review must be 200 char or less"])
+   dispatch(reviewActions.createReviews({rev}, itemId)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
     .then()
     .catch(async (res) => {
         const data = await res.json();

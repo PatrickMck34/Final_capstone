@@ -23,7 +23,8 @@ function Header() {
 
             <div className="nav-search">
                 <input className="nav-search-input"
-                type="text" />
+                type="text" 
+                onClick={()=>window.alert("Coming soon")}/>
                 <i className="fa-solid fa-magnifying-glass" id="search-icon"/>
                 </div>
 
