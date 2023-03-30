@@ -4,46 +4,50 @@ import { useModal } from "../context/Modal";
 import * as reviewActions from '../store/review'
 
 
-function EditReview() {
+function EditReview({rev}) {
+	const revs = {rev}
+	
+	const ret = rev.review
+	const id = rev.id
     const reviews = useSelector(state=>state.review)
     const user = useSelector(state=>state.session.user)
 	const dispatch = useDispatch();
-	// const [review, setReview] = useState(`${reviews.allReviews[2].review}`)
+	const [review, setNewReview] = useState(`${ret}`)
 	const [errors, setErrors] = useState([]);
 	const { closeModal } = useModal();
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		 
-        // dispatch(reviewActions.updateReview())
-			// if (data) {
-			// 	setErrors(data);
-			// } else {
-			// 	closeModal();
-			// }
+        const data = dispatch(reviewActions.deleteReview(id)).then(()=>dispatch(reviewActions.createReviews({review},id)))
+			if (data) {
+				setErrors(data);
+			} else {
+				closeModal();
+			}
 		
-			setErrors([
-				"Confirm Password field must be the same as the Password field",
-			]);
+			// setErrors([
+			// 	"Confirm Password field must be the same as the Password field",
+			// ]);
 		
 	};
 
 	return (
 		<>
-			<h1>Sign Up</h1>
+			<h1>Edit review</h1>
 			<form onSubmit={handleSubmit}>
-				<ul>
+				{/* <ul>
 					{errors.map((error, idx) => (
 						<li key={idx}>{error}</li>
 					))}
-				</ul>
+				</ul> */}
 				<label>
 					Review
 					<input
 						type="text"
-						// value={review}
-						// onChange={(e) => setReview(e.target.value)}
-						required
+						value={review}
+						onChange={(e) => setNewReview(e.target.value)}
+						
 					/>
 				</label>
 				
@@ -52,7 +56,7 @@ function EditReview() {
 						
 		
 				
-				<button type="submit">Sign Up</button>
+				<button type="submit" onClick={handleSubmit}>Submit</button>
 			</form>
 		</>
 	);

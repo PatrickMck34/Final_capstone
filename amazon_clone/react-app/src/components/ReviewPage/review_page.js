@@ -21,7 +21,7 @@ function ReviewPage() {
   const  itemId = (window.location.href[num])
   const item = useSelector(state => state.items)
   const reviews = useSelector(state => state.review)
- 
+ const rev = {review}
   
 
   // const id = sessionUser.id
@@ -42,8 +42,8 @@ function ReviewPage() {
     e.preventDefault();
     setErrors([]);
     // if(sessionUser) return setErrors(["You Must Be Logged in To Leave a Review"])
-    dispatch(reviewActions.createReviews({review, itemId}))
-
+    dispatch(reviewActions.createReviews({rev}, itemId)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
+    .then()
     .catch(async (res) => {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
@@ -70,15 +70,15 @@ function ReviewPage() {
       <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <pre className="reviewPre">
-      <i className="fa-solid fa-user"/>                    {session?.user?.username}:                                                                               {rev?.review} 
-       <div>           
+      <i className="fa-solid fa-user"/>                    {session?.user?.username} says:  {rev?.review}                                                                     <div>           
                                           
 
       
                         <OpenModalButton
                             buttonText="edit"
               
-                                 modalComponent={<EditReview />}
+                                 modalComponent={<EditReview rev={rev}/>}
+                                 
               /> 
        
                <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
@@ -126,7 +126,7 @@ function ReviewPage() {
           </span>
       </form>
           </div> 
-            <button className="continue-button-log" type="submit">Submit Review</button>
+            <button className="continue-button-log" onClick={handleSubmit} type="submit">Submit Review</button>
             </div>
             <div className="signup-redirect">
 

@@ -6,10 +6,11 @@ const CREATE_REVIEW = '/reviews/new'
 const READ_REVIEW = '/reviews/reviewId'
 const UPDATE_REVIEW = '/reviews/edit'
 
-export const createReviews = ({rev, itemId}) => async (dispatch) => {
+export const createReviews = ({rev}, itemId) => async (dispatch) => {
     // dispatch(createReview(review))
-const itemid = itemId
-const review = rev
+const item = itemId
+const {review} = rev
+
 console.log(review)
     const data = await fetch(`/api/reviews/add/${itemId}` , {
         method: 'POST',
@@ -18,35 +19,34 @@ console.log(review)
         },
         body: JSON.stringify({
             review,
-            itemid
+            item
         }),
     });
     
     const response = await data.json()
     dispatch(createReview(response))
+    console.log(response)
     return response
 }   
-export const updateReviews = ({review, itemId, reviewId, userName}) => async (dispatch) => {
+export const updateReviews = (reviewId) => async (dispatch) => {
     // dispatch(createReview(review))
-const itemid = itemId
-   const rev = review
-   const userName = userName
-  
-    const data = await fetch(`/api/reviews/add/${reviewId}` , {
-        method: 'POST',
+const id = reviewId
+
+    const data = await fetch(`/api/reviews/edit/${id}` , {
+        method: 'PUT',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            review,
-            itemid,
-            userName
+            
+            reviewId
         }),
     });
 
     const response = await data.json()
-    dispatch(createReview(response))
-    console.log(response)
+    console.log(data)
+    dispatch(updateReview(response))
+
     return response
 }   
 
@@ -122,7 +122,8 @@ export default function reviewsReducer(state = initialState, action) {
              delete newState[action.payload]
             return state
             case UPDATE_REVIEW:
-            newState.allReviews[action.payload] = action.payload
+                
+            newState.allReviews[action.payload.id] = action.payload
             return newState
       default:
     return state

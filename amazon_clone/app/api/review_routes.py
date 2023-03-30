@@ -25,52 +25,38 @@ def get_reviews2(item_id):
 def create_review_post(itemId):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
-
-    if form.validate_on_submit():
-    
-        review = form.review.data
-       
-           
-        new_review=Review(
+    userReviews = form.review.data
+     
+    new_review=Review(
          
-            review=review,
+            review=userReviews,
             item_id=itemId,
           
  
         )
-        db.session.add(new_review)
-        db.session.commit()
+    db.session.add(new_review)
+    db.session.commit()
 
-        retu = Review.query.get(new_review.id)
-        return [retu.to_dict()]
+    retu = Review.query.get(new_review.id)
+    return [retu.to_dict()]
 
     if form.errors:
         return {"errors": form.errors}
 
-@review_routes.route('/<int:reviewsId>', methods=['PUT', 'PATCH'])
+@review_routes.route('/edit/<int:reviewId>', methods=['PUT'])
 @login_required
-def edit_reviews(reviewsId):
-    form = ReviewForm()
-    form['csrf_token'].data = request.cookies['csrf_token']
-    
-    reviews = Review.query.get(reviewsId)
-    
-    if not reviews:
-        return {"errors": ["Invalid Edit Request"]}
-    
-    if form.validate_on_submit():
-        text = form.reviews.data
-        
-        if not text:
-            return {"errors": ["Invalid Edit Request"]}
-        
-        reviews.reviews = text
+def edit_reviews(reviewId):
+
+    userReviews = Review.query.get(reviewId)
+    res = request.get_json()
+    if userReviews:
+        userReviews.review=res["review"]
         db.session.commit()
-        ret = reviews.query.get(reviewsId)
-        return ret.to_dict()
+     
+        return userReviews.to_dict()
     
-    if form.errors:
-        return {"errors": form.errors}
+    
+   
 
 @review_routes.route('/<int:reviewsId>', methods=['DELETE'])
 @login_required
