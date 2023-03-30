@@ -17,9 +17,9 @@ function Header() {
     
     return(
         <div className="nav">
-            <Link to='/'>
+            <NavLink to='/'>
             <img className="nav-logo" src="https://i.postimg.cc/ZYrg8zCH/Simply-Amazin.png"  />
-            </Link>
+            </NavLink>
 
             <div className="nav-search">
                 <input className="nav-search-input"
@@ -31,21 +31,21 @@ function Header() {
             <div className="nav-nav">
                 <div className="nav-option">
                   
-                <Link to={'/login'}>
+                <NavLink to={'/login'}>
                 <button className='nav-option1' >Log In
                    </button>
-                   </Link>
-                   <Link to={'/signup'}>
+                   </NavLink>
+                   <NavLink to={'/signup'}>
                    <button className='nav-option2' >Sign Up
                    </button>
-                   </Link>
+                   </NavLink>
                 </div>
                 <div className="nav-option">
                   
-                  <Link to={'/logout'}>
+                  
                   <button className='nav-option1'onClick={(()=> dispatch(sessionActions.logout()))} >Logout
                      </button>
-                     </Link>
+                   
                      <Link to={'/signup'}>
                      <button className='nav-option2' >
                      </button>

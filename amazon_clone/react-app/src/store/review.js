@@ -31,14 +31,14 @@ console.log(review)
 export const updateReviews = ({review}, reviewId) => async (dispatch) => {
     // dispatch(createReview(review))
 const id = reviewId
-
+const rev = review
     const data = await fetch(`/api/reviews/edit/${id}` , {
         method: 'PATCH',
         headers: {
             "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            
+            rev,
             reviewId
         }),
     });

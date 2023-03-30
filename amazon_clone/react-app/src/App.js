@@ -27,6 +27,12 @@ function App() {
       {/* <Navigation isLoaded={isLoaded} />
       {isLoaded && ( */}
         <Switch>
+      <Route path="/login" >
+        <LoginFormPage />
+      </Route>
+      <Route path="/signup">
+        <SignupFormPage />
+      </Route>
         <Route path="/review/edit">
             <EditReview />
           </Route>
@@ -35,12 +41,6 @@ function App() {
           </Route>
           <Route path="/cart">
          <Cart />
-          </Route>
-          <Route path="/login" >
-            <LoginFormPage />
-          </Route>
-          <Route path="/signup">
-            <SignupFormPage />
           </Route>
           <Route path="/item/:itemId">
             <Items Item={Item}/>

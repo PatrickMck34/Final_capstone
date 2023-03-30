@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../context/Modal";
 import * as reviewActions from '../store/review'
+import '../context/Modal.css'
 
 
 function EditReview({rev}) {

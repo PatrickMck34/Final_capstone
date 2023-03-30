@@ -50,7 +50,7 @@ def edit_reviews(reviewId):
     rev = form.data['review']
     new_review = db.session.query(Review).filter(Review.id == reviewId)
     new_review.update(
-    {"review": "cheese"})
+    {"review": "almost there"})
 
     db.session.commit()
     userReviews = Review.query.get(reviewId)
