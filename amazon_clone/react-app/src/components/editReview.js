@@ -9,6 +9,7 @@ function EditReview({rev}) {
 	
 	const ret = rev.review
 	const id = rev.id
+	const item = rev.item_id
     const reviews = useSelector(state=>state.review)
     const user = useSelector(state=>state.session.user)
 	const dispatch = useDispatch();
@@ -19,7 +20,7 @@ function EditReview({rev}) {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		 
-        const data = dispatch(reviewActions.deleteReview(id)).then(()=>dispatch(reviewActions.createReviews({review},id)))
+        const data = dispatch(reviewActions.updateReviews({review}, id)).then(()=>dispatch(reviewActions.getUserReviews(item)))
 			if (data) {
 				setErrors(data);
 			} else {

@@ -28,12 +28,12 @@ console.log(review)
     console.log(response)
     return response
 }   
-export const updateReviews = (reviewId) => async (dispatch) => {
+export const updateReviews = ({review}, reviewId) => async (dispatch) => {
     // dispatch(createReview(review))
 const id = reviewId
 
     const data = await fetch(`/api/reviews/edit/${id}` , {
-        method: 'PUT',
+        method: 'PATCH',
         headers: {
             "Content-Type": "application/json",
         },

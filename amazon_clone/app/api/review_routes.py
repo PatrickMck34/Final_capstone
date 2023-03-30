@@ -43,17 +43,27 @@ def create_review_post(itemId):
     if form.errors:
         return {"errors": form.errors}
 
-@review_routes.route('/edit/<int:reviewId>', methods=['PUT'])
+@review_routes.route('/edit/<int:reviewId>', methods=['PATCH'])
 @login_required
 def edit_reviews(reviewId):
+    form = ReviewForm()
+    rev = form.data['review']
+    new_review = db.session.query(Review).filter(Review.id == reviewId)
+    new_review.update(
+    {"review": "cheese"})
 
+    db.session.commit()
     userReviews = Review.query.get(reviewId)
-    res = request.get_json()
-    if userReviews:
-        userReviews.review=res["review"]
-        db.session.commit()
+
+    return [userReviews.to_dict()]
+
+    # userReviews = Review.query.get(reviewId)
+    # res = request.get_json()
+    # if userReviews:
+    #     userReviews.review=res["review"]
+    #     db.session.commit()
      
-        return userReviews.to_dict()
+    #     return userReviews.to_dict()
     
     
    
