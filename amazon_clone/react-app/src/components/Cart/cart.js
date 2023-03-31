@@ -30,21 +30,21 @@ function Cart() {
                    
                    <div className="Item">
                    <div className="Item-info">
-                       <p>{item.name}</p>
+                       <p>{item?.name}</p>
                        <p className="Item-price">
                            <small>$</small>
-                           <strong>{item.price}</strong>
+                           <strong>{item?.price}</strong>
                        </p>
                        <div className="Item-rating">
-                           {Array(item.rating)
+                           {Array(item?.rating)
                            .fill()
                            .map((_, i) => (
                                <i className="fa-solid fa-meteor"></i>
                            ))}
                        </div>
                    </div>
-                   <img src={item.imageUrl} alt="" />
-                   <button onClick={()=>dispatch(itemActions.deleteItems(item.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
+                   <img src={item?.imageUrl} alt="" />
+                   <button onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
                     </div>
                         ))}
                        
