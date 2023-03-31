@@ -79,7 +79,7 @@ function ReviewPage() {
       <div className="spacer"></div>
       <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
-      <pre className="reviewPre">
+      <span className="reviewPre">
       <i className="fa-solid fa-user"/>                    {session?.user?.username} says:  {rev?.review}                                                                     <div>           
                                           
 
@@ -93,7 +93,7 @@ function ReviewPage() {
        
                <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
         </div>
-      </pre>
+      </span>
   
       
       ))}

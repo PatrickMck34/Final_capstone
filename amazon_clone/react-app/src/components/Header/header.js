@@ -43,13 +43,13 @@ function Header() {
                 <div className="nav-option">
                   
                   
-                  <button className='nav-option1'onClick={(()=> dispatch(sessionActions.logout()))} >Logout
+                  <button onClick={(()=> dispatch(sessionActions.logout()))} >Logout
                      </button>
                    
-                     <Link to={'/signup'}>
-                     <button className='nav-option2' >
+                  
+                     <button className='nav-option2' onClick={(()=>dispatch(sessionActions.login('1234@4edfde4.ido', 'padsdfseword')))} >Demo User
                      </button>
-                     </Link>
+                  
                   </div>
                 <div className="nav-option">
                  

@@ -46,11 +46,14 @@ def create_review_post(itemId):
 @review_routes.route('/edit/<int:reviewId>', methods=['PATCH'])
 @login_required
 def edit_reviews(reviewId):
-    form = ReviewForm()
-    rev = form.data['review']
+   
+    rev = request.get_json()
+    data = rev['rev'] 
     new_review = db.session.query(Review).filter(Review.id == reviewId)
     new_review.update(
-    {"review": "almost there"})
+        {'review': data}
+ 
+    )
 
     db.session.commit()
     userReviews = Review.query.get(reviewId)

@@ -20,6 +20,12 @@ function SignupFormPage() {
   
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setErrors([]);
+    if(password.length < 6) {
+      return setErrors(["Password must be at least 6 char long"])}
+    if(password.length > 15){
+      return setErrors(["Password must be 15 char or less"])}
+    
     if (password === confirmPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {
