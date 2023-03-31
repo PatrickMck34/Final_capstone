@@ -13,13 +13,14 @@ import Items from './components/ItemDetails/itemDetails'
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
+import NewCart from "./components/Cart/newCart";
 
 function App() {
   const user = useSelector(state=>state.session.user)
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
-    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=> dispatch(itemActions.getItem(1)));
+    dispatch(authenticate()).then(() => setIsLoaded(true)).then(()=> dispatch(itemActions.getAllItems()));
   }, [dispatch]);
 
   return (
@@ -40,7 +41,7 @@ function App() {
             <ReviewPage />
           </Route>
           <Route path="/cart">
-         <Cart />
+         <NewCart />
           </Route>
           <Route ecxact path="/">
             <Home />

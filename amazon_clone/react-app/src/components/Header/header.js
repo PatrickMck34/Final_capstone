@@ -60,7 +60,7 @@ function Header() {
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">
-                    <span className="nav-option2 basket-count">{basket?.length}</span>
+                    <span className="nav-option2 basket-count">{0}</span>
                             
                         </button>
                    

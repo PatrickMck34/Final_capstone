@@ -4,16 +4,83 @@ const CREATE_ITEM = '/Items/new'
 const READ_ITEM = '/Items/:itemId'
 const READ_CART ='Items/cart'
 
-export const createItem = ({items, itemId}) => async (dispatch) => {
-    const {item, rating,} = items
+export const createItem = () => async (dispatch) => {
 
-
-    const data = await fetch(`/api/items/${itemId}`, {
+    const data = await fetch(`/api/items/add/1`, {
 
         method: "POST",
         body: JSON.stringify({
-           item, 
-           rating
+           
+        }),
+    });
+    const response = await data.json()
+    
+    dispatch(createItems(response))
+    return response
+}
+export const createItem2 = () => async (dispatch) => {
+
+    const data = await fetch(`/api/items/add/2`, {
+
+        method: "POST",
+        body: JSON.stringify({
+           
+        }),
+    });
+    const response = await data.json()
+    
+    dispatch(createItems(response))
+    return response
+}
+export const createItem3 = () => async (dispatch) => {
+
+    const data = await fetch(`/api/items/add/3`, {
+
+        method: "POST",
+        body: JSON.stringify({
+           
+        }),
+    });
+    const response = await data.json()
+    
+    dispatch(createItems(response))
+    return response
+}
+export const createItem4 = () => async (dispatch) => {
+
+    const data = await fetch(`/api/items/add/4`, {
+
+        method: "POST",
+        body: JSON.stringify({
+           
+        }),
+    });
+    const response = await data.json()
+    
+    dispatch(createItems(response))
+    return response
+}
+export const createItem5 = () => async (dispatch) => {
+
+    const data = await fetch(`/api/items/add/5`, {
+
+        method: "POST",
+        body: JSON.stringify({
+           
+        }),
+    });
+    const response = await data.json()
+    
+    dispatch(createItems(response))
+    return response
+}
+export const createItem6 = () => async (dispatch) => {
+
+    const data = await fetch(`/api/items/add/6`, {
+
+        method: "POST",
+        body: JSON.stringify({
+           
         }),
     });
     const response = await data.json()
@@ -34,6 +101,8 @@ if (data.ok) {
     return response
 }
 }
+
+
 export const getAllItems = () => async (dispatch) => {
     const data = await fetch(`/api/items`)
     if (data.ok) {
@@ -76,8 +145,8 @@ export default function ItemsReducer(state = initialState, action) {
                 return newState
 
                 case READ_ITEMS:
-                    const variable = action.payload.reduce((acc, post) => {
-                        acc[post.id] = post
+                    const variable = action.payload.reduce((acc, item) => {
+                        acc[item.id] = item
                         return acc
                     }, {})
                     newState.allItems = variable
