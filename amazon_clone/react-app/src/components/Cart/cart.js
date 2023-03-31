@@ -24,11 +24,25 @@ function Cart() {
             <div className="checkout-left">
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
                 <h2 className="cart-title">Your Shopping Cart</h2>
-                {Object.values(basket).map((item, idx) =>(
+                {Object.values(cartItems).map((item, idx) =>(
                    
-                        
-                    <CheckoutProduct id={item?.id}title={item?.name} price={item?.price} image={item?.image} 
-                    rating={item?.rating} />  
+                   <div className="Item">
+                   <div className="Item-info">
+                       <p>{item.name}</p>
+                       <p className="Item-price">
+                           <small>$</small>
+                           <strong>{item.price}</strong>
+                       </p>
+                       <div className="Item-rating">
+                           {Array(item.rating)
+                           .fill()
+                           .map((_, i) => (
+                               <i className="fa-solid fa-meteor"></i>
+                           ))}
+                       </div>
+                   </div>
+                   <img src={item.imageUrl} alt="" />
+                    </div>
                         ))}
                        
 
