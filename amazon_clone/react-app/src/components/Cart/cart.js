@@ -2,8 +2,8 @@ import React from "react";
 import './checkout.css'
 import Item from '../Items/Item'
 import { useSelector } from "react-redux";
-import Subtotal from "../Subtotal/subtotal";
-import CheckoutProduct from "../checkout/cartItems";
+
+
 import { useStateValue } from "../../store/StateProvider";
 import { useEffect } from "react";
 import * as itemActions from '../../store/item'
@@ -57,7 +57,7 @@ function Cart() {
 
         <div className="checkout-right">
            
-            <Subtotal/>      
+              
         </div>
         </div>
 

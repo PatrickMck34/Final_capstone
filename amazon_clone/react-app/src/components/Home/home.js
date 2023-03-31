@@ -1,6 +1,6 @@
 import React from "react";
 import "./home.css" 
-import Product from "../Products/product";
+
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as itemActions from '../../store/item'

@@ -9,11 +9,11 @@ import Cart from "./components/Cart/cart";
 import * as reviewActions from './store/review'
 import ReviewPage from "./components/ReviewPage/review_page"
 import Item from './components/Items/Item'
-import Items from './components/ItemDetails/itemDetails'
+
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
-import NewCart from "./components/Cart/newCart";
+
 
 function App() {
   const user = useSelector(state=>state.session.user)
