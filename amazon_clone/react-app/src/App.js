@@ -33,17 +33,14 @@ function App() {
       <Route path="/signup">
         <SignupFormPage />
       </Route>
-        <Route path="/review/edit">
+        {/* <Route path="/review/edit">
             <EditReview />
-          </Route>
+          </Route> */}
           <Route path="/review">
             <ReviewPage />
           </Route>
           <Route path="/cart">
          <Cart />
-          </Route>
-          <Route path="/item/:itemId">
-            <Items Item={Item}/>
           </Route>
           <Route ecxact path="/">
             <Home />

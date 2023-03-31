@@ -41,10 +41,10 @@ function ReviewPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setErrors([]);
-    if(review.length < 1) {
-      return setErrors(["Review must not be empty"])}
-    if(review.length > 100){
-      return setErrors(["Review must be 100 char or less"])}
+    if(review.length < 3) {
+      return setErrors(["Review must at least 3 char long"])}
+    if(review.length > 50){
+      return setErrors(["Review must be 50 char or less"])}
     if(session.user === null){
       return setErrors(["You must be logged in to leave a review"])
     }

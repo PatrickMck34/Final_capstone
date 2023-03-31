@@ -37,7 +37,7 @@
     display:flex;
     flex-flow:column;
     height: 20em;
-    width: 290em;
+    width: 1em;
     background-color:rgb(248, 248, 249);
     margin-left:2em;
     margin-top:4em;
@@ -85,4 +85,7 @@
     /* background-color:rgb(211, 191, 75); */
      /* border:none; */
     
+}
+.log-options {
+    width:22em;
 }

@@ -23,7 +23,7 @@
 #modal-content {
   position: absolute;
   background-color:rgb(255, 255, 255);
-  height:10em;
+  height:fit-content;
   width:15em;
   border-radius: 2ch;
   padding:5px;

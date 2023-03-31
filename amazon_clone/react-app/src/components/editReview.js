@@ -5,6 +5,7 @@ import * as reviewActions from '../store/review'
 import '../context/Modal.css'
 
 
+
 function EditReview({rev}) {
 	const revs = {rev}
 	
@@ -20,7 +21,12 @@ function EditReview({rev}) {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
-		 
+		if(review.length < 3) {
+			return setErrors(["Review must at least 3 char long"])}
+		  if(review.length > 50){
+			return setErrors(["Review must be 50 char or less"])}
+		  if(user === null){
+			return setErrors(["You must be logged in to leave a review"])}
         const data = dispatch(reviewActions.updateReviews({review}, id)).then(()=>dispatch(reviewActions.getUserReviews(item)))
 			if (data) {
 				setErrors(data);
@@ -38,11 +44,11 @@ function EditReview({rev}) {
 		<>
 			<h1>Edit review</h1>
 			<form onSubmit={handleSubmit}>
-				{/* <ul>
+				<ul>
 					{errors.map((error, idx) => (
 						<li key={idx}>{error}</li>
 					))}
-				</ul> */}
+				</ul>
 				<label>
 					Review
 					<input
