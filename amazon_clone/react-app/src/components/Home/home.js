@@ -41,7 +41,7 @@ function Home(){
             </div>
             <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU'} alt="" />
             <button onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <Link to={`/review/1`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
@@ -50,7 +50,7 @@ function Home(){
                 <p>{"KingTool 325 piece Home Repair Toolkit"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{89.99}</strong>
+                    <strong>{89}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(5)
@@ -62,7 +62,7 @@ function Home(){
             </div>
             <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU'} alt="" />
             <button onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <Link to={`/review/2`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
@@ -71,7 +71,7 @@ function Home(){
                 <p>{"ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{267.00}</strong>
+                    <strong>{267}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(5)
@@ -82,8 +82,8 @@ function Home(){
                 </div>
             </div>
             <img src={'https://i.postimg.cc/Zn2MLDYp/knife.jpg'} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <button onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
+            <Link to={`/review/3`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
@@ -95,7 +95,7 @@ function Home(){
                 <p>{"Magnetic Levitation Floating Globe"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{38.99}</strong>
+                    <strong>{39}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(4)
@@ -107,7 +107,7 @@ function Home(){
             </div>
             <img src={"https://i.postimg.cc/05DXgZNW/Globe.jpg"} alt="" />
             <button onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <Link to={`/review/4`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
@@ -116,7 +116,7 @@ function Home(){
                 <p>{"Sleep HeadPhones, White Noise Bluetooth Sleep Mask"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{26.99}</strong>
+                    <strong>{27}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(3)
@@ -128,7 +128,7 @@ function Home(){
             </div>
             <img src={"https://i.postimg.cc/5NF4Whzc/mask.jpg"} alt="" />
             <button onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <Link to={`/review/5`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
@@ -137,7 +137,7 @@ function Home(){
                 <p>{"Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{1999.99}</strong>
+                    <strong>{2000}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(5)
@@ -149,7 +149,7 @@ function Home(){
             </div>
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
             <button onClick={()=>dispatch(itemActions.createItem6())}>Add To Cart</button>
-            <Link to={`/review/${1}`} >
+            <Link to={`/review/6`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>

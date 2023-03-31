@@ -80,7 +80,7 @@ function ReviewPage() {
       <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
-      <i className="fa-solid fa-user"/>                    {session?.user?.username} says:  {rev?.review}                                                                     <div>           
+      <i className="fa-solid fa-user"/> {session?.user?.username} says:  {rev?.review}                                                                     <div>           
                                           
         </div>
 

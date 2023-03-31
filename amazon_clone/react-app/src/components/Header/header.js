@@ -10,7 +10,7 @@ import { useSelector } from 'react-redux'
 import { useStateValue } from '../../store/StateProvider'
 
 function Header() {
-    
+    const user = useSelector(state=>state.session)
     const [{ basket }, dispatch] = useStateValue();
     const cartItems = useSelector(state => state.item.allItems)
     const cart = Object.values(cartItems)
@@ -30,7 +30,8 @@ function Header() {
 
             <div className="nav-nav">
                 <div className="nav-option">
-                  
+                  {user?.user === null ? (
+                    <div>
                 <NavLink to={'/login'}>
                 <button className='nav-option1' >Log In
                    </button>
@@ -39,6 +40,12 @@ function Header() {
                    <button className='nav-option2' >Sign Up
                    </button>
                    </NavLink>
+                     <button className='nav-option2' onClick={(()=>dispatch(sessionActions.login('1234@4edfde4.ido', 'padsdfseword')))} >Demo User
+                     </button>
+                   </div>
+                   ):(
+                    <div></div>
+                   )}
                 </div>
                 <div className="nav-option">
                   
@@ -47,8 +54,6 @@ function Header() {
                      </button>
                    
                   
-                     <button className='nav-option2' onClick={(()=>dispatch(sessionActions.login('1234@4edfde4.ido', 'padsdfseword')))} >Demo User
-                     </button>
                   
                   </div>
                 <div className="nav-option">

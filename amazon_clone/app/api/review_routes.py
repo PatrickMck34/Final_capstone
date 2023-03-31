@@ -52,7 +52,6 @@ def edit_reviews(reviewId):
     new_review = db.session.query(Review).filter(Review.id == reviewId)
     new_review.update(
         {'review': data}
- 
     )
 
     db.session.commit()

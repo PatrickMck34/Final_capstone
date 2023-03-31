@@ -7,7 +7,9 @@ const READ_CART ='Items/cart'
 export const createItem = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/1`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
@@ -21,7 +23,9 @@ export const createItem = () => async (dispatch) => {
 export const createItem2 = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/2`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
@@ -35,7 +39,9 @@ export const createItem2 = () => async (dispatch) => {
 export const createItem3 = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/3`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
@@ -49,7 +55,9 @@ export const createItem3 = () => async (dispatch) => {
 export const createItem4 = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/4`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
@@ -63,7 +71,9 @@ export const createItem4 = () => async (dispatch) => {
 export const createItem5 = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/5`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
@@ -77,7 +87,9 @@ export const createItem5 = () => async (dispatch) => {
 export const createItem6 = () => async (dispatch) => {
 
     const data = await fetch(`/api/items/add/6`, {
-
+        headers: {
+            "Content-Type": "application/json",
+        },
         method: "POST",
         body: JSON.stringify({
            
