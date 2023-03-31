@@ -41,7 +41,7 @@ function App() {
             <ReviewPage />
           </Route>
           <Route path="/cart">
-         <NewCart />
+         <Cart />
           </Route>
           <Route ecxact path="/">
             <Home />
