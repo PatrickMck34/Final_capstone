@@ -24,9 +24,9 @@ function EditReview({rev}) {
         const data = dispatch(reviewActions.updateReviews({review}, id)).then(()=>dispatch(reviewActions.getUserReviews(item)))
 			if (data) {
 				setErrors(data);
-			} else {
-				closeModal();
 			}
+				closeModal();
+			
 		
 			// setErrors([
 			// 	"Confirm Password field must be the same as the Password field",

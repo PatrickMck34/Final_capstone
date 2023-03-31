@@ -79,22 +79,28 @@ function ReviewPage() {
       <div className="spacer"></div>
       <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
-      <span className="reviewPre">
+      <div className="reviewPre">
       <i className="fa-solid fa-user"/>                    {session?.user?.username} says:  {rev?.review}                                                                     <div>           
                                           
-
-      
-                        <OpenModalButton
-                            buttonText="edit"
-              
-                                 modalComponent={<EditReview rev={rev}/>}
-                                 
-              /> 
-       
-               <button onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button>
         </div>
-      </span>
-  
+
+      <div className="edit-delete-buttons">
+                        <OpenModalButton
+                            buttonText={<i className="fa-solid fa-pencil delete"></i>}
+                            
+                            modalComponent={<EditReview rev={rev}/>}
+                            className="delete"
+                            /> 
+                            {/* <i className="fa-solid fa-pencil delete" onClick={()=><OpenModalButton
+                           
+                            
+                            modalComponent={<EditReview rev={rev}/>}
+                           
+                            />}></i> */}
+       <i class="fa-solid fa-trash" onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}></i>
+               {/* <button className={<i className="fa-solid fa-trash"></i>} onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button> */}
+        </div>
+  </div>
       
       ))}
       </div>
