@@ -7,9 +7,11 @@ import CheckoutProduct from "../checkout/cartItems";
 import { useStateValue } from "../../store/StateProvider";
 import { useEffect } from "react";
 import * as itemActions from '../../store/item'
+import { useDispatch } from "react-redux";
+
 function Cart() {
+    const dispatch = useDispatch()
     const cartItems = useSelector(state => state.item.allItems)
-    const [{basket}, dispatch] = useStateValue()
     useEffect(() => {
         
         dispatch(itemActions.getAllItems())
@@ -17,7 +19,7 @@ function Cart() {
        
          
           
-      }, [dispatch]);
+      }, []);
     return(
         <div className="checkout"> 
 
@@ -42,6 +44,7 @@ function Cart() {
                        </div>
                    </div>
                    <img src={item.imageUrl} alt="" />
+                   <button onClick={()=>dispatch(itemActions.deleteItems(item.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
                     </div>
                         ))}
                        

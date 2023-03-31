@@ -120,11 +120,11 @@ export const getCart = ({id}, {title}, {image}, {price}, {rating}) =>({
     type: READ_CART,
     payload: ({id}, {title}, {image}, {price}, {rating})
 })
-export const deleteItems = (id) => async (dispatch) => {
-    const response = await fetch(`/api/item/${id}`, {
+export const deleteItems = (itemId) => async (dispatch) => {
+    const response = await fetch(`/api/items/${itemId}`, {
         method: 'DELETE',
     });
-    dispatch(deleteItem(id));
+    dispatch(deleteItem(itemId));
     return response;
 };
 export  const deleteItem = (itemId) => {

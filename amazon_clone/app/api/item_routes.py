@@ -126,4 +126,14 @@ def create_item6_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-   
+@item_routes.route('/<int:itemId>', methods=['DELETE'])
+# @login_required
+def delete_item(itemId):
+    item = Item.query.get(itemId)
+    
+    if not item:
+        return {"errors": ["Invalid Delete Request"]}
+    
+    db.session.delete(item)
+    db.session.commit()
+    return {"id": item.id}
