@@ -6,7 +6,7 @@ const READ_CART ='Items/cart'
 
 export const createItem = () => async (dispatch) => {
 
-    const data = await fetch(`/api/items/add/kindle`, {
+    const data = await fetch(`/api/items/add/kind`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -21,7 +21,7 @@ export const createItem = () => async (dispatch) => {
     return response
 }
 export const createItem2 = () => async (dispatch) => {
-    const data = await fetch(`/api/items/add/tools`, {
+    const data = await fetch(`/api/items/add/tool/set`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -37,7 +37,7 @@ export const createItem2 = () => async (dispatch) => {
 }
 export const createItem3 = () => async (dispatch) => {
 
-    const data = await fetch(`/api/items/add/knives`, {
+    const data = await fetch(`/api/items/add/knife/new`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -85,7 +85,7 @@ export const createItem5 = () => async (dispatch) => {
 }
 export const createItem6 = () => async (dispatch) => {
 
-    const data = await fetch(`/api/items/add/monitor`, {
+    const data = await fetch(`/api/items/add/new/monitor`, {
         headers: {
             "Content-Type": "application/json",
         },

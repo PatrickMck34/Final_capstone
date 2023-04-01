@@ -12,20 +12,14 @@ def get_items():
     its = Item.query.all()
     return [it.to_dict() for it in its]
 
-# @item_routes.route('/<int:userId>', methods=['GET'])
-# def get_items(userId):
-#     userCarts = Item.query.filter(Item.user_id==userId)
-#     return [userCart.to_dict() for userCart in userCarts]
-
-
-@item_routes.route('/add/kindle', methods=['POST'])
-# @login_required
+@item_routes.route('/add/kind', methods=['POST'])
+@login_required
 def create_item_post():
 
     new_item = Item(
          
         name="Amazon Kindle",
-        price=299,
+        price=299.00,
         rating=5,
         imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU',
      
@@ -36,8 +30,8 @@ def create_item_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/tools', methods=['POST'])
-# @login_required
+@item_routes.route('/add/tool/set', methods=['POST'])
+@login_required
 def create_item2_post():
 
     new_item = Item(
@@ -54,8 +48,8 @@ def create_item2_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/knives', methods=['POST'])
-# @login_required
+@item_routes.route('/add/knife/new', methods=['POST'])
+@login_required
 def create_item3_post():
 
     new_item = Item(
@@ -73,7 +67,7 @@ def create_item3_post():
     return new_item.to_dict()
 
 @item_routes.route('/add/globe', methods=['POST'])
-# @login_required
+@login_required
 def create_item4_post():
 
     new_item = Item(
@@ -91,7 +85,7 @@ def create_item4_post():
     return new_item.to_dict()
 
 @item_routes.route('/add/mask', methods=['POST'])
-# @login_required
+@login_required
 def create_item5_post():
 
     new_item = Item(
@@ -108,8 +102,8 @@ def create_item5_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/monitor', methods=['POST'])
-# @login_required
+@item_routes.route('/add/new/monitor', methods=['POST'])
+@login_required
 def create_item6_post():
 
     new_item = Item(
@@ -127,7 +121,7 @@ def create_item6_post():
     return new_item.to_dict()
 
 @item_routes.route('/<int:itemId>', methods=['DELETE'])
-# @login_required
+@login_required
 def delete_item(itemId):
     item = Item.query.get(itemId)
     
