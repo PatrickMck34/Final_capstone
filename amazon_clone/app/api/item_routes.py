@@ -39,7 +39,7 @@ def create_item2_post():
         name="KingTool 325 piece Home Repair Toolkit",
         price=179.00,
         rating=5,
-        imageUrl='https://i.postimg.cc/Zn2MLDYp/knife.jpg',
+        imageUrl='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU',
      
         )
     db.session.add(new_item)
