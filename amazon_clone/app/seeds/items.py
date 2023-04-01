@@ -46,9 +46,9 @@ def seed_items():
     # )
 
 
-    # items = []
-    # add_items = [db.session.add(item) for item in items]
-    # db.session.commit()
+    items = []
+    add_items = [db.session.add(item) for item in items]
+    db.session.commit()
 
 def undo_items():
     if environment =="production":
