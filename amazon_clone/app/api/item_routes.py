@@ -20,13 +20,13 @@ def get_items():
 
 @item_routes.route('/add/kindle', methods=['POST'])
 # @login_required
-def create_item1_post():
+def create_item_post():
 
     new_item = Item(
          
         name="Amazon Kindle",
         price=299,
-        rating=4,
+        rating=5,
         imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU',
      
         )
@@ -44,8 +44,8 @@ def create_item2_post():
          
         name="KingTool 325 piece Home Repair Toolkit",
         price=179.00,
-        rating=4,
-        imageUrl='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU',
+        rating=5,
+        imageUrl='https://i.postimg.cc/Zn2MLDYp/knife.jpg',
      
         )
     db.session.add(new_item)

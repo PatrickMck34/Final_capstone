@@ -37,7 +37,7 @@ export const createItem2 = () => async (dispatch) => {
 }
 export const createItem3 = () => async (dispatch) => {
 
-    const data = await fetch(`/api/items/add/kinves`, {
+    const data = await fetch(`/api/items/add/knives`, {
         headers: {
             "Content-Type": "application/json",
         },

@@ -8,6 +8,7 @@ import * as sessionActions from '../../store/session'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useStateValue } from '../../store/StateProvider'
+import * as itemActions from '../../store/item'
 
 function Header() {
     const user = useSelector(state=>state.session)
