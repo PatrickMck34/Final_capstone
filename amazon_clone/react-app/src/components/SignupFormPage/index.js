@@ -26,6 +26,7 @@ function SignupFormPage() {
     if(password.length > 15){
       return setErrors(["Password must be 15 char or less"])}
     
+    
     if (password === confirmPassword) {
       const data = await dispatch(signUp(username, email, password));
       if (data) {

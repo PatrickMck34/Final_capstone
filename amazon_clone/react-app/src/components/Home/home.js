@@ -20,11 +20,11 @@ function Home(){
      
           
         
-      }, [dispatch]);
+      }, [user]);
       const Demo = (e) => {
         e.preventDefault();
-       return  dispatch(sessionActions.Demo());
-       
+        dispatch(sessionActions.Demo());
+       return dispatch(itemActions.getAllItems())       
       }
 
       const logout = (e) => {

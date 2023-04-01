@@ -16,16 +16,6 @@ function Header() {
     const cartItems = useSelector(state => state.item.allItems)
     const cart = Object.values(cartItems)
     
-    const Demo = (e) => {
-        e.preventDefault();
-       return  dispatch(sessionActions.Demo());
-       
-      }
-      const logout = (e) => {
-        e.preventDefault();
-        return dispatch(sessionActions.setUser(null));
-     
-      };
     return(
         <div className="nav">
             <NavLink to='/'>
@@ -65,20 +55,14 @@ function Header() {
                    </span>
                  
                    )}
-                </div>
-                <div className="nav-option">
+          
                   
                   
                    
                   
                   
                   </div>
-                <div className="nav-option">
-                 
-                </div>
-                <div className="nav-option">
-                  
-                </div>
+                
           
                 <div className="nav-option-basket">
                     <Link to="/cart">

@@ -9,7 +9,7 @@ export const setUser = (user) => ({
 export const Demo = () => async (dispatch) => {
 	const  email = "123@aa.io"
 	const password = "password" 
-	const response = await fetch('/api/session/login', {
+	const response = await fetch('/api/auth/login', {
 	  method: 'POST',
 	  body: JSON.stringify({
 		email,
