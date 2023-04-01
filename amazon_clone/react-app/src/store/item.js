@@ -21,7 +21,6 @@ export const createItem = () => async (dispatch) => {
     return response
 }
 export const createItem2 = () => async (dispatch) => {
-
     const data = await fetch(`/api/items/add/2`, {
         headers: {
             "Content-Type": "application/json",
