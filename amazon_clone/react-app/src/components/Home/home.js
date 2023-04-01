@@ -23,7 +23,7 @@ function Home(){
       }, [user]);
       const Demo = (e) => {
         e.preventDefault();
-        dispatch(sessionActions.Demo());
+        dispatch(sessionActions.login("123@aa.io","password" ));
        return dispatch(itemActions.getAllItems())       
       }
 
