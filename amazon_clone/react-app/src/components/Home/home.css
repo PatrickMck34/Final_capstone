@@ -20,3 +20,15 @@
     margin-left:5px;
     margin-right: 5px;
 }
+.Demo {
+    display:flex;
+    align-items:center;
+    margin-left:auto;
+    margin-right:auto;
+    flex-direction: row-reverse;
+    background-color:rgb(255, 191, 52)
+}
+.demo-container {
+    display:flex;
+    background:rgb(0, 0, 0)
+}

@@ -14,7 +14,7 @@
 }
 .continue-button {
     display:flex;
-   width:165%;
+   width:22.5em;
    height:2.3em;
    background:#f0c14b;
     border: 1px solid;
@@ -59,7 +59,7 @@
 .sign-options {
     display:flex;
     height:2em;
-    width:160%;
+    width:22em;
     margin-left:1em;
     border-radius: .5ch;
     border: 1px solid rgb(209, 209, 211)

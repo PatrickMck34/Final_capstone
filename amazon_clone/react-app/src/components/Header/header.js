@@ -16,6 +16,16 @@ function Header() {
     const cartItems = useSelector(state => state.item.allItems)
     const cart = Object.values(cartItems)
     
+    const Demo = (e) => {
+        e.preventDefault();
+       return  dispatch(sessionActions.Demo());
+       
+      }
+      const logout = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.setUser(null));
+     
+      };
     return(
         <div className="nav">
             <NavLink to='/'>
@@ -26,7 +36,7 @@ function Header() {
                 <input className="nav-search-input"
                 type="text" 
                 onClick={()=>window.alert("Coming soon")}/>
-                <i className="fa-solid fa-magnifying-glass" id="search-icon"/>
+                <i className="fa-solid fa-magnifying-glass" id="search-icon"onClick={()=>window.alert("Coming soon")}/> />
                 </div>
 
             <div className="nav-nav">
@@ -41,8 +51,7 @@ function Header() {
                    <button className='nav-option2' >Sign Up
                    </button>
                    </NavLink>
-                     <button className='nav-option2' onClick={(()=>dispatch(sessionActions.login('1234@4edfde4.ido', 'padsdfseword')))} >Demo User
-                     </button>
+                   <button className="Demo" onClick={Demo}>Demo User</button>
                    </div>
                    ):(
                     <div></div>
@@ -51,8 +60,6 @@ function Header() {
                 <div className="nav-option">
                   
                   
-                  <button onClick={(()=> dispatch(sessionActions.logout()))} >Logout
-                     </button>
                    
                   
                   
@@ -63,10 +70,11 @@ function Header() {
                 <div className="nav-option">
                   
                 </div>
+            <button onClick={logout}>Log Out</button>
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">
-                    <span className="nav-option2 basket-count">{0}</span>
+                    <span className="nav-option2 basket-count">{cart.length}</span>
                             
                         </button>
                    

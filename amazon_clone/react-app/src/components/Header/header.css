@@ -76,11 +76,11 @@
     cursor:pointer;
 }
 .basket-count {
-    margin-top:-10em;
+    /* margin-top:-10em; */
     margin-left:4px;
     margin-right:2px;
     font-size:large;
-    margin-bottom:3em;
+    /* margin-bottom:3em; */
 }
 #cart-button {
     font-size:32px;

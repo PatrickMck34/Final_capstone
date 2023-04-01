@@ -2,11 +2,24 @@
 const SET_USER = "session/SET_USER";
 const REMOVE_USER = "session/REMOVE_USER";
 
-const setUser = (user) => ({
+export const setUser = (user) => ({
 	type: SET_USER,
 	payload: user,
 });
-
+export const Demo = () => async (dispatch) => {
+	const  email = "123@aa.io"
+	const password = "password" 
+	const response = await fetch('/api/session/login', {
+	  method: 'POST',
+	  body: JSON.stringify({
+		email,
+		password,
+	  }),
+	});
+	const data = await response.json();
+	dispatch(setUser(data.user));
+	return response;
+  };
 const removeUser = () => ({
 	type: REMOVE_USER,
 });
@@ -59,7 +72,7 @@ export const logout = () => async (dispatch) => {
 	const response = await fetch("/api/auth/logout", {
 		headers: {
 			"Content-Type": "application/json",
-		},
+		},body: JSON.stringify({})
 	});
 
 	if (response.ok) {

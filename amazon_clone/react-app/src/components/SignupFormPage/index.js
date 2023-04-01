@@ -107,7 +107,7 @@ function SignupFormPage() {
         </span>
         </label>
           <div className="spacer"></div>
-        <button className="continue-button" type="submit">Continue</button>
+        <button className="continue-button" type="submit" onClick={handleSubmit}>Continue</button>
       </form>
           </div>
 

@@ -42,7 +42,7 @@ function LoginFormPage() {
             <li key={idx}>{error}</li>
             ))}
             </ul>
-        <span className="log-option">
+        {/* <span className="log-option"> */}
 
         <label>
         
@@ -55,8 +55,8 @@ function LoginFormPage() {
           required
           />
         </label>
-            </span>
-            <span className="log-option">
+            {/* </span>
+            <span className="log-option"> */}
 
         <label>
           <div className="spacer-log"></div>
@@ -70,10 +70,10 @@ function LoginFormPage() {
           required
           />
         </label>
-          </span>
+          {/* </span> */}
       </form>
           </div> 
-            <button className="continue-button-log" type="submit">Log In</button>
+            <button className="continue-button-log" type="submit" onClick={handleSubmit}>Log In</button>
             </div>
             <div className="signup-redirect">
 

@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as itemActions from '../../store/item'
 import { Link } from "react-router-dom";
+import * as sessionActions from "../../store/session"
 
 
 function Home(){
@@ -17,10 +18,25 @@ function Home(){
           
         
       }, [dispatch]);
+      const Demo = (e) => {
+        e.preventDefault();
+       return  dispatch(sessionActions.Demo());
+       
+      }
 
+      const logout = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.setUser(null));
+     
+      };
     return (
         <div className="home">
             <div className="home-container">
+                <div className="demo-container">
+
+<button className="Demo" onClick={logout}>Log Out</button>
+<button className="Demo" onClick={Demo}>Demo User</button>
+                </div>
                 <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" />
                 <div className="home-line">
 
@@ -36,7 +52,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU'} alt="" />
@@ -57,7 +73,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU'} alt="" />
@@ -78,7 +94,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={'https://i.postimg.cc/Zn2MLDYp/knife.jpg'} alt="" />
@@ -102,7 +118,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={"https://i.postimg.cc/05DXgZNW/Globe.jpg"} alt="" />
@@ -123,7 +139,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={"https://i.postimg.cc/5NF4Whzc/mask.jpg"} alt="" />
@@ -144,7 +160,7 @@ function Home(){
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
-                    ))}
+                        ))}
                 </div>
             </div>
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
