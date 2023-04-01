@@ -18,7 +18,7 @@ def get_items():
 #     return [userCart.to_dict() for userCart in userCarts]
 
 
-@item_routes.route('/add/1', methods=['POST'])
+@item_routes.route('/add/kindle', methods=['POST'])
 # @login_required
 def create_item1_post():
 
@@ -36,7 +36,7 @@ def create_item1_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/2', methods=['POST'])
+@item_routes.route('/add/tools', methods=['POST'])
 # @login_required
 def create_item2_post():
 
@@ -54,7 +54,7 @@ def create_item2_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/3', methods=['POST'])
+@item_routes.route('/add/knives', methods=['POST'])
 # @login_required
 def create_item3_post():
 
@@ -72,7 +72,7 @@ def create_item3_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/4', methods=['POST'])
+@item_routes.route('/add/globe', methods=['POST'])
 # @login_required
 def create_item4_post():
 
@@ -90,7 +90,7 @@ def create_item4_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/5', methods=['POST'])
+@item_routes.route('/add/mask', methods=['POST'])
 # @login_required
 def create_item5_post():
 
@@ -108,7 +108,7 @@ def create_item5_post():
     ret = Item.query.get(new_item.id)
     return new_item.to_dict()
 
-@item_routes.route('/add/6', methods=['POST'])
+@item_routes.route('/add/monitor', methods=['POST'])
 # @login_required
 def create_item6_post():
 
