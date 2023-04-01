@@ -43,18 +43,27 @@ function Header() {
                 <div className="nav-option">
                   {user?.user === null ? (
                     <div>
-                <NavLink to={'/login'}>
-                <button className='nav-option1' >Log In
-                   </button>
-                   </NavLink>
-                   <NavLink to={'/signup'}>
-                   <button className='nav-option2' >Sign Up
-                   </button>
-                   </NavLink>
-                   <button className="Demo" onClick={Demo}>Demo User</button>
+               
+                <h4  className="welcome">Welcome
+                   </h4>
+                
+                   
+                   <h3 >New Customer
+                   </h3>
+                  
+                 
                    </div>
                    ):(
-                    <div></div>
+                   <span>
+
+                        <h4  className="welcome">Welcome
+                   </h4>
+                
+                   
+                   <h3 >{user?.user?.username}
+                   </h3>
+                   </span>
+                 
                    )}
                 </div>
                 <div className="nav-option">
@@ -70,7 +79,7 @@ function Header() {
                 <div className="nav-option">
                   
                 </div>
-            <button onClick={logout}>Log Out</button>
+          
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">

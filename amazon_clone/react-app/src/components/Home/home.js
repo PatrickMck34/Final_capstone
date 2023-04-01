@@ -1,14 +1,17 @@
 import React from "react";
 import "./home.css" 
-
+import { NavLink } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as itemActions from '../../store/item'
 import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session"
+import { useSelector } from "react-redux";
 
 
 function Home(){
+
+    const user = useSelector(state=>state.session)
     const dispatch = useDispatch()
     useEffect(() => {
 
@@ -33,9 +36,25 @@ function Home(){
         <div className="home">
             <div className="home-container">
                 <div className="demo-container">
-
-<button className="Demo" onClick={logout}>Log Out</button>
+                 
+                {user?.user === null ? (
+                    <div>
+                    <NavLink to={'/login'}>
+                <button className='Demo' >Log In
+                   </button>
+                   </NavLink>
+                <NavLink to={'/signup'}>
+                   <button className='Demo' >Sign Up
+                   </button>
+                   </NavLink>
 <button className="Demo" onClick={Demo}>Demo User</button>
+               
+                        </div>
+                   ):(
+                       <div>
+<button className="Demo" onClick={logout}>Log Out</button>
+                    </div>)}
+
                 </div>
                 <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" />
                 <div className="home-line">
