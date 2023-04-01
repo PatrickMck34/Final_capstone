@@ -26,7 +26,7 @@ function Header() {
                 <input className="nav-search-input"
                 type="text" 
                 onClick={()=>window.alert("Coming soon")}/>
-                <i className="fa-solid fa-magnifying-glass" id="search-icon"onClick={()=>window.alert("Coming soon")}/> />
+                <i className="fa-solid fa-magnifying-glass" id="search-icon"onClick={()=>window.alert("Coming soon")}/>
                 </div>
 
             <div className="nav-nav">
