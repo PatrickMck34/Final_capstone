@@ -57,14 +57,15 @@ function Home(){
 
                 </div>
                 {/* <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" /> */}
-<iframe className="home-movie"  width="1600" height="315" src="https://m.media-amazon.com/images/I/A1FOjpZM7BL.mp4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <img className="home-movie" src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
+                <img className="home-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
                 <div className="home-line">
                 <div className="Item">
             <div className="Item-info">
-                <p>{"Amazon Kindle Fire"}</p>
+                <p>{"iBUYPOWER Pro Gaming PC"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{299}</strong>
+                    <strong>{1698.88}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(4)
@@ -74,7 +75,7 @@ function Home(){
                         ))}
                 </div>
             </div>
-            <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU'} alt="" />
+            <img src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
             <Link to={`/review/1`} >
                         <button className="Item-button">See Reviews</button>
@@ -82,10 +83,10 @@ function Home(){
         </div>
         <div className="Item">
             <div className="Item-info">
-                <p>{"KingTool 325 piece Home Repair Toolkit"}</p>
+                <p>{"CyberpowerPC Gamer Xtreme VR Gaming PC"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{89}</strong>
+                    <strong>{2299.99}</strong>
                 </p>
                 <div className="Item-rating">
                     {Array(5)
@@ -95,7 +96,7 @@ function Home(){
                         ))}
                 </div>
             </div>
-            <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU'} alt="" />
+            <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
             <Link to={`/review/2`} >
                         <button className="Item-button">See Reviews</button>
@@ -103,7 +104,7 @@ function Home(){
         </div>
         <div className="Item">
             <div className="Item-info">
-                <p>{"ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set"}</p>
+                <p>{"Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9"}</p>
                 <p className="Item-price">
                     <small>$</small>
                     <strong>{267}</strong>
@@ -116,52 +117,57 @@ function Home(){
                         ))}
                 </div>
             </div>
-            <img src={'https://i.postimg.cc/Zn2MLDYp/knife.jpg'} alt="" />
+            <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
             <Link to={`/review/3`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
         </div>
-                   
+        
+        
+        
+        
                 </div>
                 <div className="home-line">
         <div className="Item">
             <div className="Item-info">
-                <p>{"Magnetic Levitation Floating Globe"}</p>
+                <p>{"Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{39}</strong>
+                    <strong>{9455.15}</strong>
                 </p>
                 <div className="Item-rating">
-                    {Array(4)
+                    {Array(5)
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
                         ))}
                 </div>
             </div>
-            <img src={"https://i.postimg.cc/05DXgZNW/Globe.jpg"} alt="" />
+            <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
             <Link to={`/review/4`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
+
+
         </div>
         <div className="Item">
             <div className="Item-info">
-                <p>{"Sleep HeadPhones, White Noise Bluetooth Sleep Mask"}</p>
+                <p>{"YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station"}</p>
                 <p className="Item-price">
                     <small>$</small>
-                    <strong>{27}</strong>
+                    <strong>{19386.38}</strong>
                 </p>
                 <div className="Item-rating">
-                    {Array(3)
+                    {Array(5)
                     .fill()
                     .map((_, i) => (
                         <i className="fa-solid fa-meteor"></i>
                         ))}
                 </div>
             </div>
-            <img src={"https://i.postimg.cc/5NF4Whzc/mask.jpg"} alt="" />
+            <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
             <Link to={`/review/5`} >
                         <button className="Item-button">See Reviews</button>
