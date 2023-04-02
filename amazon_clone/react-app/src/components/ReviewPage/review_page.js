@@ -59,11 +59,12 @@ function ReviewPage() {
         if (data && data.errors) setErrors(data.errors);
    
       });
-  };
-
-  return (
-    <>
+    };
+    
+    return (
+      <>
     <div className="log-logo">
+      <img className="banner-review" src="https://i.postimg.cc/rssVtqM9/Marioedit.jpg"></img>
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
 
     <div className="reviewContainer">
@@ -75,7 +76,7 @@ function ReviewPage() {
       
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
-      <i className="fa-solid fa-user"/> {session?.user?.username} says:  {rev?.review}                                                                     <div>           
+<i className="fa-solid fa-user"/> <strong>{rev?.user?.username}</strong>-says:  {rev?.review}                                                                     <div>           
                                           
         </div>
 
@@ -89,14 +90,17 @@ function ReviewPage() {
                            
                            
   
-     <div className="Edit"> 
-<OpenModalButton
-className="mod"
+        <div id="button-edit-container"> 
+<OpenModalButton 
+
 buttonText={ 
-<i className="fa-solid fa-pencil delete" >
+  
+  <i className="button-edit" class="fa-solid fa-pencil delete" id="mod" >
         </i>
+        
       }
-      modalComponent={<EditReview rev={rev}/>}/>
+      modalComponent={<EditReview rev={rev}/>}
+      />
       </div>  
        <i class="fa-solid fa-trash" onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}></i>
                
@@ -155,7 +159,7 @@ buttonText={
             </div>
     </>
   );
-
+  
 }
 
 export default ReviewPage;

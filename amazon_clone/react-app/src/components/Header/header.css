@@ -39,6 +39,7 @@
     padding: 10px;
     border:none;
     width:100%;
+    background-color:white
 }
 .nav-option {
     display:flex;
