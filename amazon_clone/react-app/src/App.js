@@ -10,9 +10,11 @@ import * as reviewActions from './store/review'
 import ReviewPage from "./components/ReviewPage/review_page"
 import Item from './components/Items/Item'
 
+
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
+import Checkout from "./components/CheckoutPage/checkoutPage";
 
 
 function App() {
@@ -34,9 +36,9 @@ function App() {
       <Route path="/signup">
         <SignupFormPage />
       </Route>
-        {/* <Route path="/review/edit">
-            <EditReview />
-          </Route> */}
+        <Route path="/checkout">
+            <Checkout />
+          </Route>
           <Route path="/review">
             <ReviewPage />
           </Route>

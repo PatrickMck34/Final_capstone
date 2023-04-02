@@ -4,6 +4,7 @@
     align-items: center;
     background-color:black;
     position:sticky;
+    border-bottom: 1px solid rgb(177, 150, 29)
 
 }
 .nav-logo {
@@ -19,7 +20,11 @@
     padding:5px;
     height:22px;
     width:20px;
-    background-color:#f0a33d;
+    background:#f0c14b;
+    border: 1px solid;
+
+    border-color: #a88734 #9c7e31 #846a29;
+    color:#111;
     cursor:pointer;
 }
 .nav-search {

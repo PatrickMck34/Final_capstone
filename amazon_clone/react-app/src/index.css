@@ -2,5 +2,11 @@
 body {
     margin:0;
     padding:0;
-    background-color:rgb(238, 236, 236)
+    /* font-size:clamp(8px, 5vw, 34px); */
+    /* padding: clamp(2px, 5vw, 10x); */
+    background-color:rgb(238, 236, 236);
+    
+}
+* {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }

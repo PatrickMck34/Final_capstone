@@ -56,7 +56,7 @@ function Cart() {
         </div>
 
         <div className="checkout-right">
-           
+           <button>Check Out</button>
               
         </div>
         </div>
