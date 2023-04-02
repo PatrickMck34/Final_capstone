@@ -18,10 +18,10 @@ def create_item_post():
 
     new_item = Item(
          
-        name="Amazon Kindle",
-        price=299.00,
-        rating=5,
-        imageUrl='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU',
+        name="iBUYPOWER Pro Gaming PC",
+        price=1698.88,
+        rating=4,
+        imageUrl='https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg',
      
         )
     db.session.add(new_item)
@@ -36,10 +36,10 @@ def create_item2_post():
 
     new_item = Item(
          
-        name="KingTool 325 piece Home Repair Toolkit",
-        price=179.00,
+        name="CyberpowerPC Gamer Xtreme VR Gaming PC",
+        price=2299.99,
         rating=5,
-        imageUrl='https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU',
+        imageUrl='https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg',
      
         )
     db.session.add(new_item)
@@ -54,10 +54,10 @@ def create_item3_post():
 
     new_item = Item(
          
-        name="ASETY Demascus Knife Set 3PCS, NSF Food-Safe Kitchen Knife Set",
-        price=179.99,
+        name="Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9",
+        price=2399.97,
         rating=5,
-        imageUrl='https://i.postimg.cc/Zn2MLDYp/knife.jpg',
+        imageUrl='https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg',
      
         )
     db.session.add(new_item)
@@ -72,10 +72,10 @@ def create_item4_post():
 
     new_item = Item(
          
-        name="Magnetic Levitation Floating Globe",
-        price=38.99,
-        rating=3,
-        imageUrl="https://i.postimg.cc/05DXgZNW/Globe.jpg",
+        name="Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights,",
+        price=9455.15,
+        rating=5,
+        imageUrl="https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg",
      
         )
     db.session.add(new_item)
@@ -90,10 +90,10 @@ def create_item5_post():
 
     new_item = Item(
          
-        name="Sleep HeadPhones, White Noise Bluetooth Sleep Mask",
-        price=26.99,
-        rating=3,
-        imageUrl="https://i.postimg.cc/5NF4Whzc/mask.jpg",
+        name="YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station",
+        price=19386.38,
+        rating=5,
+        imageUrl="https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg",
      
         )
     db.session.add(new_item)
