@@ -75,7 +75,7 @@ function Home(){
                 </div>
             </div>
             <img src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK2xs4CcvDoHUKifWct4HZXwQ7C-129lLBrDXaqqH6P-jqVjOD7lEsA_JjFpLey7DUEQ0&usqp=CAU'} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
             <Link to={`/review/1`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -96,7 +96,7 @@ function Home(){
                 </div>
             </div>
             <img src={'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSMIzb1QnMIefo_pgAguHcB7mW4-amOfwlGyX9XNnR69V2glGhU'} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
             <Link to={`/review/2`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -117,7 +117,7 @@ function Home(){
                 </div>
             </div>
             <img src={'https://i.postimg.cc/Zn2MLDYp/knife.jpg'} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
             <Link to={`/review/3`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -141,7 +141,7 @@ function Home(){
                 </div>
             </div>
             <img src={"https://i.postimg.cc/05DXgZNW/Globe.jpg"} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
             <Link to={`/review/4`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -162,7 +162,7 @@ function Home(){
                 </div>
             </div>
             <img src={"https://i.postimg.cc/5NF4Whzc/mask.jpg"} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
             <Link to={`/review/5`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -183,7 +183,7 @@ function Home(){
                 </div>
             </div>
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
-            <button onClick={()=>dispatch(itemActions.createItem6())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6())}>Add To Cart</button>
             <Link to={`/review/6`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
