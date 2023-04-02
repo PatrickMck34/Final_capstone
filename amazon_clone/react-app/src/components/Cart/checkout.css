@@ -8,4 +8,14 @@
     padding:20px;
     background-color:white;
     height:max-content;
+
+}
+.image-checkout {
+    display:flex; 
+    margin-right:40em;
+
+}
+.checkout-button {
+margin-right:45em;
+border-radius: 1ch;
 }

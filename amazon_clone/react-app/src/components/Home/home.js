@@ -56,9 +56,9 @@ function Home(){
                     </div>)}
 
                 </div>
-                <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" />
+                {/* <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" /> */}
+<iframe className="home-movie"  width="1600" height="315" src="https://m.media-amazon.com/images/I/A1FOjpZM7BL.mp4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 <div className="home-line">
-
                 <div className="Item">
             <div className="Item-info">
                 <p>{"Amazon Kindle Fire"}</p>

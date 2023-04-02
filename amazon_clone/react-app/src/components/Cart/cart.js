@@ -43,8 +43,8 @@ function Cart() {
                            ))}
                        </div>
                    </div>
-                   <img src={item?.imageUrl} alt="" />
-                   <button onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
+                   <img className="image-checkout" src={item?.imageUrl} alt="" />
+                   <button className="Demo checkout-button" onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
                     </div>
                         ))}
                        

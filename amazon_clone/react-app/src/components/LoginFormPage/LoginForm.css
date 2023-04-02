@@ -14,7 +14,7 @@
 }
 .continue-button-log {
     display:flex;
-   width:92%;
+   width:90%;
    height:2.3em;
    background:#f0c14b;
     border: 1px solid;
@@ -25,6 +25,7 @@
     justify-content:center;
     padding:6px;
     cursor:pointer;
+    margin-top:1em;
     
 
   
@@ -49,6 +50,7 @@
 }
 .login-option {
     margin-left:7em;
+    padding:5px;
     margin-right:auto;
     
     
@@ -59,8 +61,9 @@
 .log-options {
     display:flex;
     height:2em;
-    width:160%;
+  
     margin-left:1em;
+
     border-radius: .5ch;
     border: 1px solid rgb(209, 209, 211)
    

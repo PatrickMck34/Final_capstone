@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 function Checkout () {
     return (
         <div>
-
+            <iframe width="1600" height="315" src="https://m.media-amazon.com/images/I/A1FOjpZM7BL.mp4"></iframe>
         </div>
     )
 

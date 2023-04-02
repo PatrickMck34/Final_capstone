@@ -6,23 +6,22 @@
 
 .home {
     display:flex;
-    max-width:1600px;
+    max-width:2000px;
     min-width:600px;
-
     justify-content:center;
 
 }
 
 .home-banner {
     z-index: -1;
-    margin-bottom: -250px;
+    margin-bottom: -60px;
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
     width:100%;
 }
 .home-line {
     display:flex;
-    z-index:1;
-    top:0;
+     z-index:1; 
+     top:0; 
     margin-left:5px;
     margin-right: 5px;
 }
@@ -45,4 +44,12 @@
     height:2em;
     align-items:center;
     margin-bottom: -.1em;
+}
+.home-movie {
+    
+        z-index: -1;
+        margin-bottom: -40px;
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0));
+
+    
 }
