@@ -64,7 +64,7 @@ function ReviewPage() {
     return (
       <>
     <div className="log-logo">
-      <img className="banner-review" src="https://i.postimg.cc/rssVtqM9/Marioedit.jpg"></img>
+      <img className="banner-review" src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
       <img className="login-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
 
     <div className="reviewContainer">
