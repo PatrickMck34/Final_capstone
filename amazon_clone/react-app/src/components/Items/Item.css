@@ -7,13 +7,13 @@
     z-index:1;
     align-Items:center;
     justify-content:flex-end;
-    margin:10px;
-    padding:20px;
+    margin-left:20px;
+    padding: 10px;
 width:100%;
 
     max-height:400px;
     min-width:100px;
-    background-color:rgb(244, 241, 241);
+    background-color:white;
     
     
     

@@ -5,8 +5,8 @@
     background-color:black;
     position:sticky;
     border-bottom: 1px solid rgb(177, 150, 29);
-    max-width:1600px;
-    min-width:600px;
+     /* max-width:1600px; */
+    min-width:600px; 
 }
 .nav-logo {
     width:4em;
@@ -65,16 +65,7 @@
     border-color: #a88734 #9c7e31 #846a29;
 
 }
-.nav-option2 {
 
-    font-size:12px;
-    font-weight:800;
-    margin-bottom:.1em;
-    cursor:pointer;
-    background:#f0c14b;
-    border: 1px solid;
-    border-color: #a88734 #9c7e31 #846a29;
-}
 .nav-option-basket {
     display:flex;
     align-items:center;
