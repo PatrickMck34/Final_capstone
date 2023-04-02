@@ -72,12 +72,7 @@ function ReviewPage() {
       </strong>
       <div className="spacer"></div>
 
-      <div><i className="fa-solid fa-user"/>demo says: Heck of a tool</div>
-      <div className="spacer"></div>
-
-      <div><i className="fa-solid fa-user"/>Carl says: Had better</div>
-      <div className="spacer"></div>
-      <div><i className="fa-solid fa-user"/>Joy says: Good luck!</div>
+      
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
       <i className="fa-solid fa-user"/> {session?.user?.username} says:  {rev?.review}                                                                     <div>           
@@ -85,20 +80,26 @@ function ReviewPage() {
         </div>
 
       <div className="edit-delete-buttons">
-                        <OpenModalButton
-                            buttonText={<i className="fa-solid fa-pencil delete"></i>}
+                        
                             
-                            modalComponent={<EditReview rev={rev}/>}
-                            className="delete"
-                            /> 
-                            {/* <i className="fa-solid fa-pencil delete" onClick={()=><OpenModalButton
+                      
                            
                             
-                            modalComponent={<EditReview rev={rev}/>}
                            
-                            />}></i> */}
+                           
+                           
+  
+     <div className="Edit"> 
+<OpenModalButton
+className="mod"
+buttonText={ 
+<i className="fa-solid fa-pencil delete" >
+        </i>
+      }
+      modalComponent={<EditReview rev={rev}/>}/>
+      </div>  
        <i class="fa-solid fa-trash" onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}></i>
-               {/* <button className={<i className="fa-solid fa-trash"></i>} onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}>Delete</button> */}
+               
         </div>
   </div>
       
@@ -154,6 +155,7 @@ function ReviewPage() {
             </div>
     </>
   );
+
 }
 
 export default ReviewPage;

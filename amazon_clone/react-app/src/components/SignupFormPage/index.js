@@ -58,8 +58,8 @@ function SignupFormPage() {
 <span className="signin-option">
           <input
           className="sign-options"
+          type="email"
           placeholder="Email"
-          type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
@@ -72,8 +72,8 @@ function SignupFormPage() {
         <span className="signin-option">
           <input
           className="sign-options"
-          placeholder="Username"
           type="text"
+          placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
           required
@@ -108,7 +108,7 @@ function SignupFormPage() {
         </span>
         </label>
           <div className="spacer"></div>
-        <button className="continue-button" type="submit" onClick={handleSubmit}>Continue</button>
+        <button className="continue-button" type="submit">Continue</button>
       </form>
           </div>
 
