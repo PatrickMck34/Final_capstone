@@ -7,7 +7,7 @@
 .home {
     display:flex;
     max-width:1600px;
-    min-width:600px;
+    min-width:500px;
     justify-content:center;
 
 }
