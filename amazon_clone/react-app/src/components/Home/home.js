@@ -80,7 +80,14 @@ function Home(){
                 </div>
             </div>
             <img src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
             <Link to={`/review/1`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -101,7 +108,15 @@ function Home(){
                 </div>
             </div>
             <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
+            
             <Link to={`/review/2`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -122,7 +137,14 @@ function Home(){
                 </div>
             </div>
             <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
             <Link to={`/review/3`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -149,7 +171,14 @@ function Home(){
                 </div>
             </div>
             <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
             <Link to={`/review/4`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -172,7 +201,14 @@ function Home(){
                 </div>
             </div>
             <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
             <Link to={`/review/5`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
@@ -193,7 +229,14 @@ function Home(){
                 </div>
             </div>
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
+            {user?.user !== null ? (
+                    <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
             <Link to={`/review/6`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
