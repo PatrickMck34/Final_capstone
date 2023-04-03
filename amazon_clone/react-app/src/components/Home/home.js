@@ -82,7 +82,7 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             </div>
             ):(
                 <div></div>
@@ -110,7 +110,7 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             </div>
             ):(
                 <div></div>
@@ -139,7 +139,7 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             </div>
             ):(
                 <div></div>
@@ -173,7 +173,7 @@ function Home(){
             <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             </div>
             ):(
                 <div></div>
@@ -203,7 +203,7 @@ function Home(){
             <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             </div>
             ):(
                 <div></div>
