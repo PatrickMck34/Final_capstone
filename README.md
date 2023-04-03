@@ -7,7 +7,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/PatrickMcK34/Final-capstonecapstone">
-    <img src="./Untitled.png" alt="Logo" width="80" height="80">
+    <img src="./Amazin.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">Simply-Amazin</h3>
@@ -108,19 +108,19 @@ Then use pipenv shell to start a new environment and use flask db upgrade, flask
 
 ## Usage
 
-<img src="./SignUp.png" alt="Logo" width="500" height="300">
+<img src="./Account.png" alt="Logo" width="500" height="300">
 
 Create your account with secure hashed password protection.
 
-<img src="./Home.png" alt="Logo" width="500" height="300">
+<img src="./home.png" alt="Logo" width="500" height="300">
 
 The home page displays each item available to add to cart.
 
-<img src="./Details.png" alt="Logo" width="500" height="300">
+<img src="./review.png" alt="Logo" width="500" height="300">
 
 The user may also leave reviews of the items they have enjoyed!
 
-<img src="./Create.png" alt="Logo" width="500" height="300">
+<img src="./cart.png" alt="Logo" width="500" height="300">
 
 Each item you have selected will show up in your personal checkout list.
 
