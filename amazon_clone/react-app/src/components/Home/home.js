@@ -7,20 +7,21 @@ import * as itemActions from '../../store/item'
 import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session"
 import { useSelector } from "react-redux";
+import * as reviewActions from '../../store/review'
 
 
 function Home(){
 
     const user = useSelector(state=>state.session)
     const dispatch = useDispatch()
-    useEffect(() => {
+    // useEffect(() => {
 
-        dispatch(itemActions.getAllItems())
+    //     dispatch(itemActions.getUserReviews(ItemId))
     
      
           
         
-      }, [user]);
+    //   }, [user]);
       const Demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login("123@aa.io","password" ));

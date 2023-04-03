@@ -15,6 +15,7 @@ function Header() {
     const [{ basket }, dispatch] = useStateValue();
     const cartItems = useSelector(state => state.item.allItems)
     const cart = Object.values(cartItems)
+   
     
     return(
         <div className="nav">

@@ -76,7 +76,7 @@ function ReviewPage() {
       
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
-<i className="fa-solid fa-user"/> <strong>{rev.user_name}</strong>-says:  {rev?.review}                                                                     <div>           
+<i className="fa-solid fa-user"/> <strong>{rev?.user_name}</strong>-says:  {rev?.review}  <div>           
                                     
         </div> 
 
@@ -160,7 +160,7 @@ modalComponent={<EditReview rev={rev}/>}
 
               <span>Don't Have an Account?</span>
             <Link to={'/signup'}>
-                   <button className='nav-option2' >Create Your Amazin Account
+                   <button className='continue-button-log' >Create Your Amazin Account
                    </button>
                    </Link>
             </div>

@@ -28,7 +28,7 @@ def create_item_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/add/tool/set', methods=['POST'])
 @login_required
@@ -46,7 +46,7 @@ def create_item2_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/add/knife/new', methods=['POST'])
 @login_required
@@ -64,7 +64,7 @@ def create_item3_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/add/globe', methods=['POST'])
 @login_required
@@ -82,7 +82,7 @@ def create_item4_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/add/mask', methods=['POST'])
 @login_required
@@ -100,7 +100,7 @@ def create_item5_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/add/new/monitor', methods=['POST'])
 @login_required
@@ -118,7 +118,7 @@ def create_item6_post():
     db.session.commit()
 
     ret = Item.query.get(new_item.id)
-    return new_item.to_dict()
+    return [new_item.to_dict()]
 
 @item_routes.route('/<int:itemId>', methods=['DELETE'])
 @login_required

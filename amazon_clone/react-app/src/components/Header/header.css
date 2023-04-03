@@ -56,9 +56,9 @@
 }
 .nav-option2 {
     display:flex;
-    width:5em;
+    flex-flow: nowrap;
     font-size:12px;
-    width:5.4em;
+    width:2em;
     font-weight:800;
     margin-bottom:.3em;
     cursor:pointer;
@@ -87,9 +87,11 @@
 }
 .basket-count {
     /* margin-top:-10em; */
-    margin-left:4px;
-    margin-right:2px;
+
+    margin-left:1.5em;
     font-size:large;
+    border:none;
+
     /* margin-bottom:3em; */
 }
 #cart-button {
