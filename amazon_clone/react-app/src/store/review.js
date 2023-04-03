@@ -11,7 +11,7 @@ export const createReviews = ({rev}, itemId) => async (dispatch) => {
 const item = itemId
 const {review} = rev
 
-console.log(review)
+
     const data = await fetch(`/api/reviews/add/${itemId}` , {
         method: 'POST',
         headers: {
