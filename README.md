@@ -1,148 +1,189 @@
-# Flask React Project
 
-This is the starter for the Flask React project.
 
-## Getting started
-1. Clone this repository (only this branch)
 
-2. Install dependencies
 
-      ```bash
-      pipenv install -r requirements.txt
-      ```
+<a name="readme-top"></a>
 
-3. Create a **.env** file based on the example with proper settings for your
-   development environment
+<br />
+<div align="center">
+  <a href="https://github.com/PatrickMcK34/Final-capstonecapstone">
+    <img src="./Untitled.png" alt="Logo" width="80" height="80">
+  </a>
 
-4. Make sure the SQLite3 database connection URL is in the **.env** file
+<h3 align="center">Simply-Amazin</h3>
 
-5. This starter organizes all tables inside the `flask_schema` schema, defined
-   by the `SCHEMA` environment variable.  Replace the value for
-   `SCHEMA` with a unique name, **making sure you use the snake_case
-   convention**.
+  <p align="center">
+    A clone of the popular Amazon web application. Simply-Amazin is a marketplace designed to offer high end tech to savy consumers.
+    <br />
+    <a href="https://github.com/PatrickMcK34/Final-capstone"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://github.com/PatrickMcK34/Final-capstone/issues">Report Bug</a>
+    ·
+    <a href="https://github.com/PatrickMcK34/Final-capstone/issues">Request Feature</a>
+  </p>
+</div>
 
-6. Get into your pipenv, migrate your database, seed your database, and run your Flask app
 
-   ```bash
-   pipenv shell
+
+
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+
+
+
+## About The Project
+`A clone of the popular Amazon web application. Simply-Amazin is a marketplace designed to offer high end tech to savy consumers.`
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+### Built With
+
+
+* React
+* Python
+* HTML
+* CSS
+* Flask
+* SQLAlchemy
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+## Getting Started
+.
+To get a local copy up and running follow these simple example steps.
+
+
+### Installation
+
+
+1. Clone the repo
+   ```sh
+   git clone https://github.com/PatrickMcK34/Final-capstone.git
    ```
-
-   ```bash
-   flask db upgrade
+2. Install NPM packages in the /react-app folder location
+   ```sh
+   npm install 
    ```
+3. Navigate into the /amazon_clone folder and from there use the command pipenv install -r reqquirements.txt to install necessarry packages.
 
-   ```bash
-   flask seed all
-   ```
+Then use pipenv shell to start a new environment and use flask db upgrade, flask seed all and flask run to start the back end.
 
-   ```bash
-   flask run
-   ```
-
-7. To run the React App in development, checkout the [README](./react-app/README.md) inside the `react-app` directory.
+4. Create an additional terminal window and navigate to the frontend folder /react-app and use npm start to start the application and launch the site..
 
 
-## Deployment through Render.com
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-First, refer to your Render.com deployment articles for more detailed
-instructions about getting started with [Render.com], creating a production
-database, and deployment debugging tips.
 
-From the [Dashboard], click on the "New +" button in the navigation bar, and
-click on "Web Service" to create the application that will be deployed.
 
-Look for the name of the application you want to deploy, and click the "Connect"
-button to the right of the name.
 
-Now, fill out the form to configure the build and start commands, as well as add
-the environment variables to properly deploy the application.
+## Usage
 
-### Part A: Configure the Start and Build Commands
+<img src="./SignUp.png" alt="Logo" width="500" height="300">
 
-Start by giving your application a name.
+Create your account with secure hashed password protection.
 
-Leave the root directory field blank. By default, Render will run commands from
-the root directory.
+<img src="./Home.png" alt="Logo" width="500" height="300">
 
-Make sure the Environment field is set set to "Python 3", the Region is set to
-the location closest to you, and the Branch is set to "main".
+The home page displays each item available to add to cart.
 
-Next, add your Build command. This is a script that should include everything
-that needs to happen _before_ starting the server.
+<img src="./Details.png" alt="Logo" width="500" height="300">
 
-For your Flask project, enter the following command into the Build field, all in
-one line:
+The user may also leave reviews of the items they have enjoyed!
 
-```shell
-# build command - enter all in one line
-npm install --prefix react-app &&
-npm run build --prefix react-app &&
-pip install -r requirements.txt &&
-pip install psycopg2 &&
-flask db upgrade &&
-flask seed all
-```
+<img src="./Create.png" alt="Logo" width="500" height="300">
 
-This script will install dependencies for the frontend, and run the build
-command in the __package.json__ file for the frontend, which builds the React
-application. Then, it will install the dependencies needed for the Python
-backend, and run the migration and seed files.
+Each item you have selected will show up in your personal checkout list.
 
-Now, add your start command in the Start field:
 
-```shell
-# start script
-gunicorn app:app
-```
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-_If you are using websockets, use the following start command instead for increased performance:_
 
-`gunicorn --worker-class eventlet -w 1 app:app`
 
-### Part B: Add the Environment Variables
 
-Click on the "Advanced" button at the bottom of the form to configure the
-environment variables your application needs to access to run properly. In the
-development environment, you have been securing these variables in the __.env__
-file, which has been removed from source control. In this step, you will need to
-input the keys and values for the environment variables you need for production
-into the Render GUI.
+## Roadmap
 
-Click on "Add Environment Variable" to start adding all of the variables you
-need for the production environment.
+- [ ] Reviews
+- [ ] Items
 
-Add the following keys and values in the Render GUI form:
 
-- SECRET_KEY (click "Generate" to generate a secure secret for production)
-- FLASK_ENV production
-- FLASK_APP app
-- SCHEMA (your unique schema name, in snake_case)
-- REACT_APP_BASE_URL (use render.com url, located at top of page, similar to
-  https://this-application-name.onrender.com)
+See the [open issues](https://github.com/PatrickMcK34/Final-capstone/issues) for a full list of proposed features (and known issues).
 
-In a new tab, navigate to your dashboard and click on your Postgres database
-instance.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Add the following keys and values:
 
-- DATABASE_URL (copy value from Internal Database URL field)
 
-_Note: Add any other keys and values that may be present in your local __.env__
-file. As you work to further develop your project, you may need to add more
-environment variables to your local __.env__ file. Make sure you add these
-environment variables to the Render GUI as well for the next deployment._
 
-Next, choose "Yes" for the Auto-Deploy field. This will re-deploy your
-application every time you push to main.
+## Contributing
 
-Now, you are finally ready to deploy! Click "Create Web Service" to deploy your
-project. The deployment process will likely take about 10-15 minutes if
-everything works as expected. You can monitor the logs to see your build and
-start commands being executed, and see any errors in the build process.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-When deployment is complete, open your deployed site and check to see if you
-successfully deployed your Flask application to Render! You can find the URL for
-your site just below the name of the Web Service at the top of the page.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
 
-[Render.com]: https://render.com/
-[Dashboard]: https://dashboard.render.com/
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+## Contact
+
+Patrick McKinney  CorkscrewHollow@gmail.com
+
+Project Link: [https://github.com/PatrickMcK34/Final-capstone](https://github.com/PatrickMcK34/Final-capstone)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[React-url]: https://reactjs.org/
+
+
+
+
