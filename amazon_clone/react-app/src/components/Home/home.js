@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 import * as sessionActions from "../../store/session"
 import { useSelector } from "react-redux";
 import * as reviewActions from '../../store/review'
+import AboutModal from "../AboutModal";
+import OpenModalButton from "../OpenModalButton";
 
 
 function Home(){
@@ -204,7 +206,12 @@ function Home(){
                 </div>
                 <div className="home-line">
                    
+                <div>
 
+<OpenModalButton
+    modalComponent={AboutModal}
+    buttonText="About"></OpenModalButton>
+    </div>
                 </div>
             </div>
 
