@@ -192,7 +192,7 @@ function Home(){
                 </div>
             </div>
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6())}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
             <Link to={`/review/6`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>

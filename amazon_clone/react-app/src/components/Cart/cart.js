@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import * as itemActions from '../../store/item'
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import * as sessionActions from '../../store/session'
 
 function Cart() {
    let price = 0
@@ -21,7 +22,13 @@ function Cart() {
        
          
           
-      }, []);
+      }, [cartItems]);
+
+      const logout = (e) => {
+        e.preventDefault();
+        return dispatch(sessionActions.setUser(null));
+     
+      };
     return(
         <div className="checkout"> 
 
@@ -56,9 +63,10 @@ function Cart() {
                     
                      
         <div className="checkout-button-container">
-            <button className="checkout-buttons">
-                Checkout 
-                </button> 
+          
+            <button className="checkout-buttons" onClick={logout}>Check Out</button>
+               
+                
                 </div>
         </div>
 

@@ -131,3 +131,15 @@ def delete_item(itemId):
     db.session.delete(item)
     db.session.commit()
     return {"id": item.id}
+
+@item_routes.route('/all', methods=['DELETE'])
+@login_required
+def delete_All(itemId):
+    item = Item.query.all()
+    
+    if not item:
+        return {"errors": ["Invalid Delete Request"]}
+    
+    db.session.delete(item)
+    db.session.commit()
+    return {"id": item.id}
