@@ -160,7 +160,7 @@ modalComponent={<EditReview rev={rev}/>}
 
               <span>Don't Have an Account?</span>
             <Link to={'/signup'}>
-                   <button className='continue-button-log' >Create Your Amazin Account
+                   <button className='logup-redirect sign' >Create Your Amazin Account
                    </button>
                    </Link>
             </div>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../context/Modal";
 import * as reviewActions from '../store/review'
-import '../context/Modal.css'
+import './edit.css'
 
 
 
@@ -51,7 +51,7 @@ function EditReview({rev}) {
 				</ul>
 				<label>
 					Review
-					<input
+					<input className="input"
 						type="text"
 						value={review}
 						onChange={(e) => setNewReview(e.target.value)}
@@ -64,7 +64,7 @@ function EditReview({rev}) {
 						
 		
 				
-				<button type="submit" onClick={handleSubmit}>Submit</button>
+				<button className="demo-button" type="submit" onClick={handleSubmit}>Submit</button>
 			</form>
 		</>
 	);

@@ -1,0 +1,25 @@
+.demo-button {
+    display:flex;
+    justify-content:center;
+    width:20%;
+   height:3em;
+   background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color:#111;
+    width:90%;
+    padding:2px;
+
+    justify-content:center;
+    padding:6px;
+    cursor:pointer;
+    margin-top:3em;
+    font-weight:800;
+    border-radius: 1ch;
+    /* margin-right:em; */
+    margin-left:1em;
+    
+}
+.input {
+    background-color:rgb(249, 217, 174)
+}

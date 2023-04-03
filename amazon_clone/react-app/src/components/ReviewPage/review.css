@@ -121,3 +121,9 @@
     border: 1px solid;
     border-color: #a88734 #9c7e31 #846a29;
 }
+.sign {
+    margin-left:1.5em;
+    margin-top:-.1em;
+    font-size:14px;
+    font-weight:900;
+}
