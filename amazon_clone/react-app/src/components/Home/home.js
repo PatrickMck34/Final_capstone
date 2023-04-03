@@ -14,14 +14,14 @@ function Home(){
 
     const user = useSelector(state=>state.session)
     const dispatch = useDispatch()
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     dispatch(itemActions.getUserReviews(ItemId))
+        dispatch(itemActions.getAllItems())
     
      
           
         
-    //   }, [user]);
+      }, [user]);
       const Demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login("123@aa.io","password" ));
