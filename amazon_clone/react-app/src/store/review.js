@@ -6,10 +6,11 @@ const CREATE_REVIEW = '/reviews/new'
 const READ_REVIEW = '/reviews/reviewId'
 const UPDATE_REVIEW = '/reviews/edit'
 
-export const createReviews = ({rev}, itemId) => async (dispatch) => {
+export const createReviews = ({rev}, itemId, userName) => async (dispatch) => {
     // dispatch(createReview(review))
 const item = itemId
 const {review} = rev
+const user_name = userName
 
 
     const data = await fetch(`/api/reviews/add/${itemId}` , {
@@ -19,7 +20,8 @@ const {review} = rev
         },
         body: JSON.stringify({
             review,
-            item
+            item,
+            user_name
         }),
     });
     

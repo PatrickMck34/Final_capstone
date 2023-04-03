@@ -22,7 +22,7 @@ function ReviewPage() {
   const item = useSelector(state => state.items)
   const reviews = useSelector(state => state.review)
  const rev = {review}
-  
+  const userName = session?.user?.username
 
   // const id = sessionUser.id
  
@@ -52,7 +52,7 @@ function ReviewPage() {
     
     // if(sessionUser === null) return setErrors(["You Must Be Logged in To Leave a Review"])
     // if(rev.length >2 ) return setErrors(["Review must be 200 char or less"])
-   dispatch(reviewActions.createReviews({rev}, itemId)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
+   dispatch(reviewActions.createReviews({rev}, itemId, userName )).then(()=>dispatch(reviewActions.getUserReviews(itemId)))
     .then()
     .catch(async (res) => {
         const data = await res.json();
@@ -76,11 +76,10 @@ function ReviewPage() {
       
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
-<i className="fa-solid fa-user"/> <strong>{rev?.user?.username}</strong>-says:  {rev?.review}                                                                     <div>           
-                                          
-        </div>
+<i className="fa-solid fa-user"/> <strong>{rev.user_name}</strong>-says:  {rev?.review}                                                                     <div>           
+                                    
+        </div> 
 
-      <div className="edit-delete-buttons">
                         
                             
                       
@@ -89,26 +88,34 @@ function ReviewPage() {
                            
                            
                            
+  {rev.user_name === userName ? (
+      <div className="edit-delete-buttons">
   
-        <div id="button-edit-container"> 
+      <div id="button-edit-container"> 
+
 <OpenModalButton 
 
 buttonText={ 
-  
   <i className="button-edit" class="fa-solid fa-pencil delete" id="mod" >
         </i>
-        
-      }
-      modalComponent={<EditReview rev={rev}/>}
-      />
-      </div>  
+  
+  
+}
+modalComponent={<EditReview rev={rev}/>}
+/>
+      
        <i class="fa-solid fa-trash" onClick={()=>dispatch(reviewActions.deleteReviews(rev?.id)).then(()=>dispatch(reviewActions.getUserReviews(itemId)))}></i>
                
-        </div>
+      </div>
+</div>
+      ):(
+        <div></div>
+      )
+    }
+    </div>
+  ))}
   </div>
       
-      ))}
-      </div>
       </div>
       </div>
     <div className="create-container-log">

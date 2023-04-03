@@ -16,7 +16,7 @@ def seed_reviews():
         review = "It was ok, money almost worth buying two!",
         item_id = 1,
         user_name = "Marie",
-        user_id = 2,
+        # user_id = 2,
     )
 
     review2 = Review(
@@ -24,7 +24,7 @@ def seed_reviews():
         review = "Im so glad I bought this! exactly what I wanted!",
         item_id = 3,
         user_name = "Marie",
-        user_id = 2,
+        # user_id = 2,
       
     )
     review6 = Review(
@@ -32,7 +32,7 @@ def seed_reviews():
         review = "I would reccomend to a friend, but maybe not family",
         item_id = 4,
         user_name = "bob",
-        user_id = 3,
+        # user_id = 3,
       
     )
     review1 = Review(
@@ -40,14 +40,14 @@ def seed_reviews():
         review = "I thought it was alright for the money I paid",
         item_id = 5,
         user_name = "Marie",
-        user_id = 2,
+        # user_id = 2,
     )
     review5 = Review(
         # user_id = 10,
         review = "I was a little disappointed",
         item_id = 6,
         user_name = "Marie",
-        user_id = 2,
+        # user_id = 2,
     )
     reviews = [review1, review2, review3, review4, review5, review6]
     add_reviews = [db.session.add(review) for review in reviews]

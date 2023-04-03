@@ -21,7 +21,7 @@
     margin-top:2em;
     margin-left:auto;
     /* background-color:white; */
-    height:4em;
+    height:8em;
     width:20em;
     border-radius: 5ch;
     box-shadow:2px 2px lightgray
@@ -59,11 +59,12 @@
 }
 .edit-delete-buttons {
     display:flex;
-
+    flex-flow: row;
     justify-content:right;
     margin-left:auto;
     cursor:pointer;
    height:1.5em;
+  
 /* border:none; */
     
     /* background-color:rgb(251, 251, 250); */
@@ -95,7 +96,8 @@
     border:none;
 }
 #button-edit-container >* #mod {
-    
+    display:flex;
+    flex-direction: column;
 
     border:none;
 }

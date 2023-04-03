@@ -26,11 +26,12 @@ def create_review_post(itemId):
     form = ReviewForm()
     form['csrf_token'].data = request.cookies['csrf_token']
     userReviews = form.review.data
-     
+    userId = request.get_json()['user_name']
     new_review=Review(
          
             review=userReviews,
             item_id=itemId,
+            user_name=userId
           
  
         )
