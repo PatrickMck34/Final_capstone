@@ -15,15 +15,16 @@ import OpenModalButton from "../OpenModalButton";
 function Home(){
 
     const user = useSelector(state=>state.session)
+    const items = useSelector(state=>state.items?.allItems)
     const dispatch = useDispatch()
     useEffect(() => {
-
-        dispatch(itemActions.getAllItems())
     
-     
-          
+        dispatch(itemActions.getAllItems())
         
-      }, [user]);
+       
+         
+          
+      }, [items]);
       const Demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login("123@aa.io","password" ));

@@ -2,6 +2,7 @@ import React from "react";
 import './checkout.css'
 import Item from '../Items/Item'
 import { useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 
 import { useStateValue } from "../../store/StateProvider";
@@ -10,8 +11,10 @@ import * as itemActions from '../../store/item'
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import * as sessionActions from '../../store/session'
+import { useHistory } from "react-router-dom";
 
 function Cart() {
+    const history = useHistory()
    let price = 0
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.item.allItems)
@@ -27,6 +30,12 @@ function Cart() {
       const logout = (e) => {
         e.preventDefault();
         return dispatch(sessionActions.setUser(null));
+     
+      };
+      const LogOff = (e) => {
+        e.preventDefault();
+         dispatch(sessionActions.setUser(null));
+        return history.push('/')
      
       };
     return(
@@ -63,18 +72,16 @@ function Cart() {
                     
                      
         <div className="checkout-button-container">
-          
-            <button className="checkout-buttons" onClick={logout}>Check Out</button>
+     
+            <span className="checkout-buttons" onClick={LogOff}>Check Out</span>
+       
                
                 
                 </div>
         </div>
 
-        <div className="checkout-right">
-           <button>Check Out</button>
-              
         </div>
-        </div>
+        
 
     )
 }

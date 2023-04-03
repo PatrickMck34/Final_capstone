@@ -35,7 +35,8 @@
     border: 1px solid;
     padding:5px;
     border-color: #a88734 #9c7e31 #846a29;
-    color:#111
+    color:#111;
+    cursor:pointer;
 }
 .demo-container {
     display:flex;
