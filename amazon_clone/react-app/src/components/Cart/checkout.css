@@ -19,3 +19,21 @@
 margin-right:45em;
 border-radius: 1ch;
 }
+.checkout-button-container {
+    display:flex;
+    width:100%
+}
+.checkout-buttons {
+    display:flex;
+    color:blue;
+    justify-content:center;
+    width:10em;
+    height:2em;
+    margin-left:30em;
+    font-size:24px;
+    margin-top:10em;
+    cursor:pointer;
+    background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}

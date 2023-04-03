@@ -87,3 +87,20 @@
     
     
 }
+.sign-up-redirect {
+    /* display:flex; */
+   width:80%;
+   height:3.5em;
+   background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+    color:#111;
+    margin-left:.9em;
+    margin-bottom:8em;
+    justify-content:center;
+    padding:6px;
+    cursor:pointer;
+    margin-top:1em;
+    font-weight:800;
+    border-radius: 1ch;
+}

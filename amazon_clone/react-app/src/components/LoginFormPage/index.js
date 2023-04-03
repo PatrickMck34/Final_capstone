@@ -81,7 +81,7 @@ function LoginFormPage() {
 
               <span>Don't Have an Account?</span>
             <Link to={'/signup'}>
-                   <button className='nav-option2' >Create Your Amazin Account
+                   <button className='sign-up-redirect' >Create Your Amazin Account
                    </button>
                    </Link>
             </div>

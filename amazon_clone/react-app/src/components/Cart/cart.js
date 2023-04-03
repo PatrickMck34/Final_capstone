@@ -55,6 +55,11 @@ function Cart() {
                    
                     
                      
+        <div className="checkout-button-container">
+            <button className="checkout-buttons">
+                Checkout 
+                </button> 
+                </div>
         </div>
 
         <div className="checkout-right">
