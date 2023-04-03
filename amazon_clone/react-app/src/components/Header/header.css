@@ -54,6 +54,18 @@
 
 
 }
+.nav-option2 {
+    display:flex;
+    width:5em;
+    font-size:12px;
+    width:5.4em;
+    font-weight:800;
+    margin-bottom:.3em;
+    cursor:pointer;
+    background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}
 .nav-option1 {
     font-size:12px;
     width:5.4em;
