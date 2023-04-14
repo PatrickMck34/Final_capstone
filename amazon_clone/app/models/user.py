@@ -15,7 +15,7 @@ class User(db.Model, UserMixin):
     username = db.Column(db.String(40), nullable=False,)
     email = db.Column(db.String(255), nullable=False,)
     hashed_password = db.Column(db.String(255), nullable=False)
-    
+    reviews = db.relationship("Review", back_populates="user")
 
     
 
