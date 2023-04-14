@@ -74,7 +74,7 @@ function ReviewPage() {
       <div className="spacer"></div>
 
       
-    {Object.values(reviews?.allReviews.).map((rev, idx) =>(
+    {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
 <i className="fa-solid fa-user"/> <strong>{rev?.user_name}</strong>-says:  {rev?.review}  <div>           
                                     

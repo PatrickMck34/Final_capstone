@@ -3,8 +3,8 @@ import './checkout.css'
 import Item from '../Items/Item'
 import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-
-
+import WishList from "../WishList/WishList";
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useStateValue } from "../../store/StateProvider";
 import { useEffect } from "react";
 import * as itemActions from '../../store/item'
@@ -18,14 +18,14 @@ function Cart() {
    let price = 0
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.item.allItems)
-    useEffect(() => {
+    // useEffect(() => {
     
-        dispatch(itemActions.getAllItems())
+    //     dispatch(itemActions.getAllItems())
         
        
          
           
-      }, [cartItems]);
+    //   }, [cartItems]);
 
       const logout = (e) => {
         e.preventDefault();
@@ -35,14 +35,22 @@ function Cart() {
       const LogOff = (e) => {
         e.preventDefault();
          dispatch(sessionActions.setUser(null));
-        return history.push('/')
-     
-      };
-    return(
-        <div className="checkout"> 
+         return history.push('/')
+         
+        };
+        return(
+            <div className="checkout"> 
 
             <div className="checkout-left">
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
+            <div className="checkout-right"><strong>Your Wishlist</strong>
+            <div className="wish-container">
+                <Link to="/GRAD">
+                <button>GRADUATE</button>
+                </Link>
+            <WishList></WishList>
+            </div>
+            </div>
                 <h2 className="cart-title">Your Shopping Cart</h2>
                 {Object.values(cartItems).map((item, idx) =>(
                     <div className="Item">
@@ -65,15 +73,14 @@ function Cart() {
                    <button className="Demo checkout-button" onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
                     </div>
                         ))}
-                       
 
                         
                    
                     
                      
         <div className="checkout-button-container">
-     
-            <span className="checkout-buttons" onClick={LogOff}>Check Out</span>
+    
+            <span className="checkout-buttons" onClick={((e)=> history.push("/payment"))}>Check Out</span>
        
                
                 
