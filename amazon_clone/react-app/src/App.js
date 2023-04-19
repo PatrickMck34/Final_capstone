@@ -37,9 +37,6 @@ function App() {
           <Route path="/wish_list">
             <WishList />
           </Route>
-          <Route path="/GRAD">
-            <Grad />
-          </Route>
       <Route path="/login" >
         <LoginFormPage />
       </Route>

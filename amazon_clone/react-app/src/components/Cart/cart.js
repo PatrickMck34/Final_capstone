@@ -43,10 +43,13 @@ function Cart() {
 
             <div className="checkout-left">
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
-            <div className="checkout-right"><strong>Your Wishlist</strong>
+            <div className="checkout-right">
+                <Link to='/wish_list'>
+                    <strong> View Your Wishlist</strong>
+                    </Link> 
+            
             <div className="wish-container">
                 
-            <WishList></WishList>
             </div>
             </div>
                 <h2 className="cart-title">Your Shopping Cart</h2>

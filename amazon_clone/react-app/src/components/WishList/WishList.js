@@ -8,7 +8,7 @@ function WishList () {
         <div>
             {Object.values(items).map((el)=> {
                 <div>
-            <Item title={el.name} price={el.price} rating={el.rating}></Item>
+            <Item title={el.name} price={el.price} rating={el.rating}>{Item}</Item>
             </div>
             })}
         </div>
