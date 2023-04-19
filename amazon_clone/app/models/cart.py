@@ -3,15 +3,19 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
 class Cart(db.Model):
-    __tableitems__ = 'carts'
-
+    __tablename__ = 'cart'
+   
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
-    
-    _id = db.Column(db.Integer, primary_key=True)
-    items = db.Column(db.String, nullable=False)
-    userId = db.Column(db.Integer, nullable=False)
-    
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(200), nullable=False)
+    price = db.Column(db.Integer, nullable=False)
+    description = db.Column(db.String(200))
+    rating = db.Column(db.Integer)
+    imageUrl = db.Column(db.String(300))
+    user_id = db.Column(db.Integer, nullable=True)
+  
 
 
 
@@ -19,7 +23,11 @@ class Cart(db.Model):
     def to_dict(self):
         return {
             'id': self.id,
-            'items': self.items,
-            'userId': self.userId,
-           
+            'name': self.name,
+            'price': self.price,
+            'description': self.description,
+            'rating': self.rating,
+            'imageUrl': self.imageUrl,
+            'user_id': self.user_id,
+
         }

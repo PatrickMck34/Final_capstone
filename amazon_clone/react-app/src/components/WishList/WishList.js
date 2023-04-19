@@ -7,7 +7,7 @@ import { useDispatch } from 'react-redux'
 function WishList () {
     const dispatch = useDispatch()
     const items = useSelector(state=>state.item.allItems)
-    const cartItems = useSelector(state => state.item.allItems)
+    const cartItems = useSelector(state => state.cart.allItems)
     let price = 0
       useEffect(() => {
     

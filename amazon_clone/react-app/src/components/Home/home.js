@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import * as reviewActions from '../../store/review'
 import AboutModal from "../AboutModal";
 import OpenModalButton from "../OpenModalButton";
+import * as cartActions from '../../store/cart'
 
 
 function Home(){
@@ -17,14 +18,14 @@ function Home(){
     const user = useSelector(state=>state.session)
     const items = useSelector(state=>state.items?.allItems)
     const dispatch = useDispatch()
-    useEffect(() => {
+    // useEffect(() => {
     
-        dispatch(itemActions.getAllItems())
+    //     dispatch(itemActions.getAllItems())
         
        
          
           
-      }, [items]);
+    //   }, [items]);
       const Demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login("123@aa.io","password" ));
@@ -83,6 +84,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
