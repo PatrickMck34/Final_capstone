@@ -28,7 +28,7 @@ function Cart() {
     //   }, [cartItems]);
 
       const logout = (e) => {
-        e.preventDefault();
+      history.push('/')
         return dispatch(sessionActions.setUser(null));
      
       };
@@ -45,9 +45,7 @@ function Cart() {
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
             <div className="checkout-right"><strong>Your Wishlist</strong>
             <div className="wish-container">
-                <Link to="/GRAD">
-                <button>GRADUATE</button>
-                </Link>
+                
             <WishList></WishList>
             </div>
             </div>
@@ -80,7 +78,7 @@ function Cart() {
                      
         <div className="checkout-button-container">
     
-            <span className="checkout-buttons" onClick={((e)=> history.push("/payment"))}>Check Out</span>
+            <span className="checkout-buttons" onClick={((e)=> logout())}>Check Out</span>
        
                
                 
