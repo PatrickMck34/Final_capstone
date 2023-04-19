@@ -64,7 +64,7 @@ function Header() {
                   
                   </div>
                 
-          
+                  {user?.user !== null ? (
                 <div className="nav-option-basket">
                     <Link to="/cart">
                         <button className={"fa-solid fa-cart-shopping"} id="cart-button">
@@ -75,6 +75,9 @@ function Header() {
                     </Link>
                    
                 </div>
+                  ):(
+                    <div></div>
+                  )}
             </div>
 
             </div>
