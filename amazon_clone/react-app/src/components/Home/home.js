@@ -240,24 +240,108 @@ function Home(){
             <Link to={`/review/6`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
-        </div>
+</div>
+                    </div>
+                <div className="home-line">
+                        <div className="Item">
+            <div className="Item-info">
                   
                    
 
+                <p>{"Apple MacBook Pro"}</p>
+                <p className="Item-price">
+                    <small>$</small>
+                    <strong>{1299.00}</strong>
+                </p>
+                <div className="Item-rating">
+                    {Array(5)
+                    .fill()
+                    .map((_, i) => (
+                        <i className="fa-solid fa-meteor"></i>
+                        ))}
+                </div>
+            </div>
+            <img src={"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2PUqIyvxI23vgrWfd84ON-UQhmfKVJaH-ZpZdCIJp0doerwrp2To-D-kejkQIMYHXr5rH7aKXoHj5-_YyJmE0lQ4dOR-P1KL9LJHwuwIhBuK3u32Rq-ea&usqp=CAE"} alt="" />
+            {user?.user !== null ? (
+                    <div>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
+            <Link to={`/review7`} >
+                        <button className="Item-button">See Reviews</button>
+                        </Link>
+        </div>
+        <div className="Item">
+            <div className="Item-info">
+                <p>{"Samsung 49-Inch Ultrawide Curved Gaming Monitor"}</p>
+                <p className="Item-price">
+                    <small>$</small>
+                    <strong>{1099.00}</strong>
+                </p>
+                <div className="Item-rating">
+                    {Array(5)
+                    .fill()
+                    .map((_, i) => (
+                        <i className="fa-solid fa-meteor"></i>
+                        ))}
+                </div>
+            </div>
+            <img src={"https://image-us.samsung.com/SamsungUS/home/computing/monitors/gaming/12162022/ODYSSEY_NEO_G9_HERO_IMAGE1600x1200.jpg?$product-details-jpg$"} alt="" />
+            {user?.user !== null ? (
+                    <div>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
+            <Link to={`/review8`} >
+                        <button className="Item-button">See Reviews</button>
+                        </Link>
+        </div>
+        <div className="Item">
+            <div className="Item-info">
+                <p>{"ASUS ROG Strix G15 Gaming Laptop"}</p>
+                <p className="Item-price">
+                    <small>$</small>
+                    <strong>{1399.00}</strong>
+                </p>
+                <div className="Item-rating">
+                    {Array(5)
+                    .fill()
+                    .map((_, i) => (
+                        <i className="fa-solid fa-meteor"></i>
+                        ))}
+                </div>
+            </div>
+            <img src={"https://m.media-amazon.com/images/I/71pWcOnLL+L._AC_SX679_.jpg"} alt="" />
+            {user?.user !== null ? (
+                    <div>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            </div>
+            ):(
+                <div></div>
+
+            )}
+            <Link to={`/review9`} >
+                        <button className="Item-button">See Reviews</button>
+                        </Link>
+        </div>
 
                     
                    
-                </div>
-                <div className="home-line">
                    
                 <div>
+                    </div>
 
+                    </div>
 <OpenModalButton
     modalComponent={AboutModal}
     buttonText="About"></OpenModalButton>
     </div>
-                </div>
-            </div>
 
         </div>
     )
