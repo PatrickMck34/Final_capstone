@@ -6,7 +6,7 @@
 
 .home {
     display:flex;
-    max-width:1600px;
+    max-width:100%;
     min-width:600px;
 
     justify-content:center;
