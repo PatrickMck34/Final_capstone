@@ -1,6 +1,6 @@
 const READ_ITEMS = '/carts'
 const DELETE_ITEM = '/cart/:ItemId';
-const CREATE_ITEM = '/cart/new'
+const CREATE_CARTITEM = '/cart/new'
 const READ_ITEM = '/cart/:itemId'
 const READ_CART ='/cart/cart'
 
@@ -101,14 +101,14 @@ export const createCartItem6 = () => async (dispatch) => {
 }
 
 export const createCartItems = (Item) =>({
-    type: CREATE_ITEM,
+    type: CREATE_CARTITEM,
     payload: Item
 })
 export const getCartItem = (user_id) => async (dispatch) => {
 const data = await fetch(`/api/cart/${user_id}`)
 if (data.ok) {
     const response = await data.json()
-    dispatch(getCartItems(response))
+    dispatch(getAllCartItems(response))
     return response
 }
 }
@@ -123,7 +123,7 @@ export const getAllCartItems = () => async (dispatch) => {
     }
     }
 export const getCartItems = (Item) =>({
-    type: READ_CART,
+    type: READ_ITEMS,
     payload: Item
 })
 
@@ -150,7 +150,7 @@ export default function cartReducer(state = initialState, action) {
     let newState = {...state}
     
     switch (action.type) {
-               case CREATE_ITEM:
+               case CREATE_CARTITEM:
                  newState = { allItems:{}} 
                 newState.allItems = action.payload
                 return newState
