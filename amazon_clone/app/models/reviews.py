@@ -12,10 +12,10 @@ class Review(db.Model):
         
     id = db.Column(db.Integer, primary_key=True)
     review = db.Column(db.String(200))
-    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    # user_id = db.Column(db.Integer, db.ForeignKey(User.id))
     item_id = db.Column(db.Integer)
     user_name = db.Column(db.String(30))
-    user = db.relationship("User", back_populates="reviews")
+    # user = db.relationship("User", back_populates="reviews")
 
 
 
