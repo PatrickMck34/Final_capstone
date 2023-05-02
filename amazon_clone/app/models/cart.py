@@ -30,6 +30,6 @@ class Cart(db.Model):
             'description': self.description,
             'rating': self.rating,
             'imageUrl': self.imageUrl,
-            'carts': self.cart,
+            # 'cart': self.cart,
 
         }

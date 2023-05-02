@@ -113,6 +113,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem2()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -142,6 +143,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem3()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -176,6 +178,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem4()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -206,6 +209,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem5()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -234,6 +238,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem6()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -267,6 +272,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -295,6 +301,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -323,6 +330,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
