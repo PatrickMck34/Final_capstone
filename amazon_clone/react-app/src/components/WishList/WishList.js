@@ -9,7 +9,7 @@ function WishList() {
 
     const dispatch = useDispatch()
     const items = useSelector(state => state.item.allItems)
-    const cartItems = useSelector(state => state.cart.allItems)
+    const cartItems = useSelector(state => state.cart?.allItems)
     let price = 0
     const user = useSelector(state => state.session)
     const userId = user?.user?.id
