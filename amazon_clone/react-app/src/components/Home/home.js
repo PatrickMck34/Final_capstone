@@ -16,6 +16,7 @@ import * as cartActions from '../../store/cart'
 function Home(){
 
     const user = useSelector(state=>state.session)
+    const userId = user?.user?.id
     const items = useSelector(state=>state.items?.allItems)
     const dispatch = useDispatch()
     // useEffect(() => {
@@ -84,7 +85,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -113,7 +114,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem2()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem2(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -143,7 +144,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem3()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem3(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -178,7 +179,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem4()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem4(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -209,7 +210,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem5()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem5(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -238,7 +239,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem6()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem6(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -272,7 +273,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -301,7 +302,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -330,7 +331,7 @@ function Home(){
             {user?.user !== null ? (
                     <div>
             <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem()).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>

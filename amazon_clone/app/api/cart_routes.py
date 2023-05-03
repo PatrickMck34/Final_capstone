@@ -12,14 +12,15 @@ def get_carts():
     its = Cart.query.all()
     return [it.to_dict() for it in its]
 
-@cart_routes.route('/add/kind', methods=['POST'])
+@cart_routes.route('/add/kind/<int:userId>', methods=['POST'])
 @login_required
-def create_cart_post():
-
+def create_cart_post(userId):
+    
     new_cart = Cart(
          
         name="iBUYPOWER Pro Gaming PC",
         price=1698.88,
+        user_id=userId,
         rating=4,
         imageUrl='https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg',
      
@@ -30,14 +31,15 @@ def create_cart_post():
     ret = Cart.query.get(new_cart.id)
     return [new_cart.to_dict()]
 
-@cart_routes.route('/add/tool/set', methods=['POST'])
+@cart_routes.route('/add/tool/set/<int:userId>', methods=['POST'])
 @login_required
-def create_cart2_post():
+def create_cart2_post(userId):
 
     new_cart = Cart(
          
         name="CyberpowerPC Gamer Xtreme VR Gaming PC",
         price=2299.99,
+        user_id=userId,
         rating=5,
         imageUrl='https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg',
      
@@ -48,14 +50,15 @@ def create_cart2_post():
     ret = Cart.query.get(new_cart.id)
     return [new_cart.to_dict()]
 
-@cart_routes.route('/add/knife/new', methods=['POST'])
+@cart_routes.route('/add/knife/new/<int:userId>', methods=['POST'])
 @login_required
-def create_cart3_post():
+def create_cart3_post(userId):
 
     new_cart = Cart(
          
         name="Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9",
         price=2399.97,
+        user_id=userId,
         rating=5,
         imageUrl='https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg',
      
@@ -66,14 +69,15 @@ def create_cart3_post():
     ret = Cart.query.get(new_cart.id)
     return [new_cart.to_dict()]
 
-@cart_routes.route('/add/globe', methods=['POST'])
+@cart_routes.route('/add/globe/<int:userId>', methods=['POST'])
 @login_required
-def create_cart4_post():
+def create_cart4_post(userId):
 
     new_cart = Cart(
          
         name="Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights,",
         price=9455.15,
+        user_id=userId,
         rating=5,
         imageUrl="https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg",
      
@@ -84,14 +88,15 @@ def create_cart4_post():
     ret = Cart.query.get(new_cart.id)
     return [new_cart.to_dict()]
 
-@cart_routes.route('/add/mask', methods=['POST'])
+@cart_routes.route('/add/mask/<int:userId>', methods=['POST'])
 @login_required
-def create_cart5_post():
+def create_cart5_post(userId):
 
     new_cart = Cart(
          
         name="YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station",
         price=19386.38,
+        user_id=userId,
         rating=5,
         imageUrl="https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg",
      
@@ -102,14 +107,15 @@ def create_cart5_post():
     ret = Cart.query.get(new_cart.id)
     return [new_cart.to_dict()]
 
-@cart_routes.route('/add/new/monitor', methods=['POST'])
+@cart_routes.route('/add/new/monitor/<int:userId>', methods=['POST'])
 @login_required
-def create_cart6_post():
+def create_cart6_post(userId):
 
     new_cart = Cart(
          
         name="Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black",
         price=1999.99,
+        user_id=userId,
         rating=5,
         imageUrl="https://i.postimg.cc/bNzvkCD4/monitor.jpg",
      

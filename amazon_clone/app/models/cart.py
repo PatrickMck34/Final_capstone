@@ -3,20 +3,23 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 from .user import User
 
+
+
 class Cart(db.Model):
-    __tablename__ = 'cart'
+    __tablename__ = 'carts'
    
     if environment == "production":
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    # user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
     name = db.Column(db.String(200), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(200))
     rating = db.Column(db.Integer)
     imageUrl = db.Column(db.String(300))
-    # user = db.relationship("User", back_populates=("cart"))
+
+    user = db.relationship("User", back_populates="carts")
   
 
 
@@ -30,6 +33,9 @@ class Cart(db.Model):
             'description': self.description,
             'rating': self.rating,
             'imageUrl': self.imageUrl,
+            "user_id": self.user_id,
+            # "user": [self.user.to_dict() for users in self.user]
+
             # 'cart': self.cart,
 
         }

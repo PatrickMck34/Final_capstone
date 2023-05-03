@@ -18,6 +18,7 @@ function Cart() {
    let price = 0
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.item.allItems)
+    const userId = useSelector(state=>state.session.user.id)
     // useEffect(() => {
     
     //     dispatch(itemActions.getAllItems())

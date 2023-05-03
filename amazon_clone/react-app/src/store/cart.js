@@ -4,9 +4,9 @@ const CREATE_CARTITEM = '/cart/new'
 const READ_ITEM = '/cart/:itemId'
 const READ_CART ='/cart/cart'
 
-export const createCartItem = () => async (dispatch) => {
+export const createCartItem = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/cart/add/kind`, {
+    const data = await fetch(`/api/cart/add/kind/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -20,8 +20,8 @@ export const createCartItem = () => async (dispatch) => {
     dispatch(createCartItems(response))
     return response
 }
-export const createCartItem2 = () => async (dispatch) => {
-    const data = await fetch(`/api/cart/add/tool/set`, {
+export const createCartItem2 = (userId) => async (dispatch) => {
+    const data = await fetch(`/api/cart/add/tool/set/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -35,9 +35,9 @@ export const createCartItem2 = () => async (dispatch) => {
     dispatch(createCartItems(response))
     return response
 }
-export const createCartItem3 = () => async (dispatch) => {
+export const createCartItem3 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/cart/add/knife/new`, {
+    const data = await fetch(`/api/cart/add/knife/new/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -51,9 +51,9 @@ export const createCartItem3 = () => async (dispatch) => {
     dispatch(createCartItems(response))
     return response
 }
-export const createCartItem4 = () => async (dispatch) => {
+export const createCartItem4 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/cart/add/globe`, {
+    const data = await fetch(`/api/cart/add/globe/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -67,9 +67,9 @@ export const createCartItem4 = () => async (dispatch) => {
     dispatch(createCartItems(response))
     return response
 }
-export const createCartItem5 = () => async (dispatch) => {
+export const createCartItem5 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/cart/add/mask`, {
+    const data = await fetch(`/api/cart/add/mask/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -83,9 +83,9 @@ export const createCartItem5 = () => async (dispatch) => {
     dispatch(createCartItems(response))
     return response
 }
-export const createCartItem6 = () => async (dispatch) => {
+export const createCartItem6 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/cart/add/new/monitor`, {
+    const data = await fetch(`/api/cart/add/new/monitor/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
