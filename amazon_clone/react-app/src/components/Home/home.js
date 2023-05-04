@@ -84,8 +84,8 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -113,8 +113,8 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem2(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem2()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem2(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -143,8 +143,8 @@ function Home(){
             <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem3(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem3()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem3(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -178,8 +178,8 @@ function Home(){
             <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem4(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem4(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -209,8 +209,8 @@ function Home(){
             <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem5(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem5()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem5(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -238,8 +238,8 @@ function Home(){
             <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem6(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem6(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -272,8 +272,8 @@ function Home(){
             <img src={"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2PUqIyvxI23vgrWfd84ON-UQhmfKVJaH-ZpZdCIJp0doerwrp2To-D-kejkQIMYHXr5rH7aKXoHj5-_YyJmE0lQ4dOR-P1KL9LJHwuwIhBuK3u32Rq-ea&usqp=CAE"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -301,8 +301,8 @@ function Home(){
             <img src={"https://image-us.samsung.com/SamsungUS/home/computing/monitors/gaming/12162022/ODYSSEY_NEO_G9_HERO_IMAGE1600x1200.jpg?$product-details-jpg$"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>
@@ -330,8 +330,8 @@ function Home(){
             <img src={"https://m.media-amazon.com/images/I/71pWcOnLL+L._AC_SX679_.jpg"} alt="" />
             {user?.user !== null ? (
                     <div>
-            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
-            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+            <button className="Item-button" onClick={()=>dispatch(itemActions.createItem6()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+            <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
             </div>
             ):(
                 <div></div>

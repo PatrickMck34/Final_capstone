@@ -72,7 +72,7 @@ function Cart() {
                    </div>
                    <strong>total so far (inc tax)  =${Math.ceil(( price +=((item.price * .06) +item.price)))}</strong>
                    <img className="image-checkout" src={item?.imageUrl} alt="" />
-                   <button className="Demo checkout-button" onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems()))}>Remove From Cart</button>
+                   <button className="Demo checkout-button" onClick={()=>dispatch(itemActions.deleteItems(item?.id)).then(()=>dispatch(itemActions.getAllItems())).then(()=>window.alert("Item Removed from Cart"))}>Remove From Cart</button>
                     </div>
                         ))}
 
