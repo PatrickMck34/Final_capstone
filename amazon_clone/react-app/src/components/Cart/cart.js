@@ -12,6 +12,7 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import * as sessionActions from '../../store/session'
 import { useHistory } from "react-router-dom";
+import Orders from "../Orders/orders";
 
 function Cart() {
     const history = useHistory()
@@ -82,7 +83,7 @@ function Cart() {
                      
         <div className="checkout-button-container">
     
-            <span className="checkout-buttons" onClick={((e)=> logout())}>Check Out</span>
+            <span className="checkout-buttons" onClick={((e)=> Orders().then(()=>logout()))}>Check Out</span>
        
                
                 

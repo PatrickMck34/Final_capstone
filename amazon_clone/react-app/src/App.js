@@ -13,7 +13,7 @@ import WishList from "./components/WishList/WishList";
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
 import Payment from "./components/Payment/payment";
-import Grad from "./components/GRD";
+
 
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
