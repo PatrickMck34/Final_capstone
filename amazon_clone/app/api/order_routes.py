@@ -28,10 +28,10 @@ def create_order_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
-@order_routes.route('/add/order/tool/set/<int:userId>', methods=['POST'])
+@order_routes.route('/add/tool/set/<int:userId>', methods=['POST'])
 @login_required
 def create_order2_post(userId):
 
@@ -47,8 +47,8 @@ def create_order2_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
 @order_routes.route('/add/knife/new/<int:userId>', methods=['POST'])
 @login_required
@@ -66,10 +66,10 @@ def create_order3_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
-@order_routes.route('/add/order/globe/<int:userId>', methods=['POST'])
+@order_routes.route('/add/globe/<int:userId>', methods=['POST'])
 @login_required
 def create_order4_post(userId):
 
@@ -85,10 +85,10 @@ def create_order4_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
-@order_routes.route('/add/order/mask/<int:userId>', methods=['POST'])
+@order_routes.route('/add/mask/<int:userId>', methods=['POST'])
 @login_required
 def create_order5_post(userId):
 
@@ -104,10 +104,10 @@ def create_order5_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
-@order_routes.route('/add/order/new/monitor/<int:userId>', methods=['POST'])
+@order_routes.route('/add/new/monitor/<int:userId>', methods=['POST'])
 @login_required
 def create_order6_post(userId):
 
@@ -123,8 +123,8 @@ def create_order6_post(userId):
     db.session.add(new_order)
     db.session.commit()
 
-    ret = Order.query.get(new_Order.id)
-    return [new_Order.to_dict()]
+    ret = Order.query.get(new_order.id)
+    return [new_order.to_dict()]
 
 @order_routes.route('/<int:orderId>', methods=['DELETE'])
 @login_required

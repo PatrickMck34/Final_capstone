@@ -21,7 +21,7 @@ export const createOrderItem = (userId) => async (dispatch) => {
     return response
 }
 export const createOrderItem2 = (userId) => async (dispatch) => {
-    const data = await fetch(`/api/add/order/tool/set/${userId}`, {
+    const data = await fetch(`/api/orders/add/tool/set/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -53,7 +53,7 @@ export const createOrderItem3 = (userId) => async (dispatch) => {
 }
 export const createOrderItem4 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/order/add/globe/${userId}`, {
+    const data = await fetch(`/api/orders/add/globe/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -69,7 +69,7 @@ export const createOrderItem4 = (userId) => async (dispatch) => {
 }
 export const createOrderItem5 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/order/add/mask/${userId}`, {
+    const data = await fetch(`/api/orders/add/mask/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -85,7 +85,7 @@ export const createOrderItem5 = (userId) => async (dispatch) => {
 }
 export const createOrderItem6 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/order/add/new/monitor/${userId}`, {
+    const data = await fetch(`/api/orders/add/new/monitor/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -115,7 +115,7 @@ if (data.ok) {
 
 
 export const getAllOrderItems = () => async (dispatch) => {
-    const data = await fetch(`/api/order`)
+    const data = await fetch(`/api/orders`)
     if (data.ok) {
         const response = await data.json()
         dispatch(getOrderItems(response))

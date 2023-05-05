@@ -19,14 +19,14 @@ function Home(){
     const userId = user?.user?.id
     const items = useSelector(state=>state.items?.allItems)
     const dispatch = useDispatch()
-    // useEffect(() => {
+    useEffect(() => {
     
-    //     dispatch(itemActions.getAllItems())
+        dispatch(itemActions.getAllItems())
         
        
          
           
-    //   }, [items]);
+      }, [items]);
       const Demo = (e) => {
         e.preventDefault();
         dispatch(sessionActions.login("123@aa.io","password" ));
