@@ -11,8 +11,9 @@ import * as itemActions from '../../store/item'
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import * as sessionActions from '../../store/session'
+import * as orderActions from '../../store/orders'
 import { useHistory } from "react-router-dom";
-import Orders from "../Orders/orders";
+
 
 function Cart() {
     const history = useHistory()
@@ -20,14 +21,39 @@ function Cart() {
     const dispatch = useDispatch()
     const cartItems = useSelector(state => state.item?.allItems)
     const userId = useSelector(state=>state.session?.user?.id)
-    // useEffect(() => {
+   
+    const Orders = () => {  
+
+                Object.values(cartItems).map((item, idx) => {
+                    if (item.name === "iBUYPOWER Pro Gaming PC"){
+                        dispatch(orderActions.createOrderItem(userId))
+                    }
+                    if (item.name === "CyberpowerPC Gamer Xtreme VR Gaming PC"){
+                        dispatch(orderActions.createOrderItem2(userId))
+                    }
     
-    //     dispatch(itemActions.getAllItems())
-        
-       
-         
-          
-    //   }, [cartItems]);
+                       
+                    
+                    if (item.name === "Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9"){
+                        dispatch(orderActions.createOrderItem3(userId))
+                    }
+    
+                    if (item.name === "Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"){
+                        dispatch(orderActions.createOrderItem4(userId))
+    
+                    }
+                    if (item.name === "YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station"){
+                        dispatch(orderActions.createOrderItem5(userId))
+    
+                    }
+                    if (item.name === "Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black") {
+                        dispatch(orderActions.createOrderItem6(userId))
+    
+                    }
+    
+                }
+                )}
+
 
       const logout = (e) => {
       history.push('/')
@@ -83,7 +109,7 @@ function Cart() {
                      
         <div className="checkout-button-container">
     
-            <span className="checkout-buttons" onClick={((e)=> Orders().then(()=>logout()))}>Check Out</span>
+            <span className="checkout-buttons" onClick={(()=>Orders())}>Check Out</span>
        
                
                 

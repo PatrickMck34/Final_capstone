@@ -6,7 +6,7 @@ const READ_CART ='/order/order'
 
 export const createOrderItem = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/order/add/kind/${userId}`, {
+    const data = await fetch(`/api/orders/add/orders/kind/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -21,7 +21,7 @@ export const createOrderItem = (userId) => async (dispatch) => {
     return response
 }
 export const createOrderItem2 = (userId) => async (dispatch) => {
-    const data = await fetch(`/api/order/add/tool/set/${userId}`, {
+    const data = await fetch(`/api/add/order/tool/set/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },
@@ -37,7 +37,7 @@ export const createOrderItem2 = (userId) => async (dispatch) => {
 }
 export const createOrderItem3 = (userId) => async (dispatch) => {
 
-    const data = await fetch(`/api/order/add/knife/new/${userId}`, {
+    const data = await fetch(`/api/orders/add/knife/new/${userId}`, {
         headers: {
             "Content-Type": "application/json",
         },

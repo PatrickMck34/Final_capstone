@@ -1,10 +1,11 @@
 import React from 'react'
 import Item from '../Items/Item'
 import { useSelector } from 'react-redux'
-import * as orderActions from '../../store/order'
+import * as orderActions from '../../store/orders'
 import * as cartActions from "../../store/cart"
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
+
 export function Orders() {
     const dispatch = useDispatch()
     const items = useSelector(state => state.item?.allItems)
