@@ -94,6 +94,9 @@ function Cart() {
                 <Link to='/wish_list'>
                     <strong> View Your Wishlist</strong>
                     </Link> 
+                    <Link to='/prev_order'>
+                    <strong> View Previous Orders</strong>
+                    </Link>
             
             <div className="wish-container">
                 

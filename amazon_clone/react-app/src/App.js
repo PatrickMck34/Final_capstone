@@ -13,7 +13,7 @@ import WishList from "./components/WishList/WishList";
 import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
 import Payment from "./components/Payment/payment";
-
+import Orders from "./components/Orders/orders";
 
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
@@ -36,6 +36,9 @@ function App() {
         <Switch>
           <Route path="/wish_list">
             <WishList />
+          </Route>
+          <Route path="/prev_order">
+            <Orders />
           </Route>
       <Route path="/login" >
         <LoginFormPage />

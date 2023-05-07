@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 export function Orders() {
     const dispatch = useDispatch()
     const items = useSelector(state => state.item?.allItems)
-    const cartItems = useSelector(state => state.cart?.allItems)
+    const cartItems = useSelector(state => state.orders?.allItems)
     let price = 0
     const user = useSelector(state => state.session)
     const userId = user?.user?.id
@@ -22,40 +22,47 @@ export function Orders() {
 
 
     }, []);
-   
+   return (
+    <div>
+ {Object.values(cartItems).map((item, idx) => (
+                <div>
+                    {item?.user_id === userId ? (
+                        <div>
 
-        
+                            <div className="Item">
+                                <div className="Item-info">
+                                    <p>{item?.name}</p>
+                                    <p className="Item-price">
+                                        <small>$</small>
+                                        <strong>{item?.price}</strong>
+                                    </p>
+                                    <div className="Item-rating">
+                                        {Array(item?.rating)
+                                            .fill()
+                                            .map((_, i) => (
+                                                <i className="fa-solid fa-meteor"></i>
+                                            ))}
+                                    </div>
+                                </div>
+                                
+                                <img className="image-checkout" src={item?.imageUrl} alt="" />
+                                
+                            </div>
 
-            Object.values(cartItems).map((item, idx) => {
-                if (item.name === "iBUYPOWER Pro Gaming PC"){
-                    dispatch(orderActions.createOrderItem(userId))
-                }
-                if (item.name === "CyberpowerPC Gamer Xtreme VR Gaming PC"){
-                    dispatch(orderActions.createOrderItem2(userId))
-                }
+                        </div>
+                    ) : (
+                        
 
-                   
-                
-                if (item.name === "Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9"){
-                    dispatch(orderActions.createOrderItem3(userId))
-                }
+                            <div></div>
+                     
 
-                if (item.name === "Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"){
-                    dispatch(orderActions.createOrderItem4(userId))
+                    )}
 
-                }
-                if (item.name === "YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station"){
-                    dispatch(orderActions.createOrderItem5(userId))
-
-                }
-                if (item.name === "Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black") {
-                    dispatch(orderActions.createOrderItem6(userId))
-
-                }
-
+                </div>
+            ))
             }
-            )}
-
-          
+        </div>
+   
+   )}  
 
 export default Orders
