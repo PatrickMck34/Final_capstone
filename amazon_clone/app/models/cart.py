@@ -19,7 +19,7 @@ class Cart(db.Model):
     rating = db.Column(db.Integer)
     imageUrl = db.Column(db.String(300))
 
-    user = db.relationship("User", back_populates="carts")
+    
   
 
 

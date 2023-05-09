@@ -16,7 +16,7 @@ class User(db.Model, UserMixin):
     email = db.Column(db.String(255), nullable=False,)
     hashed_password = db.Column(db.String(255), nullable=False)
     # reviews = db.relationship("Review", back_populates="user")
-    carts = db.relationship("Cart", back_populates="user")
+   
 
     
 
@@ -37,7 +37,7 @@ class User(db.Model, UserMixin):
             'username': self.username,
             'email': self.email,
             # 'reviews': [Review.allReviews.to_dict() for reviews in self.reviews],
-            'carts': [cart.to_dict() for cart in self.carts]
+         
          
 
 
