@@ -45,7 +45,7 @@ function WishList() {
                                             ))}
                                     </div>
                                 </div>
-                                <strong>total so far (inc tax)  =${Math.ceil((price += ((item.price * .06) + item.price)))}</strong>
+                               
                                 <img className="image-checkout" src={item?.imageUrl} alt="" />
                                 <button className="Demo checkout-button" onClick={() => dispatch(cartActions.deleteCartItems(item?.id)).then(()=>window.alert("Item Removed from Wish List")).then(() => dispatch(cartActions.getAllCartItems()))}>Remove From List</button>
                             </div>

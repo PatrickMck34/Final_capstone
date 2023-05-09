@@ -7,7 +7,7 @@
 .home {
     display:flex;
     max-width:100%;
-    min-width:600px;
+
 
     justify-content:center;
 
@@ -50,11 +50,11 @@
 }
 .home-logo {
     display:flex;
-    height: 60px;
+    height: 5em;
    margin-right:auto;
    margin-left:auto;
-   margin-top: -100px;
-   margin-bottom: 110px;
+   margin-top: -5em;
+   margin-bottom: 5em;
    /* position:sticky; */
 
 }

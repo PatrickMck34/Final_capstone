@@ -15,6 +15,7 @@ import * as orderActions from '../../store/orders'
 import { useHistory } from "react-router-dom";
 
 
+
 function Cart() {
     const history = useHistory()
    let price = 0
@@ -30,31 +31,31 @@ function Cart() {
     const Orders = () => {  
 
                 Object.values(cartItems).map((item, idx) => {
-                    if (item.name === "iBUYPOWER Pro Gaming PC"){
+                    if (item?.name === "iBUYPOWER Pro Gaming PC"){
                          dispatch(orderActions.createOrderItem(userId))
                          dispatch(itemActions.deleteItems(item.id))
                     }
-                    if (item.name === "CyberpowerPC Gamer Xtreme VR Gaming PC"){
+                    if (item?.name === "CyberpowerPC Gamer Xtreme VR Gaming PC"){
                        dispatch(orderActions.createOrderItem2(userId))
                        dispatch(itemActions.deleteItems(item.id))
                     }
     
-                    if (item.name === "Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9"){
+                    if (item?.name === "Alienware Aurora R14 Liquid Cooled Gaming Desktop - AMD Ryzen 9"){
                          dispatch(orderActions.createOrderItem3(userId))
                          dispatch(itemActions.deleteItems(item.id))
                     }
     
-                    if (item.name === "Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"){
+                    if (item?.name === "Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"){
                         dispatch(orderActions.createOrderItem4(userId))
                         dispatch(itemActions.deleteItems(item.id))
     
                     }
-                    if (item.name === "YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station"){
+                    if (item?.name === "YUYTIN Super Deluxe Racing Executive Office Cockpit Gaming Station"){
                         dispatch(orderActions.createOrderItem5(userId))
                         dispatch(itemActions.deleteItems(item.id))
     
                     }
-                    if (item.name === "Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black") {
+                    if (item?.name === "Samsung - Odyssey Ark 55” LED Curved 4K UHD Gaming Monitor - Black") {
                         dispatch(orderActions.createOrderItem6(userId))
                         dispatch(itemActions.deleteItems(item.id))
     
@@ -91,9 +92,9 @@ function Cart() {
             <div className="checkout-left">
                 <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
             <div className="checkout-right">
-                <Link to='/wish_list'>
+                <NavLink to='/wish_list'>
                     <strong> View Your Wishlist</strong>
-                    </Link> 
+                    </NavLink> 
                     <Link to='/prev_order'>
                     <strong> View Previous Orders</strong>
                     </Link>
@@ -102,7 +103,7 @@ function Cart() {
                 
             </div>
             </div>
-                <h2 className="cart-title">Your Shopping Cart</h2>
+                <h1 className="cart-title">Your Shopping Cart</h1>
                 {Object.values(cartItems).map((item, idx) =>(
                     <div className="Item">
                    <div className="Item-info">

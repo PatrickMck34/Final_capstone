@@ -11,6 +11,7 @@ import * as reviewActions from '../../store/review'
 import AboutModal from "../AboutModal";
 import OpenModalButton from "../OpenModalButton";
 import * as cartActions from '../../store/cart'
+import Item from "../Items/Item"
 
 
 function Home(){
@@ -340,13 +341,80 @@ function Home(){
             <Link to={`/review9`} >
                         <button className="Item-button">See Reviews</button>
                         </Link>
-        </div>
+       
+          
+                        </div>
 
-                    
+
+                        </div>
+                        <div className="home-line">
+
+                <Item
+                name="Dell XPS 13"
+                rating={2}
+                price={1199.99}
+                image="https://i.postimg.cc/DfRRn3cn/dell.jpg">
+                </Item>
+
+                <Item
+                name="Netgear Nighthawk X10 AD7200"
+                rating={4}
+                price={449.99}
+                image="https://i.postimg.cc/852wQNgY/nighthawk.jpg">
+                </Item>
+
+                </div>
+                <div className="home-line">
+
+                <Item
+                name="Logitech MX Keys"
+                rating={4}
+                price={99.99}
+                image="https://i.postimg.cc/D0cGjTvL/keyboard.jpg">
+                </Item>
+
+               
+
+                <Item
+                name="Logitech MX Master 3"
+                rating={4}
+                price={99.99}
+                image="https://i.postimg.cc/R0cZQTVn/mouse.jpg">
+                </Item>
+
+                <Item
+                name="Seagate Backup Plus Slim"
+                rating={3}
+                price={84.99}
+                image="https://i.postimg.cc/9FrXN2Q2/seagate.jpg">
+                </Item>
+
+                <Item
+                name="Logitech StreamCam"
+                rating={4}
+                price={169.99}
+                image="https://i.postimg.cc/qvprHdkg/logitech.jpg">
+                </Item>
+                </div>
+                <div className="home-line">
+             
+
+                <Item
+                name="Nvidia GeForce RTX 3080"
+                rating={4}
+                price={1699.99}
+                image="https://i.postimg.cc/RhTPcy2b/graphics.jpg">
+                </Item>
+
+                <Item
+                name="Asus ROG Rapture GT-AX11000"
+                rating={4}
+                price={449.99}
+                image="https://i.postimg.cc/gkQhgNdM/router.jpg">
+                </Item>     
                    
                    
                 <div>
-                    </div>
 
                     </div>
 <OpenModalButton
@@ -355,6 +423,7 @@ function Home(){
     </div>
 
         </div>
+    </div>
     )
 }
 export default Home
