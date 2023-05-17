@@ -90,7 +90,7 @@ function Cart() {
 
     }, [orders]);
     return (
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">
     <div class="mx-auto max-w-3xl">
       <header class="text-center">
       </header>
@@ -146,7 +146,7 @@ function Cart() {
               
                   <>
                   
-                  <div>
+                  <div className="checkout-items">
      
       
           <li class="flex items-center gap-4">
@@ -197,6 +197,8 @@ function Cart() {
             </div>
           </li>
                 </div>
+            <br>
+            </br>
           </>
                     ))}
                   
@@ -206,7 +208,6 @@ function Cart() {
 
                
           
-                <button className="checkout-buttons" onClick={() => Orders()}>Check Out</button>
       
 
 <div class="mt-8 flex justify-end border-t border-gray-100 pt-8">
@@ -214,14 +215,14 @@ function Cart() {
             <dl class="space-y-0.5 text-sm text-gray-700">
               <div class="flex justify-between">
                 <dt>Subtotal</dt>
-                <dd>${Math.ceil(price)}.98</dd>
+                <dd>${Math.ceil(price)}</dd>
               </div>
 
            
 
               <div class="flex justify-between !text-base font-medium">
                 <dt>Total</dt>
-                <dd>${Math.ceil(price+(price*.06))}.76</dd>
+                <dd>${Math.ceil(price+(price*.06))}</dd>
               </div>
             </dl>
 
@@ -238,6 +239,7 @@ function Cart() {
         
       </div>
      </div>
+<button className="checkout-buttons" onClick={() => Orders()}>Check Out</button>
     </div>
 
 

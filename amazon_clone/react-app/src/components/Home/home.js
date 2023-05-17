@@ -91,9 +91,9 @@ function Home() {
                             <div>
                                 
 
-                                <OpenModalButton className="color:green "
+                                <OpenModalButton 
              buttonText="Add Item"
-            
+             onButtonClick={()=> dispatch(itemActions.createItem())}
               modalComponent={<CartModal num={1}/>}
             />
             <br></br>
@@ -129,7 +129,7 @@ function Home() {
                             <div>
                                 <OpenModalButton
              buttonText="Add Item"
-                        
+             onButtonClick={()=> dispatch(itemActions.createItem2())}
               modalComponent={<CartModal nums={2} />}
               />
               <br></br>
@@ -165,7 +165,7 @@ function Home() {
                             <div>
                                 <OpenModalButton
              buttonText="Add Item"
-            
+             onButtonClick={()=> dispatch(itemActions.createItem3())}
               modalComponent={<CartModal nums={3} />}
               />
                            
@@ -206,9 +206,9 @@ function Home() {
                             <div>
                                 <OpenModalButton
              buttonText="Add Item"
-            
+                            onButtonClick={()=> dispatch(itemActions.createItem4())}
               modalComponent={<CartModal num={4} />}
-              />
+              /><br></br>
                                 {/* <button className="Item-button" onClick={() => dispatch(itemActions.createItem4()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem4(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                             </div>
@@ -243,9 +243,11 @@ function Home() {
                             <div>
                                 <OpenModalButton
              buttonText="Add Item"
-            
+             onButtonClick={()=> dispatch(itemActions.createItem5())}
               modalComponent={<CartModal num={5} />}
+
               />
+              <br></br>
                                 {/* <button className="Item-button" onClick={() => dispatch(itemActions.createItem5()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem5(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                             </div>
@@ -278,9 +280,10 @@ function Home() {
                                 <div>
                                 <OpenModalButton
              buttonText="Add Item"
-            
+             onButtonClick={()=> dispatch(itemActions.createItem6())}
               modalComponent={<CartModal num={6} />}
               />
+              <br></br>
               </div>
                                 {/* <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem6(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
@@ -320,7 +323,7 @@ function Home() {
              buttonText="Add Item"
             
               modalComponent={<CartModal num={7} />}
-              />
+              /><br></br>
                                 {/* <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                             </div>
@@ -351,6 +354,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+                                <br></br>
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                             </div>
                         ) : (
@@ -380,6 +384,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+                                <br></br>
                                 <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                             </div>
                         ) : (
