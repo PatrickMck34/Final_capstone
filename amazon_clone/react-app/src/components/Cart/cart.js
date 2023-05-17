@@ -92,52 +92,52 @@ function Cart() {
     return (
         <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 ">
     <div class="mx-auto max-w-3xl">
-      <header class="text-center">
-      </header>
+      
 
-            <div className="checkout-left">
-                <img className="checkout-ad" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
-                <div className="checkout-right">
-                    {/* <NavLink to='/wish_list'>
-                        <strong> View Your Wishlist</strong>
-                    </NavLink>
-                    <Link to='/prev_order'>
-                        <strong> View Previous Orders</strong>
-                    </Link> */}
+                <img className="checkout-ad border-solid border" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
+                <br></br>
+                <div className="border-solid border text-xl flex items-center justify-around">
 
-                    <div className="wish-container">
+                <NavLink to='/wish_list'>
+                    <strong className="border-solid border-teal-600 "> View Your Wishlist</strong>
+                </NavLink>
+              
 
-                    </div>
+                <Link to='/prev_order'>
+                    <strong className="border-solid border-teal-600 "> View Previous Orders</strong>
+                </Link>
+                
                 </div>
-                <h1 class="text-xl font-bold text-gray-900 sm:text-3xl">Your Cart</h1>
                 {/* <h1 className="cart-title">Your Shopping Cart</h1> */}
                 {/* {Object.values(cartItems).map((item, idx) => (
                     <div className="Item">
-                        <div className="Item-info">
-                            <p>{item?.name}</p>
-                            <p className="Item-price">
-                                <small>$</small>
-                                <strong>{item?.price}</strong>
-                            </p>
-                            <div className="Item-rating">
-                                {Array(item?.rating)
-                                    .fill()
-                                    .map((_, i) => (
-                                        <i className="fa-solid fa-meteor"></i>
-                                        ))}
+                    <div className="Item-info">
+                    <p>{item?.name}</p>
+                    <p className="Item-price">
+                    <small>$</small>
+                    <strong>{item?.price}</strong>
+                    </p>
+                    <div className="Item-rating">
+                    {Array(item?.rating)
+                        .fill()
+                        .map((_, i) => (
+                            <i className="fa-solid fa-meteor"></i>
+                            ))}
                             </div>
-                        </div>
-                        <strong>total so far (inc tax)  =${Math.ceil((price += ((item.price * .06) + item.price)))}</strong>
-                        <img className="image-checkout" src={item?.imageUrl} alt="" />
-                        <button className="Demo checkout-button" onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems())).then(() => window.alert("Item Removed from Cart"))}>Remove From Cart</button>
-                    </div>
+                            </div>
+                            <strong>total so far (inc tax)  =${Math.ceil((price += ((item.price * .06) + item.price)))}</strong>
+                            <img className="image-checkout" src={item?.imageUrl} alt="" />
+                            <button className="Demo checkout-button" onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems())).then(() => window.alert("Item Removed from Cart"))}>Remove From Cart</button>
+                            </div>
                         ))} */}
 
 
 
 
-            </div>
+          
 </div>
+                        <h1 class="text-xl font-bold text-gray-900">Your Cart
+                        </h1>
                    
 
 <br></br>
@@ -146,24 +146,26 @@ function Cart() {
               
                   <>
                   
-                  <div className="checkout-items">
+                  <div className="checkout-items text-xl">
      
       
-          <li class="flex items-center gap-4">
+          <li class="flex items-center gap-4 border-solid border-gray-500">
             <img
               src={item?.imageUrl}
               alt=""
-              class="h-16 w-16 rounded object-cover"
+              class="h-20 w-20 rounded object-cover border-solid border"
               />
 
             <div>
-              <h3 class="text-sm text-gray-900">{item?.name}</h3>
+              <h3 class="text-xl text-gray-900">{item?.name}</h3>
               <dt class="inline">Price:</dt>
                   <dd class="inline"> --{item?.price}</dd>
             </div>
-                           SubTotal:  {Math.floor(price += item.price)}
 
             <div class="flex flex-1 items-center justify-end gap-2">
+                          <dd className=" flex justify-end">
+                            SubTotal:  {Math.floor(price += item.price)}
+                            </dd> 
               <form>
                 <label for="Line1Qty" class="sr-only"> Quantity </label>
 
@@ -176,8 +178,8 @@ function Cart() {
                   />
               </form>
 
-              <button class="text-gray-600 transition hover:text-red-600" onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems())).then(() => window.alert("Item Removed from Cart"))}>
-                <span class="sr-only">Remove item</span>
+              <button class="text-gray-600 transition hover:text-red-600 " onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems())).then(() => window.alert("Item Removed from Cart"))}>
+                <span class="sr-only ">Remove item</span>
 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -210,33 +212,22 @@ function Cart() {
           
       
 
-<div class="mt-8 flex justify-end border-t border-gray-100 pt-8">
+<div class="mt-8 flex justify-end border-solid border pt-8">
           <div class="w-screen max-w-lg space-y-4">
             <dl class="space-y-0.5 text-sm text-gray-700">
-              <div class="flex justify-between">
+              <div class="flex justify-between text-xl">
                 <dt>Subtotal</dt>
                 <dd>${Math.ceil(price)}</dd>
               </div>
 
            
 
-              <div class="flex justify-between !text-base font-medium">
+              <div class="flex justify-between text-xl">
                 <dt>Total</dt>
                 <dd>${Math.ceil(price+(price*.06))}</dd>
               </div>
             </dl>
 
-            <div class="flex justify-end">
-              <span
-                class="inline-flex items-center justify-center rounded-full bg-indigo-100 px-2.5 py-0.5 text-indigo-700"
-                >
-               
-
-              </span>
-            </div>
-
-        
-        
       </div>
      </div>
 <button className="checkout-buttons" onClick={() => Orders()}>Check Out</button>

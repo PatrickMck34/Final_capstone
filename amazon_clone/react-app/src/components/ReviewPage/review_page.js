@@ -145,6 +145,7 @@ modalComponent={<EditReview rev={rev}/>}
           />
         </label>
             </span>
+            
             <span className="log-option">
 
      
