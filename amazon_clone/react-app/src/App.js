@@ -19,7 +19,7 @@ import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
 import Checkout from "./components/CheckoutPage/checkoutPage";
-import { CometChat } from "@cometchat-pro/chat";
+
 const promise = loadStripe("pk_test_51MwXvdCpHaxH8wOovgAPHMwDWQkTgbxUXHv3NYgJNaJSBrThbxAyoPJn6ptH5cRMNVX7nXsWKmxscaY3IYd3K7Ti00jnts2NyZ")
 
 function App() {

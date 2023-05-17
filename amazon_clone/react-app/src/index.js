@@ -42,7 +42,6 @@ function Root() {
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ModalProvider/>
 		<StateProvider initialState={initialState} reducer={reducer}>
 			<Root />
 		</StateProvider>
