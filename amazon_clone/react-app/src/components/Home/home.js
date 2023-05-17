@@ -67,6 +67,7 @@ function Home() {
                         </div>)}
 
                 </div>
+                
                 {/* <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" /> */}
                 <img className="home-movie" src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
                 <img className="home-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>

@@ -159,12 +159,12 @@ function Cart() {
             <div>
               <h3 class="text-xl text-gray-900">{item?.name}</h3>
               <dt class="inline">Price:</dt>
-                  <dd class="inline"> --{item?.price}</dd>
+                  <dd class="inline"> ${item?.price}</dd>
             </div>
 
             <div class="flex flex-1 items-center justify-end gap-2">
                           <dd className=" flex justify-end">
-                            SubTotal:  {Math.floor(price += item.price)}
+                            SubTotal: $ {Math.floor(price += item.price)}
                             </dd> 
               <form>
                 <label for="Line1Qty" class="sr-only"> Quantity </label>

@@ -19,6 +19,7 @@ import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
 import Checkout from "./components/CheckoutPage/checkoutPage";
+import { CometChat } from "@cometchat-pro/chat";
 const promise = loadStripe("pk_test_51MwXvdCpHaxH8wOovgAPHMwDWQkTgbxUXHv3NYgJNaJSBrThbxAyoPJn6ptH5cRMNVX7nXsWKmxscaY3IYd3K7Ti00jnts2NyZ")
 
 function App() {
@@ -29,6 +30,34 @@ function App() {
     dispatch(authenticate()).then(() => setIsLoaded(true));
   }, [dispatch]);
 
+  const appID = "2394484ebcce3f57";
+  const region = "us";
+  const appSetting = new CometChat.AppSettingsBuilder()
+    .subscribePresenceForAllUsers()
+    .setRegion(region)
+    .build();
+  CometChat.init(appID, appSetting).then(
+    () => {
+      console.log("Initialization completed successfully");
+      // You can now call login function.
+    },
+    (error) => {
+      console.log("Initialization failed with error:", error);
+      // Check the reason for error and take appropriate action.
+    }
+  );
+
+  const authKey = "dec71a4d73e9389ee4cfae053bd3a54d34422715";
+const uid = "SUPERHERO1";
+
+CometChat.login(uid, authKey).then(
+	(user) => {
+		console.log("Login Successful:", { user });
+	},
+	(error) => {
+		console.log("Login failed with exception:", { error });
+	}
+);
   return (
     <>
       {/* <Navigation isLoaded={isLoaded} />
