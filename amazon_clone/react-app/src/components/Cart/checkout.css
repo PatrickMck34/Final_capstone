@@ -37,6 +37,20 @@ border-radius: 1ch;
     color: green;
     font-weight: bold;
 }
+#Item-button {
+    display:flex;
+    border-radius: 1ch;
+    justify-content:center;
+    width:10em;
+    height:1.5em;
+    margin-left:30em;
+    font-size:24px;
+    margin-top:10em;
+    cursor:pointer;
+    background:#f0c14b;
+    border: 1px solid;
+    border-color: #a88734 #9c7e31 #846a29;
+}
 .checkout-buttons {
     display:flex;
     border-radius: 1ch;

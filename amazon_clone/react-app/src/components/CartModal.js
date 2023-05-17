@@ -1,6 +1,10 @@
 import './about.css'
-const AboutModal = () => {
+import { useDispatch } from 'react-redux'
+import * as itemActions from './../store/item'
 
+
+const CartModal = () => {
+const dispatch = useDispatch()
     return (
         <div id="about-modal-container">
             <h2 id="about-modal-prompt">About Me</h2>
@@ -10,16 +14,23 @@ const AboutModal = () => {
                 <div id="patrick-contact-container">
                     <p className="contact-name">Patrick McKinney</p>
                     <div className="contact-links-container">
-
+                       
                     </div>
                 </div>
                 
         
                    
                 </div>
+<button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>dispatch(itemActions.getAllItems()))}>Add Item?</button>
             </div>
       
     )
 }
 
-export default AboutModal
+
+         
+        
+             
+            
+
+export default CartModal

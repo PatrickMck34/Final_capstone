@@ -21,8 +21,10 @@
 }
 
 #modal-content {
-  position: absolute;
+  position: relative;
+  font-size:Large;
   background-color:rgb(243, 243, 243);
+ z-index: 1;
   height:fit-content;
   width:20em;
   border-radius: 2ch;

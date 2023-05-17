@@ -14,7 +14,7 @@ import {loadStripe} from "@stripe/stripe-js"
 import {Elements} from "@stripe/react-stripe-js"
 import Payment from "./components/Payment/payment";
 import Orders from "./components/Orders/orders";
-
+import CartModal from "./components/CartModal";
 import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
@@ -60,8 +60,9 @@ function App() {
           <Route path="/cart">
          <Cart />
           </Route>
-          <Route ecxact path="/">
+          <Route exact path="/">
             <Home />
+         
           </Route>
         </Switch>
       {/* )} */}

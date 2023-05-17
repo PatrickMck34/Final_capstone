@@ -33,11 +33,11 @@ function Item({id, title, image, price, rating}) {
                     
                      <img src={image}/>
                 
-                     <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+                     {/* <button className="Item-button" onClick={()=>dispatch(itemActions.createItem4()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button>
                      <button className="Item-button" onClick={()=>dispatch(cartActions.createCartItem(userId)).then(()=>window.alert("Item added to Wish List!")).then(()=>dispatch(cartActions.getAllCartItems()))}>Add To List</button>
                         <Link to={`/review/9`} >
                         <button className="Item-button">See Reviews</button>
-                        </Link>
+                        </Link> */}
         </div>
     )
 }
