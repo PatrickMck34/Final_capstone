@@ -49,8 +49,10 @@ function Home() {
                 <div className="demo-container">
 
                     {user?.user === null ? (
-                        <div>
+                        <div >
+                            <div className="flex  w-4 ml-3 ">
                            <ProfileButton user={sessionUser} />
+                           </div>
                             {/* <NavLink to={'/login'}>
                                 <button className='Demo' >Log In
                                 </button>
@@ -92,7 +94,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300 ">
                                 <OpenModalButton 
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem())}
@@ -100,7 +102,7 @@ function Home() {
             />
             </span>
             <br></br>
-            <span className="border-solid rounded ">
+            <span className="border-solid border rounded bg-amber-300 ">
                                 {/* <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <OpenModalButton 
              buttonText="Add to List"
@@ -136,7 +138,7 @@ function Home() {
                         <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
                         {user?.user !== null ? (
                             <div >
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300 ">
 
                                 <OpenModalButton 
              buttonText="Add Item"
@@ -145,7 +147,7 @@ function Home() {
              />
              </span>
               <br></br>
-              <span className="border-solid rounded ">
+              <span className="border-solid border rounded bg-amber-300">
 
               <OpenModalButton 
              buttonText="Add to List"
@@ -183,7 +185,7 @@ function Home() {
                         <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem3())}
@@ -192,7 +194,7 @@ function Home() {
               </span>
                            
                         <br></br>
-                        <span className="border-solid rounded ">
+                        <span className="border-solid border rounded bg-amber-300">
                         <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem3(userId))}
@@ -233,7 +235,7 @@ function Home() {
                         <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
                             onButtonClick={()=> dispatch(itemActions.createItem4())}
@@ -242,7 +244,7 @@ function Home() {
               </span>
               <br></br>
               
-              <span className="border-solid rounded ">
+              <span className="border-solid border rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem4(userId))}
@@ -281,7 +283,7 @@ function Home() {
                         <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem5())}
@@ -290,7 +292,7 @@ function Home() {
               />
               </span>
               <br></br>
-              <span className="border-solid rounded ">
+              <span className="border-solid border rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem5(userId))}
@@ -327,7 +329,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 <div>
-                                <span className="border-solid rounded ">
+                                <span className="border-solid border rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem6())}
@@ -335,7 +337,7 @@ function Home() {
               />
               </span>
               <br></br>
-              <span className="border-solid rounded ">
+              <span className="border-solid border rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem6(userId))}
@@ -349,13 +351,14 @@ function Home() {
                             </div>
                         ) : (
                             <div></div>
-
-                        )}
+                            
+                            )}
                         <Link to={`/review/6`} >
                             <button className="Item-button">See Reviews</button>
                         </Link>
                     </div>
                 </div>
+                            <div className="flex justify-center text-3xl  ">Additional Products On the Way!</div>
                 <div className="home-line">
                     <div className="Item">
                         <div className="Item-info">
@@ -378,21 +381,16 @@ function Home() {
                         <img src={"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2PUqIyvxI23vgrWfd84ON-UQhmfKVJaH-ZpZdCIJp0doerwrp2To-D-kejkQIMYHXr5rH7aKXoHj5-_YyJmE0lQ4dOR-P1KL9LJHwuwIhBuK3u32Rq-ea&usqp=CAE"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <OpenModalButton
-             buttonText="Add Item"
-            
-              modalComponent={<CartModal num={7} />}
-              /><br></br>
+                                Coming Soon!
+            <br></br>
                                 {/* <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
-                                <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+                                
                             </div>
                         ) : (
                             <div></div>
 
                         )}
-                        <Link to={`/review7`} >
-                            <button className="Item-button">See Reviews</button>
-                        </Link>
+                  
                     </div>
                     <div className="Item">
                         <div className="Item-info">
@@ -412,17 +410,15 @@ function Home() {
                         <img src={"https://image-us.samsung.com/SamsungUS/home/computing/monitors/gaming/12162022/ODYSSEY_NEO_G9_HERO_IMAGE1600x1200.jpg?$product-details-jpg$"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+                                Coming Soon!
                                 <br></br>
-                                <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+                                
                             </div>
                         ) : (
                             <div></div>
 
                         )}
-                        <Link to={`/review8`} >
-                            <button className="Item-button">See Reviews</button>
-                        </Link>
+                      
                     </div>
                     <div className="Item">
                         <div className="Item-info">
@@ -442,31 +438,31 @@ function Home() {
                         <img src={"https://m.media-amazon.com/images/I/71pWcOnLL+L._AC_SX679_.jpg"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <button className="Item-button" onClick={() => dispatch(itemActions.createItem6()).then(() => window.alert("Item added to cart")).then(() => dispatch(itemActions.getAllItems()))}>Add To Cart</button>
+                                Coming Soon!
                                 <br></br>
-                                <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button>
+                                
                             </div>
                         ) : (
                             <div></div>
 
                         )}
-                        <Link to={`/review9`} >
-                            <button className="Item-button">See Reviews</button>
-                        </Link>
+                 
 
 
                     </div>
 
 
                 </div>
+                            <br></br>
                 <div className="home-line">
-
                     <Item
                         name="Dell XPS 13"
                         rating={2}
                         price={1199.99}
                         image="https://i.postimg.cc/DfRRn3cn/dell.jpg">
+                            
                     </Item>
+                    
 
                     <Item
                         name="Netgear Nighthawk X10 AD7200"

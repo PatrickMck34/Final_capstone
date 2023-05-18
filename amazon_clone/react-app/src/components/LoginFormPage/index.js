@@ -33,7 +33,7 @@ function LoginFormPage() {
     <div className="create-container-log">
     <div className="log-logo">
 
-      <h1>Sign In</h1>
+  <br></br>
           </div>
       <div className="login-title">
 
@@ -79,7 +79,7 @@ function LoginFormPage() {
             </div>
             <div className="signup-redirect">
 
-              <span>Don't Have an Account?</span>
+              <span>-Don't Have an Account?-</span>
             <Link to={'/signup'}>
                    <button className='sign-up-redirect' >Create Your Amazin Account
                    </button>

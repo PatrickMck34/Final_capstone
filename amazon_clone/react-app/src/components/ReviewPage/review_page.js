@@ -121,7 +121,7 @@ modalComponent={<EditReview rev={rev}/>}
     <div className="create-container-log">
     <div className="log-logo">
 
-      <h1>Create A Review</h1>
+     <br></br>
           </div>
       <div className="login-title">
 

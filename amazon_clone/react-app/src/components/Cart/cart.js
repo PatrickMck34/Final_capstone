@@ -14,6 +14,8 @@ import * as sessionActions from '../../store/session'
 import * as orderActions from '../../store/orders'
 import { useHistory } from "react-router-dom";
 import CartModal from "./CartModal";
+import OpenModalButton from "../OpenModalButton/index";
+import RemoveModal from "./RemoveModal";
 
 
 
@@ -178,7 +180,8 @@ function Cart() {
                   />
               </form>
 
-              <button class="text-gray-600 transition hover:text-red-600 " onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems())).then(() => window.alert("Item Removed from Cart"))}>
+              <button class="text-gray-600 transition hover:text-red-600" onClick={() => dispatch(itemActions.deleteItems(item?.id)).then(() => dispatch(itemActions.getAllItems()))}>
+
                 <span class="sr-only ">Remove item</span>
 
                 <svg

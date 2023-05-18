@@ -45,7 +45,10 @@ function SignupFormPage() {
 
     <div className="create-container">
     <div className="signup-logo">
-      <h1>Create Account</h1>
+      <br>
+      </br>
+      <br></br>
+    
     </div>
       <div className="signin-title">
 
@@ -115,7 +118,7 @@ function SignupFormPage() {
 
           </div>
           <div className="redirect-container">
-             Already Have an Account?
+             -Already Have an Account?- 
 
             <Link to={'/login'}>
                    <button className='logup-redirect' >Login to Your Amazin Account
