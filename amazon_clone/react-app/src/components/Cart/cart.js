@@ -98,15 +98,15 @@ function Cart() {
 
                 <img className="checkout-ad border-solid border" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
                 <br></br>
-                <div className="border-solid border text-xl flex items-center justify-around">
+                <div className="border-solid border text-xl flex items-center justify-around h-6">
 
                 <NavLink to='/wish_list'>
-                    <strong className="border-solid border-teal-600 "> View Your Wishlist</strong>
+                    <strong className="border-solid border bg-teal-400 "> View Your Wishlist</strong>
                 </NavLink>
               
 
                 <Link to='/prev_order'>
-                    <strong className="border-solid border-teal-600 "> View Previous Orders</strong>
+                    <strong className="border-solid border bg-teal-400 "> View Previous Orders</strong>
                 </Link>
                 
                 </div>
