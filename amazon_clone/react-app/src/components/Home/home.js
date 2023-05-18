@@ -86,7 +86,7 @@ function Home() {
                                 {Array(4)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -131,7 +131,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -178,7 +178,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -228,7 +228,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -276,7 +276,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -321,7 +321,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -374,7 +374,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -403,7 +403,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
@@ -431,7 +431,7 @@ function Home() {
                                 {Array(5)
                                     .fill()
                                     .map((_, i) => (
-                                        <i className="fa-black border-solid fa-meteor"></i>
+                                        <i className="fa-black fa-solid fa-meteor"></i>
                                     ))}
                             </div>
                         </div>
