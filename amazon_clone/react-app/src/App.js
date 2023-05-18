@@ -10,8 +10,6 @@ import * as reviewActions from './store/review'
 import ReviewPage from "./components/ReviewPage/review_page"
 import Item from './components/Items/Item'
 import WishList from "./components/WishList/WishList";
-import {loadStripe} from "@stripe/stripe-js"
-import {Elements} from "@stripe/react-stripe-js"
 import Payment from "./components/Payment/payment";
 import Orders from "./components/Orders/orders";
 import CartModal from "./components/CartModal";
@@ -19,7 +17,7 @@ import * as itemActions from "./store/item"
 import EditReview from "./components/editReview";
 import { useSelector } from "react-redux";
 import Checkout from "./components/CheckoutPage/checkoutPage";
-const promise = loadStripe("pk_test_51MwXvdCpHaxH8wOovgAPHMwDWQkTgbxUXHv3NYgJNaJSBrThbxAyoPJn6ptH5cRMNVX7nXsWKmxscaY3IYd3K7Ti00jnts2NyZ")
+
 
 function App() {
   const user = useSelector(state=>state.session.user)
@@ -50,9 +48,7 @@ function App() {
             <Checkout />
           </Route>
           <Route path="/payment">
-          <Elements stripe={promise}>
              <Payment />
-          </Elements>
           </Route>
           <Route path="/review">
             <ReviewPage />
