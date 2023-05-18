@@ -12,7 +12,7 @@ class Cart(db.Model):
         __table_args__ = {'schema': SCHEMA}
 
     id = db.Column(db.Integer, primary_key=True)
-    user_id = db.Column(db.Integer, db.ForeignKey(User.id))
+    user_id = db.Column(db.Integer)
     name = db.Column(db.String(200), nullable=False)
     price = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(200))
@@ -34,8 +34,6 @@ class Cart(db.Model):
             'rating': self.rating,
             'imageUrl': self.imageUrl,
             "user_id": self.user_id,
-            # "user": [self.user.to_dict() for users in self.user]
-
-            # 'cart': self.cart,
+          
 
         }
