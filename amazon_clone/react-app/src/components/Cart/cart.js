@@ -96,17 +96,17 @@ function Cart() {
     <div class="mx-auto max-w-3xl">
       
 
-                <img className="checkout-ad border-solid border" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
+                <img className="checkout-ad border border-black" src="https://images-na.ssl-images-amazon.com/images/G/01/Lutron/Amazon_Diva_Smart_Launch_Banner_1500x300_English.jpg"></img>
                 <br></br>
-                <div className="border-solid border text-xl flex items-center justify-around h-6">
+                <div className="border border-black text-xl flex items-center justify-around h-6">
 
                 <NavLink to='/wish_list'>
-                    <strong className="border-solid border bg-teal-400 "> View Your Wishlist</strong>
+                    <strong className="border border-black bg-teal-400 "> View Your Wishlist</strong>
                 </NavLink>
               
 
                 <Link to='/prev_order'>
-                    <strong className="border-solid border bg-teal-400 "> View Previous Orders</strong>
+                    <strong className="border border-black bg-teal-400 "> View Previous Orders</strong>
                 </Link>
                 
                 </div>
@@ -123,7 +123,7 @@ function Cart() {
                     {Array(item?.rating)
                         .fill()
                         .map((_, i) => (
-                            <i className="fa-solid fa-meteor"></i>
+                            <i className="fa-black fa-meteor"></i>
                             ))}
                             </div>
                             </div>
@@ -151,11 +151,11 @@ function Cart() {
                   <div className="checkout-items text-xl">
      
       
-          <li class="flex items-center gap-4 border-solid border-gray-500">
+          <li class="flex items-center gap-4 border-black border-gray-500">
             <img
               src={item?.imageUrl}
               alt=""
-              class="h-20 w-20 rounded object-cover border-solid border"
+              class="h-20 w-20 rounded object-cover border-black border"
               />
 
             <div>
@@ -215,7 +215,7 @@ function Cart() {
           
       
 
-<div class="mt-8 flex justify-end border-solid border pt-8">
+<div class="mt-8 flex justify-end border-black border pt-8">
           <div class="w-screen max-w-lg space-y-4">
             <dl class="space-y-0.5 text-sm text-gray-700">
               <div class="flex justify-between text-xl">

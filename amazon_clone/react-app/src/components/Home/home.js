@@ -94,7 +94,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 
-                                <span className="border-solid border rounded bg-amber-300 ">
+                                <span className="border border-black rounded bg-amber-300 ">
                                 <OpenModalButton 
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem())}
@@ -102,7 +102,7 @@ function Home() {
             />
             </span>
             <br></br>
-            <span className="border-solid border rounded bg-amber-300 ">
+            <span className="border border-black rounded bg-amber-300 ">
                                 {/* <button className="Item-button" onClick={()=>dispatch(itemActions.createItem()).then(()=>window.alert("Item added to cart")).then(()=>dispatch(itemActions.getAllItems()))}>Add To Cart</button> */}
                                 <OpenModalButton 
              buttonText="Add to List"
@@ -138,7 +138,7 @@ function Home() {
                         <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
                         {user?.user !== null ? (
                             <div >
-                                <span className="border-solid border rounded bg-amber-300 ">
+                                <span className="border border-black rounded bg-amber-300 ">
 
                                 <OpenModalButton 
              buttonText="Add Item"
@@ -147,7 +147,7 @@ function Home() {
              />
              </span>
               <br></br>
-              <span className="border-solid border rounded bg-amber-300">
+              <span className="border border-black rounded bg-amber-300">
 
               <OpenModalButton 
              buttonText="Add to List"
@@ -185,7 +185,7 @@ function Home() {
                         <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid border rounded bg-amber-300">
+                                <span className="border border-black rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem3())}
@@ -194,7 +194,7 @@ function Home() {
               </span>
                            
                         <br></br>
-                        <span className="border-solid border rounded bg-amber-300">
+                        <span className="border border-black rounded bg-amber-300">
                         <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem3(userId))}
@@ -235,7 +235,7 @@ function Home() {
                         <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid border rounded bg-amber-300">
+                                <span className="border border-black rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
                             onButtonClick={()=> dispatch(itemActions.createItem4())}
@@ -244,7 +244,7 @@ function Home() {
               </span>
               <br></br>
               
-              <span className="border-solid border rounded bg-amber-300">
+              <span className="border border-black rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem4(userId))}
@@ -283,7 +283,7 @@ function Home() {
                         <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
                         {user?.user !== null ? (
                             <div>
-                                <span className="border-solid border rounded bg-amber-300">
+                                <span className="border border-black rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem5())}
@@ -292,7 +292,7 @@ function Home() {
               />
               </span>
               <br></br>
-              <span className="border-solid border rounded bg-amber-300">
+              <span className="border border-black rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem5(userId))}
@@ -329,7 +329,7 @@ function Home() {
                         {user?.user !== null ? (
                             <div>
                                 <div>
-                                <span className="border-solid border rounded bg-amber-300">
+                                <span className="border border-black rounded bg-amber-300">
                                 <OpenModalButton
              buttonText="Add Item"
              onButtonClick={()=> dispatch(itemActions.createItem6())}
@@ -337,7 +337,7 @@ function Home() {
               />
               </span>
               <br></br>
-              <span className="border-solid border rounded bg-amber-300">
+              <span className="border border-black rounded bg-amber-300">
               <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem6(userId))}
