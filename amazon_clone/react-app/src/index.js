@@ -10,10 +10,9 @@ import App from "./App";
 import Header from "./components/Header/header";
 import { StateProvider } from "./store/StateProvider";
 import "./index.css";
-import EditReview from "./components/editReview";
+
 import reducer, { initialState } from "./store/reducer";
-import Home from "./components/Home/home";
-import CartModal from "./components/Cart/CartModal";
+
 
 
 const store = configureStore();

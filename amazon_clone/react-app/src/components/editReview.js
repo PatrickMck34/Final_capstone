@@ -7,12 +7,12 @@ import './edit.css'
 
 
 function EditReview({rev}) {
-	const revs = {rev}
+	
 	
 	const ret = rev.review
 	const id = rev.id
 	const item = rev.item_id
-    const reviews = useSelector(state=>state.review)
+   
     const user = useSelector(state=>state.session.user)
 	const dispatch = useDispatch();
 	const [review, setNewReview] = useState(`${ret}`)

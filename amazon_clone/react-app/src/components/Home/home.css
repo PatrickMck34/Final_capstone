@@ -45,7 +45,10 @@
     padding:4px;
     background:rgb(96, 21, 3);
     height:2em;
-    align-items:center;
+  /* align-items:center; */
+  justify-items:right;
+
+ 
     margin-bottom: -.1em;
 }
 .home-logo {

@@ -1,9 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
 import { logout } from "../../store/session";
-import OpenModalButton from "../OpenModalButton";
-import LoginFormModal from "../LoginFormModal";
-import SignupFormModal from "../SignupFormModal";
+import * as sessionActions from "../../store/session";
+import * as itemActions from "../../store/item";
+import "./Navigation.css";
+import { Link } from "react-router-dom"
+import { Demo } from "../../store/session";
 
 function ProfileButton({ user }) {
   const dispatch = useDispatch();
@@ -14,12 +16,18 @@ function ProfileButton({ user }) {
     if (showMenu) return;
     setShowMenu(true);
   };
+  const Demo = (e) => {
+    e.preventDefault();
+    dispatch(sessionActions.login("123@aa.io", "password"));
+    return dispatch(itemActions.getAllItems())
+}
 
   useEffect(() => {
     if (!showMenu) return;
 
     const closeMenu = (e) => {
-      if (!ulRef.current.contains(e.target)) {
+  
+      if (ulRef.current &&!ulRef.current.contains(e.target)) {
         setShowMenu(false);
       }
     };
@@ -40,7 +48,7 @@ function ProfileButton({ user }) {
   return (
     <>
       <button onClick={openMenu}>
-        <i className="fas fa-user-circle" />
+      <i class="fa-solid fa-bars"></i>
       </button>
       <ul className={ulClassName} ref={ulRef}>
         {user ? (
@@ -52,18 +60,15 @@ function ProfileButton({ user }) {
             </li>
           </>
         ) : (
-          <>
-            <OpenModalButton
-              buttonText="Log In"
-              onItemClick={closeMenu}
-              modalComponent={<LoginFormModal />}
-            />
+          <><Link to={'/login'}>
+            <button className="text-xl border-solid border w-40 rounded" > Login </button>
+             </Link>
 
-            <OpenModalButton
-              buttonText="Sign Up"
-              onItemClick={closeMenu}
-              modalComponent={<SignupFormModal />}
-            />
+             <Link to={'/signup'}>
+            <button className="text-xl border-solid border w-40 rounded" > Sign In </button>
+             </Link>
+
+             <button className="text-xl border-solid border w-40 rounded" onClick={Demo}>Demo User</button>
           </>
         )}
       </ul>

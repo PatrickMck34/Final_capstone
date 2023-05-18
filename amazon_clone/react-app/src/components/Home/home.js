@@ -23,6 +23,7 @@ function Home() {
     const userId = user?.user?.id
     const items = useSelector(state => state.items?.allItems)
     const dispatch = useDispatch()
+    const sessionUser = useSelector(state => state.session.user);
     useEffect(() => {
 
         dispatch(itemActions.getAllItems())
@@ -49,16 +50,16 @@ function Home() {
 
                     {user?.user === null ? (
                         <div>
-                            <ProfileButton />
-                            <NavLink to={'/login'}>
+                           <ProfileButton user={sessionUser} />
+                            {/* <NavLink to={'/login'}>
                                 <button className='Demo' >Log In
                                 </button>
                             </NavLink>
                             <NavLink to={'/signup'}>
                                 <button className='Demo' >Sign Up
                                 </button>
-                            </NavLink>
-                            <button className="Demo" onClick={Demo}>Demo User</button>
+                            </NavLink> */}
+                            {/* <button className="Demo" onClick={Demo}>Demo User</button> */}
 
                         </div>
                     ) : (
