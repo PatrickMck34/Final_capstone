@@ -4,7 +4,7 @@
 .Item {
     display:flex;
     flex-direction: column;
-    z-index:1;
+  
     align-Items:center;
     justify-content:flex-end;
     margin-left:20px;
@@ -36,6 +36,7 @@ width:100%;
     background:#f0c14b;
     border: 1px solid;
     margin-top: 10px;
+    width:6em;
     border-color: #a88734 #9c7e31 #846a29;
     color:#111;
     border-radius: 2ch;
@@ -43,4 +44,14 @@ width:100%;
 }
 .Item-rating {
     display:flex;
+}
+#Item-button {
+    background:#f0c14b;
+    border: 1px solid;
+    margin-top: 10px;
+    width:6em;
+    border-color: #a88734 #9c7e31 #846a29;
+    color:#111;
+    border-radius: 2ch;
+    cursor:pointer;
 }

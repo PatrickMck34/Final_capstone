@@ -45,15 +45,15 @@ function Header() {
                  
                    </div>
                    ):(
-                   <span>
+                   <div>
 
                         <h4  className="welcome">Welcome
                    </h4>
-                
+                <br></br>
                    
                    <h3 >{user?.user?.username}
                    </h3>
-                   </span>
+                   </div>
                  
                    )}
           

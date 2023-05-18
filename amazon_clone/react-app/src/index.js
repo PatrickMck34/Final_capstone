@@ -12,6 +12,8 @@ import { StateProvider } from "./store/StateProvider";
 import "./index.css";
 import EditReview from "./components/editReview";
 import reducer, { initialState } from "./store/reducer";
+import Home from "./components/Home/home";
+import CartModal from "./components/Cart/CartModal";
 
 
 const store = configureStore();
@@ -29,10 +31,9 @@ function Root() {
 		<ModalProvider>
 			<Provider store={store}>
 				<BrowserRouter>
-				<Header />
+					<Header />				
+					<App />
 					<Modal />
-					
-			         <App />
 				</BrowserRouter>
 			</Provider>
 		</ModalProvider>
@@ -41,9 +42,10 @@ function Root() {
 
 ReactDOM.render(
 	<React.StrictMode>
-	<StateProvider initialState={initialState} reducer={reducer}>
-		<Root />
+		<StateProvider initialState={initialState} reducer={reducer}>
+			<Root />
 		</StateProvider>
+		
 	</React.StrictMode>,
 	document.getElementById("root")
 );
