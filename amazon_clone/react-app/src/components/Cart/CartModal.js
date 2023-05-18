@@ -8,7 +8,9 @@ function CartModal({nums})  {
 
     return (
         <div id="about-modal-container">
+            
             Item Added!
+
                     </div>
     )
 }
