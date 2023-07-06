@@ -9,8 +9,8 @@ import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { useStateValue } from '../../store/StateProvider'
 import * as itemActions from '../../store/item'
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
-import { ShoppingCart } from '@material-ui/icons'
+
+
 function Header() {
     const user = useSelector(state=>state.session)
     const [{ basket }, dispatch] = useStateValue();
