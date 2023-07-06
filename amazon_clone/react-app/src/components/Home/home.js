@@ -45,38 +45,57 @@ function Home() {
     };
     return (
         <div className="home">
-            <div className="home-container">
-                <div className="demo-container">
+            <div className="home-container bg-blue-950">
+                <div className="demo-container  bg-blue-950 ">
 
                     {user?.user === null ? (
                         <div >
-                            <div className=" w-4 ml-3 border border-black border-solid bg-gray-400 ">
-                           <ProfileButton user={sessionUser} />
+                            <div className=" w-0 ml-auto mr-8 border text-2xl bg-blue-950  text-white  justify-around  flex cursor-pointer">
+                           <ProfileButton user={sessionUser} className="cursor-pointer " /> 
                            </div>
-                            {/* <NavLink to={'/login'}>
+                             {/* <NavLink to={'/login'}>
                                 <button className='Demo' >Log In
                                 </button>
                             </NavLink>
                             <NavLink to={'/signup'}>
                                 <button className='Demo' >Sign Up
                                 </button>
-                            </NavLink> */}
-                            {/* <button className="Demo" onClick={Demo}>Demo User</button> */}
+                            </NavLink> 
+                            <button className="Demo" onClick={Demo}>Demo User</button>  */}
 
                         </div>
                     ) : (
                         <div>
-                            <button className="Demo" onClick={logout}>Log Out</button>
+                            <button className="text-xl w-full ml-[45%] text-white" onClick={logout}>Log Out</button>
                         </div>)}
 
                 </div>
                 
                 {/* <img  className="home-banner" src="https://m.media-amazon.com/images/I/719Izgkn1dL._SX3000_.jpg" /> */}
-                <img className="home-movie" src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
-                <img className="home-logo" src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img>
-                <div className="home-line">
-                    <div className="Item">
-                        <div className="Item-info">
+                
+                    <div className="flex">
+                        <div className=" bg-blue-900 border border-x-0 border-t-2 border-solid text-3xl  p-3  ">
+                            <br></br>
+                            <div className="text-white bg-blue-950 mt-3 text-xl m-auto w-52 p-1"> 
+                            Early Prime Day Deals!
+                            </div>
+                            <br></br>
+                            <div className="text-white text-center ">
+
+                            Get A New Alienware System As Low As
+                            
+                            $267!
+                            </div>
+                                
+                            </div>
+                        
+
+                <img className="home-movie w-[80%] border border-x-0 border-solid border-t-2 flex  bg-blue-950 " src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
+                </div>
+                {/* <img className="home-logo h-9 items-center justify-center w-full  " src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img> */}
+                <div className="home-line w-full  flex justify-between p-4   ">
+                    <div className="Item rounded-lg ">
+                        <div className="Item-info ">
                             <p>{"iBUYPOWER Pro Gaming PC"}</p>
                             <p className="Item-price">
                                 <small>$</small>
@@ -90,7 +109,11 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
+                         <Link to={"/item/1"}> 
+
+                        <img className="h-44" src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
+                     </Link> 
+
                         {user?.user !== null ? (
                             <div>
                                 
@@ -135,7 +158,9 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
+                        <Link to={"/item/2"}> 
+                        <img className="h-44" src={'https://m.media-amazon.com/images/I/71Lczneb0VL._AC_SL1500_.jpg'} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div >
                                 <span className="border border-black border-solid rounded bg-amber-300 ">
@@ -182,7 +207,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
+                        
+                        <Link to={"/item/3"}>
+                            <img className="h-44" src={'https://m.media-amazon.com/images/I/713XHpvZRML._AC_SL1500_.jpg'} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 <span className="border border-black border-solid rounded bg-amber-300">
@@ -216,7 +244,7 @@ function Home() {
 
 
                 </div>
-                <div className="home-line">
+                <div className="home-line w-full  flex justify-between p-4">
                     <div className="Item">
                         <div className="Item-info">
                             <p>{"Fly YUTING Gaming Chair, Ergonomic Computer Cockpit Chair with Led Lights"}</p>
@@ -232,7 +260,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
+                        <Link to={"/item/4"}>
+
+                        <img className="h-44" src={"https://m.media-amazon.com/images/I/61OvRdy6n1L._AC_SL1080_.jpg"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 <span className="border border-black border-solid rounded bg-amber-300">
@@ -280,7 +311,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
+                        <Link to={"/item/5"}>
+
+                        <img className="h-44" src={"https://m.media-amazon.com/images/I/61SZuCXn5hL._AC_SL1200_.jpg"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 <span className="border border-black border-solid rounded bg-amber-300">
@@ -325,7 +359,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
+                        <Link to={"/item/6"}>
+
+                        <img className="h-44" src={"https://i.postimg.cc/bNzvkCD4/monitor.jpg"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 <div>
@@ -358,8 +395,10 @@ function Home() {
                         </Link>
                     </div>
                 </div>
-                            <div className="flex justify-center text-3xl  ">Additional Products On the Way!</div>
-                <div className="home-line">
+                            <div className="justify-center text-3xl bg-blue-95
+                            +
+                            0 text-white text-center w-full ">Additional Products On the Way!</div>
+                <div className="home-line w-full  flex justify-between">
                     <div className="Item">
                         <div className="Item-info">
 
@@ -378,7 +417,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2PUqIyvxI23vgrWfd84ON-UQhmfKVJaH-ZpZdCIJp0doerwrp2To-D-kejkQIMYHXr5rH7aKXoHj5-_YyJmE0lQ4dOR-P1KL9LJHwuwIhBuK3u32Rq-ea&usqp=CAE"} alt="" />
+                        <Link to={"/item/7"}>
+
+                        <img className="h-44" src={"https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcR2PUqIyvxI23vgrWfd84ON-UQhmfKVJaH-ZpZdCIJp0doerwrp2To-D-kejkQIMYHXr5rH7aKXoHj5-_YyJmE0lQ4dOR-P1KL9LJHwuwIhBuK3u32Rq-ea&usqp=CAE"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 Coming Soon!
@@ -407,7 +449,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://image-us.samsung.com/SamsungUS/home/computing/monitors/gaming/12162022/ODYSSEY_NEO_G9_HERO_IMAGE1600x1200.jpg?$product-details-jpg$"} alt="" />
+                        <Link to={"/item/7"}>
+
+                        <img className="h-44" src={"https://image-us.samsung.com/SamsungUS/home/computing/monitors/gaming/12162022/ODYSSEY_NEO_G9_HERO_IMAGE1600x1200.jpg?$product-details-jpg$"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 Coming Soon!
@@ -435,7 +480,10 @@ function Home() {
                                     ))}
                             </div>
                         </div>
-                        <img src={"https://m.media-amazon.com/images/I/71pWcOnLL+L._AC_SX679_.jpg"} alt="" />
+                        <Link to={"/item/8"}>
+
+                        <img className="h-44" src={"https://m.media-amazon.com/images/I/71pWcOnLL+L._AC_SX679_.jpg"} alt="" />
+                        </Link>
                         {user?.user !== null ? (
                             <div>
                                 Coming Soon!
@@ -453,8 +501,8 @@ function Home() {
 
 
                 </div>
-                            <br></br>
-                <div className="home-line">
+                      
+                <div className="home-line w-full  flex justify-between p-3">
                     <Item
                         name="Dell XPS 13"
                         rating={2}
@@ -472,7 +520,7 @@ function Home() {
                     </Item>
 
                 </div>
-                <div className="home-line">
+                <div className="home-line w-full  flex justify-between p-3">
 
                     <Item
                         name="Logitech MX Keys"
@@ -504,7 +552,7 @@ function Home() {
                         image="https://i.postimg.cc/qvprHdkg/logitech.jpg">
                     </Item>
                 </div>
-                <div className="home-line">
+                <div className="home-line w-full  flex justify-between p-3">
 
 
                     <Item
@@ -531,7 +579,9 @@ function Home() {
                 </div>
 
             </div>
+            
         </div>
+        
     )
 }
 export default Home

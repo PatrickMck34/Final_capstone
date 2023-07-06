@@ -1,20 +1,37 @@
 import React from "react";
-import "./checkoutPage.css"
+import "./checkoutPage.css";
 
-import { NavLink } from "react-router-dom";
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import * as itemActions from '../../store/item'
-import { Link } from "react-router-dom";
-import * as sessionActions from "../../store/session"
-import { useSelector } from "react-redux";
 
-function Checkout () {
-    return (
+
+import Product from "../Product";
+
+function Checkout() {
+
+
+  return (
+    <div className="checkout">
+      <div className="checkout__left">
+        <img
+          className="checkout__ad"
+          src="https://images-na.ssl-images-amazon.com/images/G/02/UK_CCMP/TM/OCC_Amazon1._CB423492668_.jpg"
+          alt=""
+        />
+
         <div>
-            <iframe width="1600" height="315" src="https://m.media-amazon.com/images/I/A1FOjpZM7BL.mp4"></iframe>
-        </div>
-    )
+        
+          <h2 className="checkout__title">Your shopping Basket</h2>
 
+         
+          
+
+        </div>
+      </div>
+
+      <div className="checkout__right">
+    
+      </div>
+    </div>
+  );
 }
-export default Checkout
+
+export default Checkout;

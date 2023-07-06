@@ -6,21 +6,20 @@ import LoginFormPage from "./components/LoginFormPage";
 import { authenticate } from "./store/session";
 import Home from "./components/Home/home";
 import Cart from "./components/Cart/cart";
-import * as reviewActions from './store/review'
 import ReviewPage from "./components/ReviewPage/review_page"
-import Item from './components/Items/Item'
+
 import WishList from "./components/WishList/WishList";
 import Payment from "./components/Payment/payment";
 import Orders from "./components/Orders/orders";
-import CartModal from "./components/CartModal";
-import * as itemActions from "./store/item"
-import EditReview from "./components/editReview";
-import { useSelector } from "react-redux";
+import Product from "./components/Product";
+import ItemSpec from "./components/ItemSpec/ItemSpec.js";
+
+
 import Checkout from "./components/CheckoutPage/checkoutPage";
 
 
 function App() {
-  const user = useSelector(state=>state.session.user)
+
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
   useEffect(() => {
@@ -29,8 +28,7 @@ function App() {
 
   return (
     <>
-      {/* <Navigation isLoaded={isLoaded} />
-      {isLoaded && ( */}
+     
         <Switch>
           <Route path="/wish_list">
             <WishList />
@@ -47,6 +45,9 @@ function App() {
         <Route path="/checkout">
             <Checkout />
           </Route>
+          <Route path="/item/:itemId">
+            <ItemSpec/>
+          </Route>
           <Route path="/payment">
              <Payment />
           </Route>
@@ -61,7 +62,7 @@ function App() {
          
           </Route>
         </Switch>
-      {/* )} */}
+      
     </>
   );
 }

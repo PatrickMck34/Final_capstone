@@ -9,7 +9,7 @@ import { useEffect } from "react";
 import * as itemActions from '../../store/item'
 import OpenModalButton from "../OpenModalButton";
 import EditReview from "../editReview";
-
+import { Avatar } from "@material-tailwind/react";
 
 function ReviewPage() {
   const dispatch = useDispatch();
@@ -76,7 +76,7 @@ function ReviewPage() {
       
     {Object.values(reviews?.allReviews).map((rev, idx) =>(
       <div className="reviewPre">
-<i className="fa-solid fa-user"/> <strong>{rev?.user_name}</strong>-says:  {rev?.review}  <div>           
+<i className="fa-solid fa-user"/> <strong><Avatar src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="avatar" />{rev?.user_name}</strong>-says:  {rev?.review}  <div>           
                                     
         </div> 
 
