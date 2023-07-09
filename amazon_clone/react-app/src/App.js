@@ -13,6 +13,7 @@ import Payment from "./components/Payment/payment";
 import Orders from "./components/Orders/orders";
 import Product from "./components/Product";
 import ItemSpec from "./components/ItemSpec/ItemSpec.js";
+import Splash from "./components/Splash/Splash";
 
 
 import Checkout from "./components/CheckoutPage/checkoutPage";
