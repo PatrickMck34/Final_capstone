@@ -19,7 +19,7 @@ function Header() {
    
     
     return(
-        <div className="nav ">
+        <div className="nav bg-gray-900">
             <NavLink to='/'>
             <img className="nav-logo" src="https://i.postimg.cc/ZYrg8zCH/Simply-Amazin.png"  />
             </NavLink>

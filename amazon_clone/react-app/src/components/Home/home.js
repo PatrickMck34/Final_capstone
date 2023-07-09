@@ -44,9 +44,9 @@ function Home() {
 
     };
     return (
-        <div className="home">
-            <div className="home-container bg-blue-950">
-                <div className="demo-container  bg-blue-950 ">
+        <div className="home ">
+            <div className=" ">
+                <div className="bg-slate-800 justify-between ">
 
                     {user?.user === null ? (
                         <div >
@@ -65,9 +65,17 @@ function Home() {
 
                         </div>
                     ) : (
-                        <div>
+                       
+                        <div className="">
+                        
+
+                            <button className=" text-white text-xl justify-between w-full px-4 text-inherit items-center "> Computers</button>
+                            <button className=" text-xl justify-between  px-4 w-full text-inherit items-center "> Gaming Chairs</button>
+                            <button className="text-xl justify-between w-full  px-4 text-inherit  "> Computers</button>
                             <button className="text-xl w-full ml-[45%] text-white" onClick={logout}>Log Out</button>
-                        </div>)}
+                        
+                            </div>
+                        )}
 
                 </div>
                 
@@ -93,27 +101,29 @@ function Home() {
                 <img className="home-movie w-[80%] border border-x-0 border-solid border-t-2 flex  bg-blue-950 " src="https://i.postimg.cc/gjmkD18x/Banner.jpg"></img>
                 </div>
                 {/* <img className="home-logo h-9 items-center justify-center w-full  " src="https://i.postimg.cc/rpXrJb4x/amazin-clear.png" alt="loading"></img> */}
-                <div className="home-line w-full  flex justify-between p-4   ">
-                    <div className="Item rounded-lg ">
-                        <div className="Item-info ">
-                            <p>{"iBUYPOWER Pro Gaming PC"}</p>
-                            <p className="Item-price">
+                <div className=" ml-[10%]  p-4 items-center justify-center flex ">
+                    <div className=" w-[30%] bg-gray-400/50">
+                    <div className="flex flex-col w-full"> 
+                       
+                     
+                         <Link to={"/item/1"}> 
+
+                        <img className=" h-36 w-32 mt-[50%] flex mx-auto" src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
+                     </Link> 
+
+                            <p className="Item-price p-4">
                                 <small>$</small>
                                 <strong>{1698.88}</strong>
                             </p>
-                            <div className="Item-rating">
-                                {Array(4)
+                            <p>{"iBUYPOWER Pro Gaming PC"}</p>
+                                </div>
+                            <div className="Item-rating flex flex-col">
+                                {/* {Array(4)
                                     .fill()
                                     .map((_, i) => (
                                         <i className="fa-black fa-solid fa-meteor"></i>
-                                    ))}
-                            </div>
-                        </div>
-                         <Link to={"/item/1"}> 
-
-                        <img className="h-44" src={'https://m.media-amazon.com/images/I/81YUHsnzj1L._AC_SL1500_.jpg'} alt="" />
-                     </Link> 
-
+                                        ))} */}
+                                    </div>
                         {user?.user !== null ? (
                             <div>
                                 
@@ -130,19 +140,19 @@ function Home() {
                                 <OpenModalButton 
              buttonText="Add to List"
              onButtonClick={()=> dispatch(cartActions.createCartItem(userId))}
-              modalComponent={<CartModal num={1}/>}
-            />
+             modalComponent={<CartModal num={1}/>}
+             />
             </span>
                                 {/* <button className="Item-button" onClick={() => dispatch(cartActions.createCartItem(userId)).then(() => window.alert("Item added to Wish List!")).then(() => dispatch(cartActions.getAllCartItems()))}>Add To List</button> */}
                             </div>
                         ) : (
                             <div></div>
-
-                        )}
+                            
+                            )}
                         <Link to={`/review/1`} >
                             <button className="Item-button">See Reviews</button>
                         </Link>
-                    </div>
+                            </div>
                     <div className="Item">
                         <div className="Item-info">
                             <p>{"CyberpowerPC Gamer Xtreme VR Gaming PC"}</p>
