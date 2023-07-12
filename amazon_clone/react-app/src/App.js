@@ -59,7 +59,7 @@ function App() {
          <Cart />
           </Route>
           <Route exact path="/">
-            <Home />
+            <Splash />
          
           </Route>
         </Switch>

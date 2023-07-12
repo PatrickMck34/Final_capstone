@@ -1,14 +1,14 @@
 
- 
+/*  
 * {
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
+ */
 
 
 
-
-.Demo {
+/* .Demo {
  
     height:2em;
     width:13em;
@@ -19,7 +19,7 @@
     color:#111;
     cursor:pointer;
  
-}
+} */
 /* .demo-container {
     display:flex;
     flex-flow:column;
@@ -34,8 +34,8 @@
     margin-bottom: -.1em; */
 
 
-.Profile {
+/* .Profile {
     display:flex;
     
     z-index: 1;
-}
+} */
